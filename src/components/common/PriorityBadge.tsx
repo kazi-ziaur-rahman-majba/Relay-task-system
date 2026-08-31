@@ -13,31 +13,31 @@ const priorityConfig: Record<
 > = {
   urgent: {
     label: 'Urgent',
-    bg: 'bg-rose-50 dark:bg-rose-950/50',
-    text: 'text-rose-700 dark:text-rose-300 font-bold',
-    border: 'border-rose-300 dark:border-rose-800',
-    icon: <AlertCircle className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400 animate-pulse" />,
+    bg: 'bg-rose-50',
+    text: 'text-rose-700 font-extrabold',
+    border: 'border-rose-300',
+    icon: <AlertCircle className="w-3.5 h-3.5 text-rose-600 animate-pulse" />,
   },
   high: {
     label: 'High',
-    bg: 'bg-orange-50 dark:bg-orange-950/40',
-    text: 'text-orange-700 dark:text-orange-300',
-    border: 'border-orange-200 dark:border-orange-800',
-    icon: <AlertTriangle className="w-3.5 h-3.5 text-orange-500" />,
+    bg: 'bg-amber-50',
+    text: 'text-amber-800 font-bold',
+    border: 'border-amber-300',
+    icon: <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />,
   },
   medium: {
     label: 'Medium',
-    bg: 'bg-blue-50 dark:bg-blue-950/40',
-    text: 'text-blue-700 dark:text-blue-300',
-    border: 'border-blue-200 dark:border-blue-800',
-    icon: <ArrowUpRight className="w-3.5 h-3.5 text-blue-500" />,
+    bg: 'bg-sky-50',
+    text: 'text-sky-800 font-bold',
+    border: 'border-sky-300',
+    icon: <ArrowUpRight className="w-3.5 h-3.5 text-sky-600" />,
   },
   low: {
     label: 'Low',
-    bg: 'bg-slate-50 dark:bg-slate-800/60',
-    text: 'text-slate-600 dark:text-slate-400',
-    border: 'border-slate-200 dark:border-slate-700',
-    icon: <Minus className="w-3.5 h-3.5 text-slate-400" />,
+    bg: 'bg-slate-100',
+    text: 'text-slate-700 font-semibold',
+    border: 'border-slate-300',
+    icon: <Minus className="w-3.5 h-3.5 text-slate-500" />,
   },
 };
 
@@ -46,7 +46,7 @@ export const PriorityBadge: React.FC<PriorityBadgeProps> = ({ priority, classNam
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 text-xs font-medium rounded-md border shadow-2xs ${config.bg} ${config.text} ${config.border} ${className}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold rounded-lg border shadow-2xs ${config.bg} ${config.text} ${config.border} ${className}`}
     >
       {config.icon}
       {config.label}

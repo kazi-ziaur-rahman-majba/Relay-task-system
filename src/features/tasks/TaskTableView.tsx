@@ -20,9 +20,9 @@ export const TaskTableView: React.FC<TaskTableViewProps> = ({
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-slate-50/90 border-b border-slate-200 text-xs font-bold uppercase tracking-wider text-slate-500 select-none">
-              <th scope="col" className="py-3 px-4 w-24">ID</th>
-              <th scope="col" className="py-3 px-4 min-w-[280px]">Task Title</th>
+            <tr className="bg-slate-50 border-b border-slate-200 text-[11px] font-extrabold uppercase tracking-wider text-slate-500 select-none">
+              <th scope="col" className="py-3 px-4 w-20">ID</th>
+              <th scope="col" className="py-3 px-4 w-[320px] max-w-[320px]">Task Title</th>
               <th scope="col" className="py-3 px-4 w-44">Owner</th>
               <th scope="col" className="py-3 px-4 w-32">Priority</th>
               <th scope="col" className="py-3 px-4 w-36">Due Date</th>
@@ -35,51 +35,40 @@ export const TaskTableView: React.FC<TaskTableViewProps> = ({
                 key={task.id}
                 onClick={() => onTaskClick?.(task)}
                 tabIndex={0}
-                className="group hover:bg-[#FFF5EC]/60 focus:bg-[#FFF5EC]/80 focus:outline-none transition-colors cursor-pointer"
+                className="group hover:bg-[#FFF5EC]/80 focus:bg-[#FFF5EC] focus:outline-none transition-colors cursor-pointer"
               >
                 {/* ID */}
-                <td className="py-3 px-4 font-mono text-xs font-bold text-slate-500 group-hover:text-[#fe9f43]">
+                <td className="py-3.5 px-4 font-mono text-xs font-bold text-slate-500 group-hover:text-[#FE9F43]">
                   {task.id}
                 </td>
 
-                {/* Title & Tags */}
-                <td className="py-3 px-4">
-                  <div className="flex flex-col gap-1">
-                    <span className="font-bold text-slate-900 group-hover:text-[#fe9f43] line-clamp-2 transition-colors">
-                      {task.title}
-                    </span>
-                    {task.tags && task.tags.length > 0 && (
-                      <div className="flex items-center gap-1 flex-wrap">
-                        {task.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-1.5 py-0.5 text-[10px] font-semibold bg-slate-100 text-slate-600 rounded"
-                          >
-                            #{tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                {/* Clean Task Title without unrequested hashtags */}
+                <td className="py-3.5 px-4 w-[320px] max-w-[320px]">
+                  <div 
+                    className="max-h-14 overflow-y-hidden hover:overflow-y-auto whitespace-normal break-words text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#FE9F43] transition-colors pr-1 scrollbar-thin scrollbar-thumb-slate-300"
+                    title={task.title}
+                  >
+                    {task.title}
                   </div>
                 </td>
 
                 {/* Owner */}
-                <td className="py-3 px-4">
+                <td className="py-3.5 px-4">
                   <Avatar owner={task.owner} size="sm" showName />
                 </td>
 
                 {/* Priority */}
-                <td className="py-3 px-4">
+                <td className="py-3.5 px-4">
                   <PriorityBadge priority={task.priority} />
                 </td>
 
                 {/* Due Date */}
-                <td className="py-3 px-4">
+                <td className="py-3.5 px-4">
                   <DateBadge dueDate={task.dueDate} />
                 </td>
 
                 {/* Status Dropdown/Badge */}
-                <td className="py-3 px-4" onClick={(e) => e.stopPropagation()}>
+                <td className="py-3.5 px-4" onClick={(e) => e.stopPropagation()}>
                   <div className="relative inline-block">
                     <StatusBadge status={task.status} />
                   </div>

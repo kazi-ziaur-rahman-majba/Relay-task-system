@@ -25,12 +25,12 @@ export const Avatar: React.FC<AvatarProps> = ({
     return (
       <div className={`flex items-center gap-2 ${className}`}>
         <div
-          className={`${sizeClasses} rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400`}
+          className={`${sizeClasses} rounded-full bg-slate-100 border border-slate-300 flex items-center justify-center text-slate-400 shrink-0`}
           title="Unassigned"
         >
-          <UserX className="w-4 h-4" />
+          <UserX className="w-3.5 h-3.5" />
         </div>
-        {showName && <span className="text-xs italic text-slate-400">Unassigned</span>}
+        {showName && <span className="text-xs font-medium italic text-slate-400">Unassigned</span>}
       </div>
     );
   }
@@ -47,9 +47,8 @@ export const Avatar: React.FC<AvatarProps> = ({
       <img
         src={owner.avatarUrl}
         alt={owner.name}
-        className={`${sizeClasses} rounded-full object-cover bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shrink-0`}
+        className={`${sizeClasses} rounded-full object-cover bg-slate-100 border border-slate-200 shrink-0`}
         onError={(e) => {
-          // Fallback to initials if image fails
           e.currentTarget.style.display = 'none';
           if (e.currentTarget.nextElementSibling) {
             (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
@@ -57,14 +56,14 @@ export const Avatar: React.FC<AvatarProps> = ({
         }}
       />
       <div
-        className={`${sizeClasses} rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 font-semibold border border-indigo-200 dark:border-indigo-800 flex items-center justify-center shrink-0 hidden`}
+        className={`${sizeClasses} rounded-full bg-[#FFF5EC] text-[#FE9F43] font-bold border border-[#FE9F43]/30 items-center justify-center shrink-0 hidden`}
         aria-hidden="true"
       >
         {initials}
       </div>
       {showName && (
         <span
-          className="text-xs font-medium text-slate-700 dark:text-slate-200 truncate max-w-[140px] sm:max-w-[180px]"
+          className="text-xs font-bold text-slate-900 truncate max-w-[140px] sm:max-w-[180px]"
           title={owner.name}
         >
           {owner.name}

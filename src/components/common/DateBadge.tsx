@@ -10,7 +10,7 @@ interface DateBadgeProps {
 export const DateBadge: React.FC<DateBadgeProps> = ({ dueDate, className = '' }) => {
   if (!dueDate) {
     return (
-      <span className={`inline-flex items-center gap-1 text-xs text-slate-400 italic ${className}`}>
+      <span className={`inline-flex items-center gap-1 text-xs text-slate-400 font-medium italic ${className}`}>
         <Calendar className="w-3.5 h-3.5 text-slate-300" />
         No due date
       </span>
@@ -18,7 +18,7 @@ export const DateBadge: React.FC<DateBadgeProps> = ({ dueDate, className = '' })
   }
 
   const dateObj = new Date(dueDate);
-  const today = startOfDay(new Date('2026-08-31T12:00:00Z')); // Current local context date
+  const today = startOfDay(new Date('2026-08-31T12:00:00Z'));
   const isOverdue = isBefore(startOfDay(dateObj), today);
   const isDueToday = isToday(dateObj);
 
@@ -27,10 +27,10 @@ export const DateBadge: React.FC<DateBadgeProps> = ({ dueDate, className = '' })
   if (isOverdue) {
     return (
       <span
-        className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs font-semibold rounded bg-rose-50 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 ${className}`}
+        className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold rounded-lg bg-rose-50 text-rose-700 border border-rose-300 shadow-2xs ${className}`}
         title={`Overdue! Was due on ${formattedDate}`}
       >
-        <AlertCircle className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
+        <AlertCircle className="w-3.5 h-3.5 text-rose-600 shrink-0" />
         {formattedDate} (Overdue)
       </span>
     );
@@ -39,10 +39,10 @@ export const DateBadge: React.FC<DateBadgeProps> = ({ dueDate, className = '' })
   if (isDueToday) {
     return (
       <span
-        className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs font-semibold rounded bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800 ${className}`}
+        className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-800 border border-amber-300 shadow-2xs ${className}`}
         title="Due Today!"
       >
-        <Clock className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
+        <Clock className="w-3.5 h-3.5 text-amber-600 shrink-0" />
         Today
       </span>
     );
@@ -50,9 +50,9 @@ export const DateBadge: React.FC<DateBadgeProps> = ({ dueDate, className = '' })
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400 ${className}`}
+      className={`inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 ${className}`}
     >
-      <Calendar className="w-3.5 h-3.5 text-slate-400" />
+      <Calendar className="w-3.5 h-3.5 text-slate-400 shrink-0" />
       {formattedDate}
     </span>
   );
