@@ -10,13 +10,13 @@ export default function AdminLayout() {
 	const handleSidebarClick = () => setSidebarClick((v) => !v);
 
 	return (
-		<div className="relative flex h-screen overflow-hidden">
+		<div className="relative flex h-screen overflow-hidden bg-[#F7F7F7]">
+			{/* Desktop Sidebar Collapse Toggle Button */}
 			<button
 				onClick={handleSidebarClick}
 				aria-label={sidebarClick ? "Expand sidebar" : "Collapse sidebar"}
-				style={{ willChange: "left" }}
-				className={`hidden lg:block lg:fixed top-5 z-[51] bg-[#fe9f43] text-white rounded-full p-1 shadow hover:opacity-90 focus:outline-none transition-[left,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer motion-reduce:transition-none ${
-					sidebarClick ? "left-[80px]" : "left-[235px]"
+				className={`hidden lg:flex fixed top-4 z-[51] bg-[#fe9f43] text-white rounded-full p-1 shadow-md hover:scale-105 focus:outline-none transition-all duration-300 ease-in-out cursor-pointer items-center justify-center ${
+					sidebarClick ? "left-[68px]" : "left-[228px]"
 				}`}
 			>
 				{sidebarClick ? (
@@ -26,15 +26,17 @@ export default function AdminLayout() {
 				)}
 			</button>
 
+			{/* Sidebar Navigation */}
 			<Sidebar
 				sidebarClick={sidebarClick}
 				setSidebarClick={setSidebarClick}
 			/>
 
-			<div className="flex flex-col flex-1">
+			{/* Main Layout Area - Added 6px padding on 4 sides */}
+			<div className="flex flex-col flex-1 min-w-0 overflow-hidden">
 				<Header sidebarClick={sidebarClick} />
 
-				<main className="flex-1 overflow-auto bg-[#F6F6F6] mt-16">
+				<main className="flex-1 overflow-y-auto mt-14 p-3.5 sm:p-4 bg-[#F7F7F7]">
 					<Outlet />
 				</main>
 			</div>
