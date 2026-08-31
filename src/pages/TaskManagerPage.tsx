@@ -168,7 +168,7 @@ export const TaskManagerPage: React.FC = () => {
         </div>
       )}
 
-      <main className="w-full max-w-full px-2.5 sm:px-3.5 py-2.5 space-y-3.5">
+      <main className="w-full max-w-full px-3 sm:px-4 py-3 space-y-4">
         {/* Header & Stats Overview */}
         <TaskHeader
           totalTasks={totalTasks}

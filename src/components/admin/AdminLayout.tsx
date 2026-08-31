@@ -32,11 +32,11 @@ export default function AdminLayout() {
 				setSidebarClick={setSidebarClick}
 			/>
 
-			{/* Main Layout Area - Added 6px padding on 4 sides */}
+			{/* Main Layout Area - Added +4px padding */}
 			<div className="flex flex-col flex-1 min-w-0 overflow-hidden">
 				<Header sidebarClick={sidebarClick} />
 
-				<main className="flex-1 overflow-y-auto mt-14 p-3.5 sm:p-4 bg-[#F7F7F7]">
+				<main className="flex-1 overflow-y-auto mt-14 p-4 sm:p-5 lg:p-5 bg-[#F7F7F7]">
 					<Outlet />
 				</main>
 			</div>

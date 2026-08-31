@@ -18,7 +18,7 @@ const Sidebar = ({ sidebarClick }: SidebarProps) => {
       {/* Brand Logo & Header - WEBNS TASK SYSTEM */}
       <div className="h-16 flex items-center justify-between px-4 border-b border-slate-200">
         <Link to="/" className="flex items-center gap-3 overflow-hidden">
-          <div className="w-9 h-9 rounded-xl bg-[#fe9f43] text-white font-black text-sm flex items-center justify-center shrink-0 shadow-xs">
+          <div className="w-9 h-9 rounded-lg bg-[#FE9F43] text-white font-black text-sm flex items-center justify-center shrink-0 shadow-xs">
             W
           </div>
           {!sidebarClick && (
@@ -26,7 +26,7 @@ const Sidebar = ({ sidebarClick }: SidebarProps) => {
               <span className="font-black text-base tracking-tight text-black leading-none">
                 WEBNS
               </span>
-              <span className="text-[10px] text-[#fe9f43] font-black tracking-widest uppercase mt-0.5">
+              <span className="text-[10px] text-[#FE9F43] font-black tracking-widest uppercase mt-0.5">
                 TASK SYSTEM
               </span>
             </div>
@@ -53,9 +53,9 @@ const Sidebar = ({ sidebarClick }: SidebarProps) => {
                   key={item.id}
                   to={item.path}
                   title={sidebarClick ? item.name : undefined}
-                  className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                  className={`flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-xs font-bold transition-all ${
                     isActive
-                      ? "bg-[#fe9f43] text-white shadow-xs"
+                      ? "bg-[#FE9F43] text-white shadow-2xs"
                       : "text-black hover:bg-slate-100 hover:text-black"
                   } ${sidebarClick ? "justify-center" : ""}`}
                 >
@@ -76,8 +76,8 @@ const Sidebar = ({ sidebarClick }: SidebarProps) => {
 
       {/* Footer User Profile Card */}
       {!sidebarClick && (
-        <div className="p-3 m-3 bg-slate-50 rounded-xl border border-slate-200/80 flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-full bg-[#fe9f43] text-white font-bold text-xs flex items-center justify-center shrink-0">
+        <div className="p-3 m-3 bg-slate-50 rounded-lg border border-slate-200/80 flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-full bg-[#FE9F43] text-white font-bold text-xs flex items-center justify-center shrink-0">
             KZ
           </div>
           <div className="truncate">
