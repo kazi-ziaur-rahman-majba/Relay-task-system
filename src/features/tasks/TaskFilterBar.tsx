@@ -53,10 +53,24 @@ export const TaskFilterBar: React.FC<TaskFilterBarProps> = ({
   const debouncedSearchValue = useDebounce(localSearchInput, 300);
 
   useEffect(() => {
+    if (localSearchInput === '') {
+      if (filters.search !== '') {
+        onSearchChange('');
+      }
+      return;
+    }
     if (debouncedSearchValue !== filters.search) {
       onSearchChange(debouncedSearchValue);
     }
-  }, [debouncedSearchValue, filters.search, onSearchChange]);
+  }, [debouncedSearchValue, localSearchInput, filters.search, onSearchChange]);
+
+  const handleClearSearch = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setLocalSearchInput('');
+    onSearchChange('');
+    searchInputRef.current?.focus();
+  };
 
   // Keyboard shortcut: '/' key to focus search bar (guarded against active input elements)
   useEffect(() => {
@@ -85,56 +99,18 @@ export const TaskFilterBar: React.FC<TaskFilterBarProps> = ({
   const activePriority = filters.priority.length > 0 ? filters.priority[0] : 'all';
 
   return (
-    <div className="space-y-3 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200 shadow-2xs">
-      {/* Top Search Input & Mobile Filter Button */}
-      <div className="flex items-center gap-2">
-        <div className="relative flex-1">
-          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
-          <input
-            ref={searchInputRef}
-            type="text"
-            value={localSearchInput}
-            onChange={(e) => setLocalSearchInput(e.target.value)}
-            placeholder="Search tasks by title, ID (TSK-0001), or owner... (Press '/' to focus)"
-            className="w-full pl-10 pr-9 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FE9F43] focus:bg-white transition-all min-h-[38px]"
-          />
-          {localSearchInput && (
-            <button
-              onClick={() => {
-                setLocalSearchInput('');
-                onSearchChange('');
-              }}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5 rounded-full cursor-pointer"
-              aria-label="Clear search"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
-          )}
-        </div>
-
-        {/* Mobile Filter Button (< 768px / md) */}
-        <button
-          onClick={onOpenMobileFilter}
-          className="md:hidden flex items-center gap-1.5 px-3 py-2 text-xs font-bold bg-[#FE9F43] text-white rounded-xl transition-colors shrink-0 min-h-[38px] cursor-pointer"
-        >
-          <Filter className="w-4 h-4" />
-          <span>Filters</span>
-          {hasActiveFilters && (
-            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-          )}
-        </button>
-      </div>
-
-      {/* Navigation Status Tabs */}
-      <div className="flex items-center justify-between border-b border-slate-100 pb-2 overflow-x-auto no-scrollbar">
-        <nav className="flex items-center gap-1 min-w-max" aria-label="Status Tabs">
+    <div className="space-y-2 sm:space-y-3 bg-white p-2.5 sm:p-4 rounded-2xl border border-slate-200 shadow-2xs">
+      {/* Combined Status Tabs & Search Box Row (Flex justify-between) */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 sm:gap-3 border-b border-slate-100 pb-2 sm:pb-3">
+        {/* Navigation Status Tabs */}
+        <nav className="flex items-center gap-1 overflow-x-auto no-scrollbar shrink-0" aria-label="Status Tabs">
           {statusTabs.map((tab) => {
             const isActive = activeStatus === tab.id;
             return (
               <button
                 key={tab.id}
                 onClick={() => onStatusChange(tab.id)}
-                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all cursor-pointer ${
+                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
                   isActive
                     ? 'bg-[#FE9F43] text-white shadow-2xs'
                     : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
@@ -145,6 +121,43 @@ export const TaskFilterBar: React.FC<TaskFilterBarProps> = ({
             );
           })}
         </nav>
+
+        {/* Search Input & Mobile Filter Button */}
+        <div className="flex items-center gap-2 w-full sm:w-80 shrink-0">
+          <div className="relative flex-1">
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+            <input
+              ref={searchInputRef}
+              type="text"
+              value={localSearchInput}
+              onChange={(e) => setLocalSearchInput(e.target.value)}
+              placeholder="Search tasks... (Press '/' to focus)"
+              className="w-full pl-9 pr-8 py-1.5 text-xs bg-white border border-[#FE9F43] rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none transition-all min-h-[36px]"
+            />
+            {localSearchInput && (
+              <button
+                type="button"
+                onClick={handleClearSearch}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 p-1 rounded-full cursor-pointer transition-colors"
+                aria-label="Clear search"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+
+          {/* Mobile Filter Button (< 768px / md) */}
+          <button
+            onClick={onOpenMobileFilter}
+            className="md:hidden flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-[#FE9F43] text-white rounded-xl transition-colors shrink-0 min-h-[36px] cursor-pointer"
+          >
+            <Filter className="w-4 h-4" />
+            <span>Filters</span>
+            {hasActiveFilters && (
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Filter Selectors (Desktop View >= 768px / md) */}
@@ -201,6 +214,7 @@ export const TaskFilterBar: React.FC<TaskFilterBarProps> = ({
             onChange={(e) => onSortByChange(e.target.value as TaskSortField)}
             className="px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 font-bold focus:ring-2 focus:ring-[#FE9F43] focus:outline-none cursor-pointer"
           >
+            <option value="id">Task ID</option>
             <option value="createdAt">Created Date</option>
             <option value="dueDate">Due Date</option>
             <option value="priority">Priority</option>

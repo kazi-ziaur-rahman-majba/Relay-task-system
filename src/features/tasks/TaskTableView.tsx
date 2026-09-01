@@ -4,7 +4,7 @@ import { StatusBadge } from '@/components/common/StatusBadge';
 import { PriorityBadge } from '@/components/common/PriorityBadge';
 import { Avatar } from '@/components/common/Avatar';
 import { DateBadge } from '@/components/common/DateBadge';
-import { Edit2, Trash2 } from 'lucide-react';
+import { Edit2, Trash2, Eye } from 'lucide-react';
 
 interface TaskTableViewProps {
   tasks: PopulatedTask[];
@@ -34,7 +34,7 @@ export const TaskTableView: React.FC<TaskTableViewProps> = ({
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-slate-50 border-b border-slate-200 text-[11px] font-extrabold uppercase tracking-wider text-slate-500 select-none">
+            <tr className="bg-slate-50 border-b border-slate-200 text-[11px] font-extrabold uppercase tracking-wider text-[#051A2C] select-none">
               <th scope="col" className="py-3 px-4 w-20">ID</th>
               <th scope="col" className="py-3 px-4 w-[320px] max-w-[320px]">Task Title</th>
               <th scope="col" className="py-3 px-4 w-44">Owner</th>
@@ -53,14 +53,14 @@ export const TaskTableView: React.FC<TaskTableViewProps> = ({
                 className="group hover:bg-[#FFF5EC]/80 focus:bg-[#FFF5EC] focus:outline-none transition-colors cursor-pointer"
               >
                 {/* ID */}
-                <td className="py-3.5 px-4 font-mono text-xs font-bold text-slate-500 group-hover:text-[#FE9F43]">
+                <td className="py-3.5 px-4 font-mono text-xs font-bold text-[#051A2C] group-hover:text-[#FE9F43]">
                   {task.id}
                 </td>
 
                 {/* Title */}
                 <td className="py-3.5 px-4 w-[320px] max-w-[320px]">
                   <div 
-                    className="max-h-14 overflow-y-hidden hover:overflow-y-auto whitespace-normal break-words text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#FE9F43] transition-colors pr-1 scrollbar-thin scrollbar-thumb-slate-300"
+                    className="max-h-14 overflow-y-hidden hover:overflow-y-auto whitespace-normal break-words text-xs sm:text-sm font-medium text-slate-900 group-hover:text-[#FE9F43] transition-colors pr-1 scrollbar-thin scrollbar-thumb-slate-300"
                     title={task.title}
                   >
                     {task.title}
@@ -105,18 +105,25 @@ export const TaskTableView: React.FC<TaskTableViewProps> = ({
                 <td className="py-3.5 px-4 text-right" onClick={(e) => e.stopPropagation()}>
                   <div className="flex items-center justify-end gap-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
                     <button
+                      onClick={() => onTaskClick?.(task)}
+                      className="p-1.5 text-[#051A2C] border border-[#FE9F43] rounded-sm hover:bg-[#FE9F43] hover:text-white transition-colors cursor-pointer"
+                      title="View task details"
+                    >
+                      <Eye className="w-3.5 h-3.5" />
+                    </button>
+                    <button
                       onClick={() => onEditTask?.(task)}
-                      className="p-1.5 text-slate-400 hover:text-[#FE9F43] hover:bg-amber-50 rounded-lg transition-colors cursor-pointer"
+                      className="p-1.5 text-[#051A2C] border border-[#FE9F43] rounded-sm hover:bg-[#FE9F43] hover:text-white transition-colors cursor-pointer"
                       title="Edit task details"
                     >
-                      <Edit2 className="w-4 h-4" />
+                      <Edit2 className="w-3.5 h-3.5" />
                     </button>
                     <button
                       onClick={() => onDeleteTask?.(task)}
-                      className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors cursor-pointer"
+                      className="p-1.5 text-[#051A2C] border border-[#FE9F43] rounded-sm hover:bg-rose-600 hover:border-rose-600 hover:text-white transition-colors cursor-pointer"
                       title="Delete task"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      <Trash2 className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 </td>

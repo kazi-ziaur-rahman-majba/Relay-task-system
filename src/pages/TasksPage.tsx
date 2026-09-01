@@ -10,6 +10,7 @@ import { CreateTaskModal } from '@/features/tasks/modals/CreateTaskModal';
 import { EditTaskModal } from '@/features/tasks/modals/EditTaskModal';
 import { DeleteConfirmModal } from '@/features/tasks/modals/DeleteConfirmModal';
 import { ShortcutsModal } from '@/features/tasks/modals/ShortcutsModal';
+import { TaskDetailDrawer } from '@/features/tasks/modals/TaskDetailDrawer';
 import { TaskOwner, PopulatedTask, TaskStatus, CreateTaskInput, UpdateTaskInput } from '@/types/task';
 import { useUrlTaskState } from '@/hooks/useUrlTaskState';
 import { useTaskStorage } from '@/hooks/useTaskStorage';
@@ -134,7 +135,7 @@ export default function TasksPage() {
 
   return (
     <div className="min-h-full bg-[#F7F7F7] text-slate-900 font-sans antialiased">
-      <main className="w-full max-w-full px-3 sm:px-6 py-4 space-y-4">
+      <main className="w-full max-w-full px-1 sm:px-6 py-1 sm:py-4 space-y-2.5 sm:space-y-4">
         {/* Header with New Task CTA */}
         <TaskHeader
           title="All Tasks"
@@ -157,21 +158,7 @@ export default function TasksPage() {
           onOpenMobileFilter={() => setIsMobileFilterOpen(true)}
         />
 
-        {/* Keyboard hint & seed reset */}
-        <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 px-1">
-          <span>Press <kbd className="px-1 py-0.5 bg-white border rounded text-slate-600 shadow-2xs">?</kbd> for keyboard shortcuts</span>
-          <button
-            onClick={() => {
-              if (confirm('Reset task data back to default 250 seed items?')) {
-                resetToDefaultSeed();
-                toast.success('Restored default 250 seed tasks.');
-              }
-            }}
-            className="hover:text-[#FE9F43] transition-colors cursor-pointer"
-          >
-            Reset Demo Data
-          </button>
-        </div>
+
 
         {/* Loading Skeleton or Data Table/Cards */}
         {isLoading ? (
@@ -272,49 +259,14 @@ export default function TasksPage() {
         onClose={() => setIsShortcutsOpen(false)}
       />
 
-      {/* Detail View Modal */}
-      {selectedTask && (
-        <div
-          className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4"
-          onClick={() => setSelectedTask(null)}
-        >
-          <div
-            className="bg-white rounded-2xl max-w-lg w-full p-5 space-y-4 shadow-2xl border border-slate-200"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-              <span className="font-mono text-xs font-bold text-slate-500">{selectedTask.id}</span>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => {
-                    setEditingTask(selectedTask);
-                    setSelectedTask(null);
-                  }}
-                  className="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg transition-colors cursor-pointer"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => setSelectedTask(null)}
-                  className="text-slate-400 hover:text-slate-600 font-bold text-lg cursor-pointer"
-                >
-                  ✕
-                </button>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-base font-extrabold text-slate-900">{selectedTask.title}</h3>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed font-medium">
-                {selectedTask.description || 'No detailed description provided for this task.'}
-              </p>
-            </div>
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
-              <span>Created: {new Date(selectedTask.createdAt).toLocaleDateString()}</span>
-              <span>Updated: {new Date(selectedTask.updatedAt).toLocaleDateString()}</span>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Right Slide-Over Task Detail Drawer */}
+      <TaskDetailDrawer
+        task={selectedTask}
+        isOpen={Boolean(selectedTask)}
+        onClose={() => setSelectedTask(null)}
+        onEdit={(task) => setEditingTask(task)}
+        onDelete={(task) => setDeletingTask(task)}
+      />
     </div>
   );
 }

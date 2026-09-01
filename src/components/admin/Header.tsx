@@ -5,7 +5,7 @@ import { IoClose } from "react-icons/io5";
 import { menu } from "@/navigation/sidebar";
 import { Link, useLocation } from "react-router-dom";
 import { MotionDiv } from "@/utils/framer.motion";
-import { FaCog, FaSignOutAlt, FaUserCircle, FaSearch } from "react-icons/fa";
+import { FaCog, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 
 const MenuItem = ({
     icon,
@@ -65,7 +65,7 @@ const Header = ({ sidebarClick }: { sidebarClick: boolean }) => {
             sidebarClick ? "lg:w-[calc(100%-80px)]" : "lg:w-[calc(100%-240px)]"
         }`}>
             {/* Mobile Header Bar (< 1024px / lg) */}
-            <div className="flex lg:hidden items-center justify-between px-4 py-3 bg-white">
+            <div className="flex lg:hidden items-center justify-between px-3 py-2 sm:px-4 sm:py-3 bg-white">
                 {showSidebarMenu ? (
                     <IoClose
                         size={26}
@@ -175,20 +175,7 @@ const Header = ({ sidebarClick }: { sidebarClick: boolean }) => {
             )}
 
             {/* Desktop Top Navbar (>= 1024px / lg) Clean Header Bar */}
-            <div className="hidden lg:flex justify-between items-center px-6 py-3 bg-white">
-                {/* Search Bar */}
-                <div className="relative w-80">
-                    <FaSearch className="w-3.5 h-3.5 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
-                    <input
-                        type="text"
-                        placeholder="Search tasks..."
-                        className="w-full pl-9 pr-9 py-1.5 text-xs bg-slate-100/70 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#fe9f43] transition-all"
-                    />
-                    <kbd className="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 bg-white border border-slate-200 rounded shadow-2xs">
-                        ⌘K
-                    </kbd>
-                </div>
-
+            <div className="hidden lg:flex justify-end items-center px-6 py-3 bg-white">
                 {/* Right Area: User Profile Dropdown (Notification Icon Removed) */}
                 <div className="flex items-center gap-4">
                     {/* User Profile Dropdown */}

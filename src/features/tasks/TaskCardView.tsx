@@ -4,7 +4,7 @@ import { StatusBadge } from '@/components/common/StatusBadge';
 import { PriorityBadge } from '@/components/common/PriorityBadge';
 import { Avatar } from '@/components/common/Avatar';
 import { DateBadge } from '@/components/common/DateBadge';
-import { Edit2, Trash2 } from 'lucide-react';
+import { Edit2, Trash2, Eye } from 'lucide-react';
 
 interface TaskCardViewProps {
   tasks: PopulatedTask[];
@@ -30,12 +30,12 @@ export const TaskCardView: React.FC<TaskCardViewProps> = ({
   onDeleteTask,
 }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3.5">
       {tasks.map((task) => (
         <div
           key={task.id}
           onClick={() => onTaskClick?.(task)}
-          className="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs hover:shadow-md hover:border-[#FE9F43]/40 transition-all cursor-pointer flex flex-col justify-between space-y-3 group"
+          className="bg-white border border-slate-200 rounded-2xl p-3 sm:p-4 shadow-2xs hover:shadow-md hover:border-[#FE9F43]/40 transition-all cursor-pointer flex flex-col justify-between space-y-2 sm:space-y-3 group"
         >
           {/* Top Row: Task ID, Status Picker, and Quick Actions */}
           <div className="flex items-center justify-between gap-2">
@@ -61,15 +61,22 @@ export const TaskCardView: React.FC<TaskCardViewProps> = ({
 
               <div className="flex items-center gap-1">
                 <button
+                  onClick={() => onTaskClick?.(task)}
+                  className="p-1 text-[#051A2C] border border-[#FE9F43] rounded-sm hover:bg-[#FE9F43] hover:text-white transition-colors cursor-pointer"
+                  title="View task details"
+                >
+                  <Eye className="w-3.5 h-3.5" />
+                </button>
+                <button
                   onClick={() => onEditTask?.(task)}
-                  className="p-1 text-slate-400 hover:text-[#FE9F43] hover:bg-amber-50 rounded-lg transition-colors cursor-pointer"
+                  className="p-1 text-[#051A2C] border border-[#FE9F43] rounded-sm hover:bg-[#FE9F43] hover:text-white transition-colors cursor-pointer"
                   title="Edit task"
                 >
                   <Edit2 className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => onDeleteTask?.(task)}
-                  className="p-1 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors cursor-pointer"
+                  className="p-1 text-[#051A2C] border border-[#FE9F43] rounded-sm hover:bg-rose-600 hover:border-rose-600 hover:text-white transition-colors cursor-pointer"
                   title="Delete task"
                 >
                   <Trash2 className="w-3.5 h-3.5" />

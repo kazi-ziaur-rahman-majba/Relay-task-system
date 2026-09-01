@@ -5,6 +5,7 @@ import { TaskTableView } from '@/features/tasks/TaskTableView';
 import { TaskCardView } from '@/features/tasks/TaskCardView';
 import { EditTaskModal } from '@/features/tasks/modals/EditTaskModal';
 import { DeleteConfirmModal } from '@/features/tasks/modals/DeleteConfirmModal';
+import { TaskDetailDrawer } from '@/features/tasks/modals/TaskDetailDrawer';
 import { TaskOwner, PopulatedTask, TaskStatus, UpdateTaskInput } from '@/types/task';
 import { useTaskStorage } from '@/hooks/useTaskStorage';
 import { isBefore, isToday, startOfDay } from 'date-fns';
@@ -104,7 +105,7 @@ export default function UrgentPage() {
 
   return (
     <div className="min-h-full bg-[#F7F7F7] text-slate-900 font-sans antialiased">
-      <main className="w-full max-w-full px-3 sm:px-6 py-4 space-y-5">
+      <main className="w-full max-w-full px-1 sm:px-6 py-1 sm:py-4 space-y-2.5 sm:space-y-5">
         {/* Header */}
         <TaskHeader
           title="Urgent & Overdue Focus"
@@ -113,23 +114,27 @@ export default function UrgentPage() {
 
         {/* Highlight Alert Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="p-4 rounded-2xl bg-amber-500 text-white flex items-center gap-3.5 shadow-2xs">
-            <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
-              <AlertCircle className="w-5 h-5 text-white" />
+          <div className="p-4 rounded-2xl bg-white border border-amber-200/80 shadow-2xs flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center shrink-0">
+              <AlertCircle className="w-5 h-5 text-amber-600" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white/90">Urgent Priority Items</p>
-              <p className="text-xl font-black">{urgentCount} tasks need immediate attention</p>
+              <p className="text-xs font-medium text-slate-500">Urgent Priority Items</p>
+              <p className="text-base sm:text-lg font-semibold text-[#051A2C]">
+                {urgentCount} tasks need immediate attention
+              </p>
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-rose-600 text-white flex items-center gap-3.5 shadow-2xs">
-            <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
-              <Clock className="w-5 h-5 text-white" />
+          <div className="p-4 rounded-2xl bg-white border border-rose-200/80 shadow-2xs flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200/60 flex items-center justify-center shrink-0">
+              <Clock className="w-5 h-5 text-rose-600" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white/90">Overdue Deadline Items</p>
-              <p className="text-xl font-black">{overdueCount} tasks past target date</p>
+              <p className="text-xs font-medium text-slate-500">Overdue Deadline Items</p>
+              <p className="text-base sm:text-lg font-semibold text-[#051A2C]">
+                {overdueCount} tasks past target date
+              </p>
             </div>
           </div>
         </div>
@@ -186,33 +191,14 @@ export default function UrgentPage() {
         onConfirm={handleDeleteTaskConfirm}
       />
 
-      {selectedTask && (
-        <div
-          className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4"
-          onClick={() => setSelectedTask(null)}
-        >
-          <div
-            className="bg-white rounded-2xl max-w-lg w-full p-5 space-y-4 shadow-2xl border border-slate-200"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-              <span className="font-mono text-xs font-bold text-slate-500">{selectedTask.id}</span>
-              <button
-                onClick={() => setSelectedTask(null)}
-                className="text-slate-400 hover:text-slate-600 font-bold text-lg cursor-pointer"
-              >
-                ✕
-              </button>
-            </div>
-            <div>
-              <h3 className="text-base font-extrabold text-slate-900">{selectedTask.title}</h3>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed font-medium">
-                {selectedTask.description || 'No detailed description provided for this task.'}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Right Slide-Over Task Detail Drawer */}
+      <TaskDetailDrawer
+        task={selectedTask}
+        isOpen={Boolean(selectedTask)}
+        onClose={() => setSelectedTask(null)}
+        onEdit={(task) => setEditingTask(task)}
+        onDelete={(task) => setDeletingTask(task)}
+      />
     </div>
   );
 }

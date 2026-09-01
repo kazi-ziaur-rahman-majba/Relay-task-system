@@ -76,7 +76,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-full bg-[#F7F7F7] text-slate-900 font-sans antialiased">
-      <main className="w-full max-w-full px-3 sm:px-6 py-4 space-y-6">
+      <main className="w-full max-w-full px-1 sm:px-6 py-1 sm:py-4 space-y-3 sm:space-y-6">
         {/* Page Header */}
         <TaskHeader
           title="Dashboard & Analytics"
@@ -99,29 +99,21 @@ export default function DashboardPage() {
             />
 
             {/* Visual Workload Analytics Panel */}
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                <div>
-                  <h2 className="text-base font-extrabold text-slate-900">Workload Visual Analytics</h2>
-                  <p className="text-xs text-slate-500 font-medium">Detailed breakdown of status, priorities, and team distributions</p>
-                </div>
-              </div>
-              <AnalyticsPanel tasks={rawTasks} />
-            </div>
+            <AnalyticsPanel tasks={rawTasks} />
 
             {/* Recent Critical Tasks Widget */}
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div className="bg-white p-3.5 sm:p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-3 sm:space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-slate-100 pb-3">
                 <div className="flex items-center gap-2">
-                  <AlertTriangle className="w-5 h-5 text-[#FE9F43]" />
+                  <AlertTriangle className="w-5 h-5 text-[#FE9F43] shrink-0" />
                   <div>
-                    <h2 className="text-base font-extrabold text-slate-900">High Priority & In-Progress Tasks</h2>
+                    <h2 className="text-sm sm:text-base font-extrabold text-slate-900">High Priority & In-Progress Tasks</h2>
                     <p className="text-xs text-slate-500 font-medium">Quick snapshot of active tasks needing attention</p>
                   </div>
                 </div>
                 <Link
                   to="/tasks"
-                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-extrabold text-[#FE9F43] hover:text-[#FF6E22] bg-amber-50 hover:bg-amber-100/80 rounded-xl transition-colors"
+                  className="self-start sm:self-auto flex items-center gap-1.5 px-3 py-1.5 text-xs font-extrabold text-[#FE9F43] hover:text-[#FF6E22] bg-amber-50 hover:bg-amber-100/80 rounded-xl transition-colors shrink-0"
                 >
                   View All Tasks <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
@@ -129,15 +121,19 @@ export default function DashboardPage() {
 
               <div className="divide-y divide-slate-100">
                 {recentCriticalTasks.map((task) => (
-                  <div key={task.id} className="py-3.5 flex items-center justify-between gap-4">
-                    <div className="flex items-start gap-3 min-w-0">
+                  <div key={task.id} className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                    <div className="flex items-start gap-2.5 min-w-0">
                       <CheckCircle className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
                       <div className="min-w-0">
-                        <span className="font-mono text-[11px] font-bold text-slate-400 mr-2">{task.id}</span>
-                        <span className="text-xs font-bold text-slate-900 truncate inline-block max-w-xs sm:max-w-md">{task.title}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="font-mono text-xs font-bold text-[#051A2C]">{task.id}</span>
+                        </div>
+                        <p className="text-xs sm:text-sm font-medium text-slate-900 line-clamp-2 mt-0.5" title={task.title}>
+                          {task.title}
+                        </p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3 shrink-0">
+                    <div className="flex items-center gap-2 pl-6 sm:pl-0 shrink-0">
                       <PriorityBadge priority={task.priority} />
                       <StatusBadge status={task.status} />
                       {task.owner ? (

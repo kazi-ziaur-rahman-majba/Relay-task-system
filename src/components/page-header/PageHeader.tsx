@@ -14,9 +14,9 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   className = '',
 }) => {
   return (
-    <div className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 ${className}`}>
+    <div className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-3 ${className}`}>
       <div className="flex flex-col">
-        <h1 className="text-xl sm:text-xl lg:text-2xl font-black text-[#051A2C]">
+        <h1 className="text-lg sm:text-xl lg:text-2xl font-black text-[#051A2C]">
           {headerTitle}
         </h1>
         {headerDescription && (

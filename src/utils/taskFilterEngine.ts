@@ -72,6 +72,11 @@ export function sortTasks(
   const isAsc = sortOrder === 'asc';
 
   return [...tasks].sort((a, b) => {
+    if (sortBy === 'id') {
+      const cmp = a.id.localeCompare(b.id, undefined, { numeric: true, sensitivity: 'base' });
+      return isAsc ? cmp : -cmp;
+    }
+
     if (sortBy === 'dueDate') {
       // Null due dates sorted last always
       if (!a.dueDate && !b.dueDate) return 0;

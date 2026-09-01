@@ -57,7 +57,7 @@ export default function TeamPage() {
 
   return (
     <div className="min-h-full bg-[#F7F7F7] text-slate-900 font-sans antialiased">
-      <main className="w-full max-w-full px-3 sm:px-6 py-4 space-y-6">
+      <main className="w-full max-w-full px-1 sm:px-6 py-1 sm:py-4 space-y-3 sm:space-y-6">
         {/* Header */}
         <TaskHeader
           title="Team Directory & Workload"
