@@ -5,18 +5,38 @@ import { TaskTableView } from '@/features/tasks/TaskTableView';
 import { TaskCardView } from '@/features/tasks/TaskCardView';
 import { MobileFilterDrawer } from '@/features/tasks/MobileFilterDrawer';
 import { Pagination } from '@/components/common/Pagination';
-import { Task, TaskOwner, PopulatedTask } from '@/types/task';
+import { CreateTaskModal } from '@/features/tasks/modals/CreateTaskModal';
+import { EditTaskModal } from '@/features/tasks/modals/EditTaskModal';
+import { DeleteConfirmModal } from '@/features/tasks/modals/DeleteConfirmModal';
+import { TaskOwner, PopulatedTask, TaskStatus, CreateTaskInput, UpdateTaskInput } from '@/types/task';
 import { useUrlTaskState } from '@/hooks/useUrlTaskState';
+import { useTaskStorage } from '@/hooks/useTaskStorage';
+import { useToast } from '@/utils/toast';
 import { processTasks } from '@/utils/taskFilterEngine';
 import { isBefore, isToday, startOfDay } from 'date-fns';
 
 export default function TaskManagerPage() {
-  const [rawTasks, setRawTasks] = useState<Task[]>([]);
+  // Store-level Task Mutations & LocalStorage Persistence Hook
+  const {
+    tasks: rawTasks,
+    isLoading: isStorageLoading,
+    createTask,
+    updateTask,
+    deleteTask,
+  } = useTaskStorage();
+
   const [owners, setOwners] = useState<TaskOwner[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isOwnersLoading, setIsOwnersLoading] = useState<boolean>(true);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState<boolean>(false);
+
+  // Modal Visibility States
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState<boolean>(false);
+  const [editingTask, setEditingTask] = useState<PopulatedTask | null>(null);
+  const [deletingTask, setDeletingTask] = useState<PopulatedTask | null>(null);
   const [selectedTask, setSelectedTask] = useState<PopulatedTask | null>(null);
-  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  // Toast Feedback Utility
+  const { toast, showToast } = useToast();
 
   // Bi-directional URL SearchParams State Engine
   const {
@@ -32,32 +52,25 @@ export default function TaskManagerPage() {
     hasActiveFilters,
   } = useUrlTaskState();
 
-  // Load normalized datasets (users.json and tasks.json)
+  // Load normalized team members dataset (team-members.json / users.json)
   useEffect(() => {
-    async function loadData() {
+    async function loadTeamMembers() {
       try {
-        setIsLoading(true);
-        const [usersRes, tasksRes] = await Promise.all([
-          fetch('/users.json'),
-          fetch('/tasks.json'),
-        ]);
-
-        const usersData: TaskOwner[] = await usersRes.json();
-        const tasksData: Task[] = await tasksRes.json();
-
+        setIsOwnersLoading(true);
+        const res = await fetch('/team-members.json');
+        const usersData: TaskOwner[] = await res.json();
         setOwners(usersData);
-        setRawTasks(tasksData);
       } catch (error) {
-        console.error('Failed to load tasks dataset:', error);
+        console.error('Failed to load team-members dataset:', error);
       } finally {
-        setIsLoading(false);
+        setIsOwnersLoading(false);
       }
     }
 
-    loadData();
+    loadTeamMembers();
   }, []);
 
-  // Map of users for fast O(1) lookup
+  // Map of team members for fast O(1) lookup
   const usersMap = useMemo(() => {
     return owners.reduce<Record<string, TaskOwner>>((acc, owner) => {
       acc[owner.id] = owner;
@@ -104,30 +117,56 @@ export default function TaskManagerPage() {
     return processTasks(rawTasks, filters, usersMap, 10);
   }, [rawTasks, filters, usersMap]);
 
-  // Toast Notification Helper
-  const showToast = (message: string) => {
-    setToastMessage(message);
-    setTimeout(() => {
-      setToastMessage(null);
-    }, 3000);
+  // --- CRUD Mutation Handlers ---
+
+  // 1. Create Task Handler
+  const handleCreateTask = (input: CreateTaskInput) => {
+    createTask(input);
+    showToast(`New task created successfully!`, 'success');
   };
 
-  // Share View: Copy URL to clipboard
+  // 2. Inline Status Quick Update Handler
+  const handleInlineStatusChange = (taskId: string, newStatus: TaskStatus) => {
+    updateTask(taskId, { status: newStatus });
+    showToast(`Task ${taskId} status updated to ${newStatus.replace('_', ' ')}.`, 'info');
+  };
+
+  // 3. Edit Task Submission Handler
+  const handleEditTaskSubmit = (id: string, updates: UpdateTaskInput) => {
+    updateTask(id, updates);
+    showToast(`Task ${id} details saved successfully.`, 'success');
+    setEditingTask(null);
+  };
+
+  // 4. Delete Task Confirmation Handler
+  const handleDeleteTaskConfirm = (id: string) => {
+    deleteTask(id);
+    showToast(`Task ${id} has been deleted.`, 'warning');
+    setDeletingTask(null);
+  };
+
+  // 5. Share View Handler: Copy URL to clipboard
   const handleShareClick = () => {
     navigator.clipboard.writeText(window.location.href);
-    showToast('URL copied to clipboard! Share this view with your team.');
+    showToast('URL copied to clipboard! Share this view with your team.', 'info');
   };
 
-  const handleTaskClick = (task: PopulatedTask) => {
-    setSelectedTask(task);
-  };
+  const isLoading = isStorageLoading || isOwnersLoading;
 
   return (
     <div className="min-h-full bg-[#F7F7F7] text-slate-900 font-sans antialiased">
-      {/* Toast Notification */}
-      {toastMessage && (
-        <div className="fixed top-4 right-4 z-50 px-4 py-2.5 bg-slate-900 text-white rounded-xl shadow-lg text-xs font-bold flex items-center gap-2 animate-bounce">
-          <span>{toastMessage}</span>
+      {/* Toast Notification Container */}
+      {toast && (
+        <div
+          className={`fixed top-4 right-4 z-50 px-4 py-2.5 rounded-xl shadow-lg text-xs font-extrabold flex items-center gap-2 animate-bounce transition-all ${
+            toast.type === 'success'
+              ? 'bg-slate-900 text-white'
+              : toast.type === 'warning'
+              ? 'bg-rose-600 text-white'
+              : 'bg-[#FE9F43] text-white'
+          }`}
+        >
+          <span>{toast.message}</span>
         </div>
       )}
 
@@ -138,7 +177,7 @@ export default function TaskManagerPage() {
           urgentCount={urgentCount}
           overdueCount={overdueCount}
           unassignedCount={unassignedCount}
-          onNewTaskClick={() => showToast('New Task modal will open here.')}
+          onNewTaskClick={() => setIsCreateModalOpen(true)}
           onShareClick={handleShareClick}
         />
 
@@ -184,7 +223,10 @@ export default function TaskManagerPage() {
             <div className="hidden md:block">
               <TaskTableView
                 tasks={processedTasks}
-                onTaskClick={handleTaskClick}
+                onStatusChange={handleInlineStatusChange}
+                onTaskClick={(task) => setSelectedTask(task)}
+                onEditTask={(task) => setEditingTask(task)}
+                onDeleteTask={(task) => setDeletingTask(task)}
               />
             </div>
 
@@ -192,7 +234,10 @@ export default function TaskManagerPage() {
             <div className="md:hidden">
               <TaskCardView
                 tasks={processedTasks}
-                onTaskClick={handleTaskClick}
+                onStatusChange={handleInlineStatusChange}
+                onTaskClick={(task) => setSelectedTask(task)}
+                onEditTask={(task) => setEditingTask(task)}
+                onDeleteTask={(task) => setDeletingTask(task)}
               />
             </div>
 
@@ -222,7 +267,32 @@ export default function TaskManagerPage() {
         owners={owners}
       />
 
-      {/* Detail Modal Placeholder */}
+      {/* 1. Create Task Modal */}
+      <CreateTaskModal
+        isOpen={isCreateModalOpen}
+        onClose={() => setIsCreateModalOpen(false)}
+        onSubmit={handleCreateTask}
+        owners={owners}
+      />
+
+      {/* 2. Edit Task Modal */}
+      <EditTaskModal
+        task={editingTask}
+        isOpen={Boolean(editingTask)}
+        onClose={() => setEditingTask(null)}
+        onSubmit={handleEditTaskSubmit}
+        owners={owners}
+      />
+
+      {/* 3. Delete Confirmation Modal */}
+      <DeleteConfirmModal
+        task={deletingTask}
+        isOpen={Boolean(deletingTask)}
+        onClose={() => setDeletingTask(null)}
+        onConfirm={handleDeleteTaskConfirm}
+      />
+
+      {/* Detail View Modal */}
       {selectedTask && (
         <div
           className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4"
@@ -234,29 +304,33 @@ export default function TaskManagerPage() {
           >
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <span className="font-mono text-xs font-bold text-slate-500">{selectedTask.id}</span>
-              <button
-                onClick={() => setSelectedTask(null)}
-                className="text-slate-400 hover:text-slate-600 font-bold text-lg"
-              >
-                ✕
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    setEditingTask(selectedTask);
+                    setSelectedTask(null);
+                  }}
+                  className="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg transition-colors cursor-pointer"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => setSelectedTask(null)}
+                  className="text-slate-400 hover:text-slate-600 font-bold text-lg cursor-pointer"
+                >
+                  ✕
+                </button>
+              </div>
             </div>
             <div>
               <h3 className="text-base font-extrabold text-slate-900">{selectedTask.title}</h3>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              <p className="text-xs text-slate-600 mt-2 leading-relaxed font-medium">
                 {selectedTask.description || 'No detailed description provided for this task.'}
               </p>
             </div>
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span className="font-bold text-slate-500">
-                Created: {new Date(selectedTask.createdAt).toLocaleDateString()}
-              </span>
-              <button
-                onClick={() => setSelectedTask(null)}
-                className="px-4 py-1.5 bg-[#FE9F43] text-white font-bold rounded-lg hover:bg-[#FF6E22] transition-colors"
-              >
-                Close
-              </button>
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+              <span>Created: {new Date(selectedTask.createdAt).toLocaleDateString()}</span>
+              <span>Updated: {new Date(selectedTask.updatedAt).toLocaleDateString()}</span>
             </div>
           </div>
         </div>

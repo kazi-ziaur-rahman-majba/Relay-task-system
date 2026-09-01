@@ -1,0 +1,74 @@
+[
+  {
+    "id": "USR-001",
+    "name": "John Smith",
+    "email": "john.smith@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=John"
+  },
+  {
+    "id": "USR-002",
+    "name": "Sarah Jenkins",
+    "email": "sarah.j@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+  },
+  {
+    "id": "USR-003",
+    "name": "Alex Rivera",
+    "email": "alex.rivera@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex"
+  },
+  {
+    "id": "USR-004",
+    "name": "Bartholomew Montgomery-Wellington III",
+    "email": "b.montgomery.wellington@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Bartholomew"
+  },
+  {
+    "id": "USR-005",
+    "name": "Elena Rostova",
+    "email": "elena.r@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Elena"
+  },
+  {
+    "id": "USR-006",
+    "name": "David Chen",
+    "email": "david.c@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=David"
+  },
+  {
+    "id": "USR-007",
+    "name": "Priya Sharma",
+    "email": "priya.s@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Priya"
+  },
+  {
+    "id": "USR-008",
+    "name": "Marcus Vance",
+    "email": "marcus.v@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus"
+  },
+  {
+    "id": "USR-009",
+    "name": "Amina Al-Mansoor",
+    "email": "amina.m@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Amina"
+  },
+  {
+    "id": "USR-010",
+    "name": "Liam O'Connor",
+    "email": "liam.o@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Liam"
+  },
+  {
+    "id": "USR-011",
+    "name": "Kazi Ziaur Rahman",
+    "email": "kazi.z@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Kazi"
+  },
+  {
+    "id": "USR-012",
+    "name": "Sophia Martinez",
+    "email": "sophia.m@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sophia"
+  }
+]

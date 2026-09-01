@@ -60,3 +60,21 @@ export interface TaskFilterState {
   page: number;
   pageSize: number;
 }
+
+export interface CreateTaskInput {
+  title: string;
+  description?: string | null;
+  status: TaskStatus;
+  priority: TaskPriority;
+  ownerId: string | null;
+  dueDate?: string | null;
+}
+
+export interface UpdateTaskInput {
+  title?: string;
+  description?: string | null;
+  status?: TaskStatus;
+  priority?: TaskPriority;
+  ownerId?: string | null;
+  dueDate?: string | null;
+}
