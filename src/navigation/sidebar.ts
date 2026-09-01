@@ -1,8 +1,8 @@
 import {
-	FaThLarge,
+	FaChartPie,
+	FaListUl,
 	FaExclamationTriangle,
 	FaUsers,
-	FaCheckCircle,
 	FaCog,
 } from "react-icons/fa";
 
@@ -12,14 +12,22 @@ export const menu = [
 		items: [
 			{
 				id: 1,
-				name: "All Tasks",
-				title: "All Tasks",
-				icon: FaThLarge,
+				name: "Dashboard",
+				title: "Dashboard",
+				icon: FaChartPie,
 				path: "/",
 				subItems: [],
 			},
 			{
 				id: 2,
+				name: "All Tasks",
+				title: "All Tasks",
+				icon: FaListUl,
+				path: "/tasks",
+				subItems: [],
+			},
+			{
+				id: 3,
 				name: "Urgent & Overdue",
 				title: "Urgent & Overdue",
 				icon: FaExclamationTriangle,
@@ -27,7 +35,7 @@ export const menu = [
 				subItems: [],
 			},
 			{
-				id: 3,
+				id: 4,
 				name: "Team Members",
 				title: "Team Members",
 				icon: FaUsers,
@@ -40,7 +48,7 @@ export const menu = [
 		sectionName: "Management",
 		items: [
 			{
-				id: 4,
+				id: 5,
 				name: "Settings",
 				title: "Settings",
 				icon: FaCog,
@@ -50,3 +58,4 @@ export const menu = [
 		],
 	},
 ];
+
