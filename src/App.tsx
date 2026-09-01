@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdminLayout from "@/components/admin/AdminLayout";
-import { TaskManagerPage } from "@/pages/TaskManagerPage";
+import TaskManagerPage from "@/pages/TaskManagerPage";
 
 const App: React.FC = () => {
   return (

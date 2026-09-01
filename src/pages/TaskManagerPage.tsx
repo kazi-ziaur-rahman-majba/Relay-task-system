@@ -1,169 +1,132 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { Task, TaskOwner, PopulatedTask, TaskStatus, TaskPriority, TaskSortField } from '@/types/task';
+import { useState, useEffect, useMemo } from 'react';
 import { TaskHeader } from '@/features/tasks/TaskHeader';
 import { TaskFilterBar } from '@/features/tasks/TaskFilterBar';
 import { TaskTableView } from '@/features/tasks/TaskTableView';
 import { TaskCardView } from '@/features/tasks/TaskCardView';
 import { MobileFilterDrawer } from '@/features/tasks/MobileFilterDrawer';
+import { Pagination } from '@/components/common/Pagination';
+import { Task, TaskOwner, PopulatedTask } from '@/types/task';
+import { useUrlTaskState } from '@/hooks/useUrlTaskState';
+import { processTasks } from '@/utils/taskFilterEngine';
+import { isBefore, isToday, startOfDay } from 'date-fns';
 
-export const TaskManagerPage: React.FC = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [users, setUsers] = useState<TaskOwner[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-
-  // Filter States
-  const [search, setSearch] = useState<string>('');
-  const [selectedStatus, setSelectedStatus] = useState<TaskStatus | 'all'>('all');
-  const [selectedPriority, setSelectedPriority] = useState<TaskPriority | 'all'>('all');
-  const [selectedOwnerId, setSelectedOwnerId] = useState<string | 'all'>('all');
-  const [sortBy, setSortBy] = useState<TaskSortField>('dueDate');
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
-  
-  // Mobile Filter Drawer state
+export default function TaskManagerPage() {
+  const [rawTasks, setRawTasks] = useState<Task[]>([]);
+  const [owners, setOwners] = useState<TaskOwner[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState<boolean>(false);
-
-  // Toast notification for Share Link
+  const [selectedTask, setSelectedTask] = useState<PopulatedTask | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  // Fetch tasks and users from public JSON
+  // Bi-directional URL SearchParams State Engine
+  const {
+    filters,
+    setSearch,
+    setStatus,
+    setPriority,
+    setOwnerId,
+    setSortBy,
+    toggleSortOrder,
+    setPage,
+    resetFilters,
+    hasActiveFilters,
+  } = useUrlTaskState();
+
+  // Load normalized datasets (users.json and tasks.json)
   useEffect(() => {
-    const fetchData = async () => {
+    async function loadData() {
       try {
-        setLoading(true);
-        const [tasksRes, usersRes] = await Promise.all([
-          fetch('/tasks.json'),
+        setIsLoading(true);
+        const [usersRes, tasksRes] = await Promise.all([
           fetch('/users.json'),
+          fetch('/tasks.json'),
         ]);
 
-        if (!tasksRes.ok || !usersRes.ok) {
-          throw new Error('Failed to load tasks data');
-        }
-
-        const tasksData: Task[] = await tasksRes.json();
         const usersData: TaskOwner[] = await usersRes.json();
+        const tasksData: Task[] = await tasksRes.json();
 
-        setTasks(tasksData);
-        setUsers(usersData);
-        setError(null);
-      } catch (err: any) {
-        setError(err.message || 'Something went wrong while fetching data');
+        setOwners(usersData);
+        setRawTasks(tasksData);
+      } catch (error) {
+        console.error('Failed to load tasks dataset:', error);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
-    };
+    }
 
-    fetchData();
+    loadData();
   }, []);
 
-  // Map tasks with populated owner objects
+  // Map of users for fast O(1) lookup
   const usersMap = useMemo(() => {
-    const map = new Map<string, TaskOwner>();
-    users.forEach((u) => map.set(u.id, u));
-    return map;
-  }, [users]);
+    return owners.reduce<Record<string, TaskOwner>>((acc, owner) => {
+      acc[owner.id] = owner;
+      return acc;
+    }, {});
+  }, [owners]);
 
-  const populatedTasks: PopulatedTask[] = useMemo(() => {
-    return tasks.map((t) => ({
-      ...t,
-      owner: t.ownerId ? usersMap.get(t.ownerId) || null : null,
-    }));
-  }, [tasks, usersMap]);
+  // Overall Stat Counters across raw dataset
+  const { urgentCount, overdueCount, unassignedCount } = useMemo(() => {
+    const today = startOfDay(new Date('2026-08-31T12:00:00Z'));
 
-  // Overall Statistics for Header
-  const totalTasks = populatedTasks.length;
-  const urgentCount = useMemo(() => populatedTasks.filter((t) => t.priority === 'urgent').length, [populatedTasks]);
-  const overdueCount = useMemo(() => {
-    const today = new Date('2026-08-31T12:00:00Z');
-    return populatedTasks.filter(
-      (t) => t.dueDate && new Date(t.dueDate) < today && t.status !== 'done'
-    ).length;
-  }, [populatedTasks]);
-  const unassignedCount = useMemo(() => populatedTasks.filter((t) => !t.ownerId).length, [populatedTasks]);
+    let urgent = 0;
+    let overdue = 0;
+    let unassigned = 0;
 
-  // Filtered & Sorted Tasks Pipeline
-  const filteredTasks = useMemo(() => {
-    let result = [...populatedTasks];
+    rawTasks.forEach((task) => {
+      if (task.priority === 'urgent') urgent++;
+      if (task.ownerId === null) unassigned++;
 
-    // 1. Search Filter (Title, ID, Owner Name)
-    if (search.trim()) {
-      const q = search.toLowerCase().trim();
-      result = result.filter(
-        (t) =>
-          t.title.toLowerCase().includes(q) ||
-          t.id.toLowerCase().includes(q) ||
-          (t.owner && t.owner.name.toLowerCase().includes(q))
-      );
-    }
-
-    // 2. Status Filter
-    if (selectedStatus !== 'all') {
-      result = result.filter((t) => t.status === selectedStatus);
-    }
-
-    // 3. Priority Filter
-    if (selectedPriority !== 'all') {
-      result = result.filter((t) => t.priority === selectedPriority);
-    }
-
-    // 4. Owner Filter
-    if (selectedOwnerId !== 'all') {
-      if (selectedOwnerId === 'unassigned') {
-        result = result.filter((t) => !t.ownerId);
-      } else {
-        result = result.filter((t) => t.ownerId === selectedOwnerId);
+      if (task.dueDate) {
+        const dueDateObj = startOfDay(new Date(task.dueDate));
+        if (isBefore(dueDateObj, today) && !isToday(dueDateObj)) {
+          overdue++;
+        }
       }
-    }
-
-    // 5. Sorting
-    result.sort((a, b) => {
-      let comparison = 0;
-      if (sortBy === 'dueDate') {
-        const d1 = a.dueDate ? new Date(a.dueDate).getTime() : Infinity;
-        const d2 = b.dueDate ? new Date(b.dueDate).getTime() : Infinity;
-        comparison = d1 - d2;
-      } else if (sortBy === 'priority') {
-        const priorityOrder: Record<TaskPriority, number> = { urgent: 1, high: 2, medium: 3, low: 4 };
-        comparison = priorityOrder[a.priority] - priorityOrder[b.priority];
-      } else if (sortBy === 'createdAt') {
-        comparison = new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-      } else if (sortBy === 'title') {
-        comparison = a.title.localeCompare(b.title);
-      }
-
-      return sortOrder === 'asc' ? comparison : -comparison;
     });
 
-    return result;
-  }, [populatedTasks, search, selectedStatus, selectedPriority, selectedOwnerId, sortBy, sortOrder]);
+    return {
+      urgentCount: urgent,
+      overdueCount: overdue,
+      unassignedCount: unassigned,
+    };
+  }, [rawTasks]);
 
-  const hasActiveFilters =
-    Boolean(search) ||
-    selectedStatus !== 'all' ||
-    selectedPriority !== 'all' ||
-    selectedOwnerId !== 'all';
+  // Process raw tasks through deterministic filter -> sort -> paginate pipeline
+  const {
+    items: processedTasks,
+    totalItems,
+    totalPages,
+    currentPage,
+    startIndex,
+    endIndex,
+  } = useMemo(() => {
+    return processTasks(rawTasks, filters, usersMap, 10);
+  }, [rawTasks, filters, usersMap]);
 
-  const handleResetFilters = () => {
-    setSearch('');
-    setSelectedStatus('all');
-    setSelectedPriority('all');
-    setSelectedOwnerId('all');
-    setSortBy('dueDate');
-    setSortOrder('asc');
+  // Toast Notification Helper
+  const showToast = (message: string) => {
+    setToastMessage(message);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3000);
   };
 
+  // Share View: Copy URL to clipboard
   const handleShareClick = () => {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url);
-    setToastMessage('Filtered view link copied to clipboard!');
-    setTimeout(() => setToastMessage(null), 3000);
+    navigator.clipboard.writeText(window.location.href);
+    showToast('URL copied to clipboard! Share this view with your team.');
+  };
+
+  const handleTaskClick = (task: PopulatedTask) => {
+    setSelectedTask(task);
   };
 
   return (
     <div className="min-h-full bg-[#F7F7F7] text-slate-900 font-sans antialiased">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed top-4 right-4 z-50 px-4 py-2.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-lg shadow-lg text-sm font-semibold flex items-center gap-2 animate-bounce">
+        <div className="fixed top-4 right-4 z-50 px-4 py-2.5 bg-slate-900 text-white rounded-xl shadow-lg text-xs font-bold flex items-center gap-2 animate-bounce">
           <span>{toastMessage}</span>
         </div>
       )}
@@ -171,99 +134,133 @@ export const TaskManagerPage: React.FC = () => {
       <main className="w-full max-w-full px-3 sm:px-4 py-3 space-y-4">
         {/* Header & Stats Overview */}
         <TaskHeader
-          totalTasks={totalTasks}
+          totalTasks={rawTasks.length}
           urgentCount={urgentCount}
           overdueCount={overdueCount}
           unassignedCount={unassignedCount}
-          onNewTaskClick={() => alert('New Task Modal feature coming next!')}
+          onNewTaskClick={() => showToast('New Task modal will open here.')}
           onShareClick={handleShareClick}
         />
 
-        {/* Filter Bar */}
+        {/* Filter Controls & Search Bar */}
         <TaskFilterBar
-          search={search}
+          filters={filters}
           onSearchChange={setSearch}
-          selectedStatus={selectedStatus}
-          onStatusChange={setSelectedStatus}
-          selectedPriority={selectedPriority}
-          onPriorityChange={setSelectedPriority}
-          selectedOwnerId={selectedOwnerId}
-          onOwnerChange={setSelectedOwnerId}
-          sortBy={sortBy}
+          onStatusChange={setStatus}
+          onPriorityChange={setPriority}
+          onOwnerChange={setOwnerId}
           onSortByChange={setSortBy}
-          sortOrder={sortOrder}
-          onToggleSortOrder={() => setSortOrder((prev) => (prev === 'asc' ? 'desc' : 'asc'))}
-          owners={users}
-          onOpenMobileFilter={() => setIsMobileFilterOpen(true)}
+          onToggleSortOrder={toggleSortOrder}
+          onResetFilters={resetFilters}
           hasActiveFilters={hasActiveFilters}
-          onResetFilters={handleResetFilters}
+          owners={owners}
+          onOpenMobileFilter={() => setIsMobileFilterOpen(true)}
         />
 
-        {/* Main Content Area */}
-        {loading ? (
-          <div className="p-12 text-center text-slate-500 animate-pulse font-medium">
-            Loading team tasks...
+        {/* Loading Skeleton or Data Table/Cards */}
+        {isLoading ? (
+          <div className="p-8 text-center bg-white rounded-2xl border border-slate-200 shadow-2xs">
+            <div className="inline-block w-8 h-8 border-4 border-[#FE9F43] border-t-transparent rounded-full animate-spin mb-2" />
+            <p className="text-xs text-slate-500 font-bold">Loading workload dataset...</p>
           </div>
-        ) : error ? (
-          <div className="p-8 text-center bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900 rounded-xl text-rose-600 dark:text-rose-400 space-y-3">
-            <p className="font-semibold">{error}</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="px-4 py-2 text-xs font-bold bg-rose-600 text-white rounded-lg hover:bg-rose-700 transition-colors"
-            >
-              Retry Loading
-            </button>
-          </div>
-        ) : filteredTasks.length === 0 ? (
-          <div className="p-12 text-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl space-y-3 shadow-2xs">
-            <h3 className="text-lg font-bold text-slate-700 dark:text-slate-300">No matching tasks found</h3>
-            <p className="text-sm text-slate-400">
-              No tasks match your current filter parameters. Try clearing your filters to see all tasks.
+        ) : totalItems === 0 ? (
+          <div className="p-12 text-center bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-3">
+            <p className="text-base font-extrabold text-slate-800">No tasks found matching your filters</p>
+            <p className="text-xs text-slate-500 max-w-md mx-auto">
+              Try adjusting your search criteria, clearing specific filters, or resetting all search conditions.
             </p>
             {hasActiveFilters && (
               <button
-                onClick={handleResetFilters}
-                className="mt-2 px-4 py-2 text-xs font-bold bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                onClick={resetFilters}
+                className="mt-2 px-4 py-2 bg-[#FE9F43] text-white text-xs font-bold rounded-xl hover:bg-[#FF6E22] transition-colors cursor-pointer"
               >
-                Clear All Filters
+                Reset All Filters
               </button>
             )}
           </div>
         ) : (
-          <div className="space-y-4">
-            {/* Counter bar */}
-            <div className="flex items-center justify-between text-xs text-slate-500 font-medium px-1">
-              <span>Showing <strong>{filteredTasks.length}</strong> of {totalTasks} tasks</span>
-            </div>
-
-            {/* Desktop View (>= 768px) */}
+          <>
+            {/* Desktop / Tablet High-Density Table View (>= 768px / md) */}
             <div className="hidden md:block">
-              <TaskTableView tasks={filteredTasks} />
+              <TaskTableView
+                tasks={processedTasks}
+                onTaskClick={handleTaskClick}
+              />
             </div>
 
-            {/* Mobile View (< 768px) */}
-            <div className="block md:hidden">
-              <TaskCardView tasks={filteredTasks} />
+            {/* Mobile Touch Card View (< 768px / md) */}
+            <div className="md:hidden">
+              <TaskCardView
+                tasks={processedTasks}
+                onTaskClick={handleTaskClick}
+              />
             </div>
-          </div>
+
+            {/* Pagination Controls */}
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              totalItems={totalItems}
+              startIndex={startIndex}
+              endIndex={endIndex}
+              onPageChange={setPage}
+            />
+          </>
         )}
       </main>
 
-      {/* Mobile Filter Slide-over Drawer */}
+      {/* Mobile Slide-Over Filter Drawer */}
       <MobileFilterDrawer
         isOpen={isMobileFilterOpen}
         onClose={() => setIsMobileFilterOpen(false)}
-        selectedStatus={selectedStatus}
-        onStatusChange={setSelectedStatus}
-        selectedPriority={selectedPriority}
-        onPriorityChange={setSelectedPriority}
-        selectedOwnerId={selectedOwnerId}
-        onOwnerChange={setSelectedOwnerId}
-        sortBy={sortBy}
-        onSortByChange={setSortBy}
-        owners={users}
-        onResetFilters={handleResetFilters}
+        filters={filters}
+        onStatusChange={setStatus}
+        onPriorityChange={setPriority}
+        onOwnerChange={setOwnerId}
+        onResetFilters={resetFilters}
+        hasActiveFilters={hasActiveFilters}
+        owners={owners}
       />
+
+      {/* Detail Modal Placeholder */}
+      {selectedTask && (
+        <div
+          className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4"
+          onClick={() => setSelectedTask(null)}
+        >
+          <div
+            className="bg-white rounded-2xl max-w-lg w-full p-5 space-y-4 shadow-2xl border border-slate-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <span className="font-mono text-xs font-bold text-slate-500">{selectedTask.id}</span>
+              <button
+                onClick={() => setSelectedTask(null)}
+                className="text-slate-400 hover:text-slate-600 font-bold text-lg"
+              >
+                ✕
+              </button>
+            </div>
+            <div>
+              <h3 className="text-base font-extrabold text-slate-900">{selectedTask.title}</h3>
+              <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                {selectedTask.description || 'No detailed description provided for this task.'}
+              </p>
+            </div>
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span className="font-bold text-slate-500">
+                Created: {new Date(selectedTask.createdAt).toLocaleDateString()}
+              </span>
+              <button
+                onClick={() => setSelectedTask(null)}
+                className="px-4 py-1.5 bg-[#FE9F43] text-white font-bold rounded-lg hover:bg-[#FF6E22] transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
-};
+}

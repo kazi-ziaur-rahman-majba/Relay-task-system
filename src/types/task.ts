@@ -39,7 +39,7 @@ export interface Task {
   dueDate: string | null;
   createdAt: string;
   updatedAt: string;
-  tags: string[];
+  tags?: string[];
 }
 
 /**
@@ -54,7 +54,7 @@ export interface TaskFilterState {
   search: string;
   status: TaskStatus[];
   priority: TaskPriority[];
-  ownerId: string | null;
+  ownerId: string; // 'all', 'unassigned', or user ID
   sortBy: TaskSortField;
   sortOrder: 'asc' | 'desc';
   page: number;
