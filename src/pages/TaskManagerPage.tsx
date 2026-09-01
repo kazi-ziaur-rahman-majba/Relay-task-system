@@ -1,33 +1,38 @@
 import { useState, useEffect, useMemo } from 'react';
+import toast from 'react-hot-toast';
 import { TaskHeader } from '@/features/tasks/TaskHeader';
 import { TaskFilterBar } from '@/features/tasks/TaskFilterBar';
 import { TaskTableView } from '@/features/tasks/TaskTableView';
 import { TaskCardView } from '@/features/tasks/TaskCardView';
 import { MobileFilterDrawer } from '@/features/tasks/MobileFilterDrawer';
+import { AnalyticsPanel } from '@/features/tasks/analytics/AnalyticsPanel';
 import { Pagination } from '@/components/common/Pagination';
 import { CreateTaskModal } from '@/features/tasks/modals/CreateTaskModal';
 import { EditTaskModal } from '@/features/tasks/modals/EditTaskModal';
 import { DeleteConfirmModal } from '@/features/tasks/modals/DeleteConfirmModal';
+import { ShortcutsModal } from '@/features/tasks/modals/ShortcutsModal';
 import { TaskOwner, PopulatedTask, TaskStatus, CreateTaskInput, UpdateTaskInput } from '@/types/task';
 import { useUrlTaskState } from '@/hooks/useUrlTaskState';
 import { useTaskStorage } from '@/hooks/useTaskStorage';
-import { useToast } from '@/utils/toast';
+import { exportTasksToJson, parseImportedJsonFile } from '@/utils/datasetUtils';
 import { processTasks } from '@/utils/taskFilterEngine';
 import { isBefore, isToday, startOfDay } from 'date-fns';
 
 export default function TaskManagerPage() {
-  // Store-level Task Mutations & LocalStorage Persistence Hook
   const {
     tasks: rawTasks,
     isLoading: isStorageLoading,
     createTask,
     updateTask,
     deleteTask,
+    resetToDefaultSeed,
   } = useTaskStorage();
 
   const [owners, setOwners] = useState<TaskOwner[]>([]);
   const [isOwnersLoading, setIsOwnersLoading] = useState<boolean>(true);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState<boolean>(false);
+  const [isAnalyticsOpen, setIsAnalyticsOpen] = useState<boolean>(false);
+  const [isShortcutsOpen, setIsShortcutsOpen] = useState<boolean>(false);
 
   // Modal Visibility States
   const [isCreateModalOpen, setIsCreateModalOpen] = useState<boolean>(false);
@@ -35,10 +40,6 @@ export default function TaskManagerPage() {
   const [deletingTask, setDeletingTask] = useState<PopulatedTask | null>(null);
   const [selectedTask, setSelectedTask] = useState<PopulatedTask | null>(null);
 
-  // Toast Feedback Utility
-  const { toast, showToast } = useToast();
-
-  // Bi-directional URL SearchParams State Engine
   const {
     filters,
     setSearch,
@@ -52,7 +53,7 @@ export default function TaskManagerPage() {
     hasActiveFilters,
   } = useUrlTaskState();
 
-  // Load normalized team members dataset (team-members.json / users.json)
+  // Load team members dataset (team-members.json)
   useEffect(() => {
     async function loadTeamMembers() {
       try {
@@ -70,7 +71,29 @@ export default function TaskManagerPage() {
     loadTeamMembers();
   }, []);
 
-  // Map of team members for fast O(1) lookup
+  // Keyboard shortcut listener for '?' key to launch Shortcuts Modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === '?') {
+        const target = e.target as HTMLElement;
+        const isInput =
+          target &&
+          (target.tagName === 'INPUT' ||
+            target.tagName === 'TEXTAREA' ||
+            target.tagName === 'SELECT' ||
+            target.isContentEditable);
+
+        if (!isInput) {
+          e.preventDefault();
+          setIsShortcutsOpen((prev) => !prev);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const usersMap = useMemo(() => {
     return owners.reduce<Record<string, TaskOwner>>((acc, owner) => {
       acc[owner.id] = owner;
@@ -78,7 +101,6 @@ export default function TaskManagerPage() {
     }, {});
   }, [owners]);
 
-  // Overall Stat Counters across raw dataset
   const { urgentCount, overdueCount, unassignedCount } = useMemo(() => {
     const today = startOfDay(new Date('2026-08-31T12:00:00Z'));
 
@@ -105,7 +127,6 @@ export default function TaskManagerPage() {
     };
   }, [rawTasks]);
 
-  // Process raw tasks through deterministic filter -> sort -> paginate pipeline
   const {
     items: processedTasks,
     totalItems,
@@ -117,59 +138,54 @@ export default function TaskManagerPage() {
     return processTasks(rawTasks, filters, usersMap, 10);
   }, [rawTasks, filters, usersMap]);
 
-  // --- CRUD Mutation Handlers ---
-
-  // 1. Create Task Handler
+  // Mutation Handlers
   const handleCreateTask = (input: CreateTaskInput) => {
     createTask(input);
-    showToast(`New task created successfully!`, 'success');
+    toast.success(`New task created successfully!`);
   };
 
-  // 2. Inline Status Quick Update Handler
   const handleInlineStatusChange = (taskId: string, newStatus: TaskStatus) => {
     updateTask(taskId, { status: newStatus });
-    showToast(`Task ${taskId} status updated to ${newStatus.replace('_', ' ')}.`, 'info');
+    toast.success(`Task ${taskId} status updated to ${newStatus.replace('_', ' ')}.`);
   };
 
-  // 3. Edit Task Submission Handler
   const handleEditTaskSubmit = (id: string, updates: UpdateTaskInput) => {
     updateTask(id, updates);
-    showToast(`Task ${id} details saved successfully.`, 'success');
+    toast.success(`Task ${id} details saved successfully.`);
     setEditingTask(null);
   };
 
-  // 4. Delete Task Confirmation Handler
   const handleDeleteTaskConfirm = (id: string) => {
     deleteTask(id);
-    showToast(`Task ${id} has been deleted.`, 'warning');
+    toast.error(`Task ${id} has been deleted.`);
     setDeletingTask(null);
   };
 
-  // 5. Share View Handler: Copy URL to clipboard
   const handleShareClick = () => {
     navigator.clipboard.writeText(window.location.href);
-    showToast('URL copied to clipboard! Share this view with your team.', 'info');
+    toast.success('URL copied to clipboard! Share this view with your team.');
+  };
+
+  // JSON Mobility Handlers
+  const handleExportJson = () => {
+    exportTasksToJson(rawTasks);
+    toast.success(`Exported ${rawTasks.length} tasks to JSON file.`);
+  };
+
+  const handleImportJsonFile = async (file: File) => {
+    try {
+      const importedTasks = await parseImportedJsonFile(file);
+      localStorage.setItem('relay_tasks_data', JSON.stringify(importedTasks));
+      window.location.reload();
+    } catch (err: any) {
+      toast.error(err.message || 'Failed to import JSON file.');
+    }
   };
 
   const isLoading = isStorageLoading || isOwnersLoading;
 
   return (
     <div className="min-h-full bg-[#F7F7F7] text-slate-900 font-sans antialiased">
-      {/* Toast Notification Container */}
-      {toast && (
-        <div
-          className={`fixed top-4 right-4 z-50 px-4 py-2.5 rounded-xl shadow-lg text-xs font-extrabold flex items-center gap-2 animate-bounce transition-all ${
-            toast.type === 'success'
-              ? 'bg-slate-900 text-white'
-              : toast.type === 'warning'
-              ? 'bg-rose-600 text-white'
-              : 'bg-[#FE9F43] text-white'
-          }`}
-        >
-          <span>{toast.message}</span>
-        </div>
-      )}
-
       <main className="w-full max-w-full px-3 sm:px-4 py-3 space-y-4">
         {/* Header & Stats Overview */}
         <TaskHeader
@@ -179,7 +195,14 @@ export default function TaskManagerPage() {
           unassignedCount={unassignedCount}
           onNewTaskClick={() => setIsCreateModalOpen(true)}
           onShareClick={handleShareClick}
+          onToggleAnalytics={() => setIsAnalyticsOpen((prev) => !prev)}
+          isAnalyticsOpen={isAnalyticsOpen}
+          onExportJson={handleExportJson}
+          onImportJsonFile={handleImportJsonFile}
         />
+
+        {/* Collapsible Workload Visual Analytics Panel */}
+        {isAnalyticsOpen && <AnalyticsPanel tasks={rawTasks} />}
 
         {/* Filter Controls & Search Bar */}
         <TaskFilterBar
@@ -195,6 +218,22 @@ export default function TaskManagerPage() {
           owners={owners}
           onOpenMobileFilter={() => setIsMobileFilterOpen(true)}
         />
+
+        {/* Developer Reset Seed Button Notice */}
+        <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 px-1">
+          <span>Press <kbd className="px-1 py-0.5 bg-white border rounded text-slate-600 shadow-2xs">?</kbd> for keyboard shortcuts guide</span>
+          <button
+            onClick={() => {
+              if (confirm('Reset task data back to default 250 seed items?')) {
+                resetToDefaultSeed();
+                toast.success('Restored default 250 seed tasks.');
+              }
+            }}
+            className="hover:text-[#FE9F43] transition-colors cursor-pointer"
+          >
+            Reset Demo Seed Data
+          </button>
+        </div>
 
         {/* Loading Skeleton or Data Table/Cards */}
         {isLoading ? (
@@ -267,7 +306,7 @@ export default function TaskManagerPage() {
         owners={owners}
       />
 
-      {/* 1. Create Task Modal */}
+      {/* Modals */}
       <CreateTaskModal
         isOpen={isCreateModalOpen}
         onClose={() => setIsCreateModalOpen(false)}
@@ -275,7 +314,6 @@ export default function TaskManagerPage() {
         owners={owners}
       />
 
-      {/* 2. Edit Task Modal */}
       <EditTaskModal
         task={editingTask}
         isOpen={Boolean(editingTask)}
@@ -284,12 +322,16 @@ export default function TaskManagerPage() {
         owners={owners}
       />
 
-      {/* 3. Delete Confirmation Modal */}
       <DeleteConfirmModal
         task={deletingTask}
         isOpen={Boolean(deletingTask)}
         onClose={() => setDeletingTask(null)}
         onConfirm={handleDeleteTaskConfirm}
+      />
+
+      <ShortcutsModal
+        isOpen={isShortcutsOpen}
+        onClose={() => setIsShortcutsOpen(false)}
       />
 
       {/* Detail View Modal */}

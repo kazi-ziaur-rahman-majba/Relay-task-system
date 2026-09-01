@@ -1,11 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import AdminLayout from "@/components/admin/AdminLayout";
 import TaskManagerPage from "@/pages/TaskManagerPage";
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+      <Toaster position="top-right" reverseOrder={false} />
       <Routes>
         <Route element={<AdminLayout />}>
           <Route path="/" element={<TaskManagerPage />} />

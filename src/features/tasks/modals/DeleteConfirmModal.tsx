@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { AlertTriangle, X } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 import { PopulatedTask } from '@/types/task';
 
 interface DeleteConfirmModalProps {
@@ -31,49 +31,37 @@ export const DeleteConfirmModal: React.FC<DeleteConfirmModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in"
+      className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="delete-modal-title"
     >
       <div
-        className="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-slate-200"
+        className="bg-white rounded-3xl max-w-sm w-full p-8 text-center space-y-5 shadow-2xl border border-slate-100"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
-            <AlertTriangle className="w-5 h-5" />
-          </div>
-          <button
-            onClick={onClose}
-            className="p-2 text-slate-400 hover:text-slate-600 rounded-full cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center"
-            aria-label="Close modal"
-          >
-            <X className="w-5 h-5" />
-          </button>
+        {/* Red Circle Trash Icon */}
+        <div className="w-16 h-16 rounded-full bg-[#FFE8E8] text-[#E50914] flex items-center justify-center mx-auto shrink-0">
+          <Trash2 className="w-7 h-7 stroke-[2]" />
         </div>
 
-        {/* Content */}
+        {/* Text Content */}
         <div className="space-y-1.5">
-          <h3 id="delete-modal-title" className="text-base font-extrabold text-slate-900">
-            Delete Task
+          <h3 id="delete-modal-title" className="text-xl font-extrabold text-slate-900">
+            Confirm Delete
           </h3>
-          <p className="text-xs text-slate-600 leading-relaxed font-medium">
-            Are you sure you want to delete task{' '}
-            <span className="font-mono font-bold text-slate-900">{task.id}</span> (
-            <span className="italic font-semibold text-slate-800 line-clamp-1">{task.title}</span>)?
-            This action cannot be undone.
+          <p className="text-sm text-slate-500 font-medium leading-relaxed">
+            Are you sure you want to delete?
           </p>
         </div>
 
-        {/* Actions */}
-        <div className="pt-3 border-t border-slate-100 flex items-center justify-end gap-2.5">
+        {/* Action Buttons */}
+        <div className="pt-2 flex items-center justify-center gap-3">
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-xs font-bold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer min-h-[44px]"
+            className="px-6 py-2.5 text-sm font-semibold text-slate-600 bg-white border border-slate-200 hover:bg-slate-50 rounded-xl transition-colors cursor-pointer min-w-[100px]"
           >
             Cancel
           </button>
@@ -83,9 +71,9 @@ export const DeleteConfirmModal: React.FC<DeleteConfirmModalProps> = ({
               onConfirm(task.id);
               onClose();
             }}
-            className="px-4 py-2 text-xs font-bold bg-rose-600 hover:bg-rose-700 text-white rounded-xl transition-all shadow-2xs cursor-pointer min-h-[44px]"
+            className="px-6 py-2.5 text-sm font-semibold bg-[#E50914] hover:bg-red-700 text-white rounded-xl transition-all shadow-xs cursor-pointer min-w-[100px]"
           >
-            Delete Task
+            Delete
           </button>
         </div>
       </div>

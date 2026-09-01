@@ -1,5 +1,5 @@
-import React from 'react';
-import { AlertCircle, Clock, UserX, Plus, Share2, CheckCircle2 } from 'lucide-react';
+import React, { useRef } from 'react';
+import { AlertCircle, Clock, UserX, Plus, Share2, CheckCircle2, BarChart2, Download, Upload } from 'lucide-react';
 import PageHeader from '@/components/page-header/PageHeader';
 
 interface TaskHeaderProps {
@@ -9,6 +9,10 @@ interface TaskHeaderProps {
   unassignedCount: number;
   onNewTaskClick?: () => void;
   onShareClick?: () => void;
+  onToggleAnalytics?: () => void;
+  isAnalyticsOpen?: boolean;
+  onExportJson?: () => void;
+  onImportJsonFile?: (file: File) => void;
 }
 
 export const TaskHeader: React.FC<TaskHeaderProps> = ({
@@ -18,14 +22,75 @@ export const TaskHeader: React.FC<TaskHeaderProps> = ({
   unassignedCount,
   onNewTaskClick,
   onShareClick,
+  onToggleAnalytics,
+  isAnalyticsOpen = false,
+  onExportJson,
+  onImportJsonFile,
 }) => {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file && onImportJsonFile) {
+      onImportJsonFile(file);
+      e.target.value = '';
+    }
+  };
+
   return (
     <header className="space-y-4 pb-2">
+      {/* Hidden File Input for JSON Dataset Import */}
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".json"
+        onChange={handleFileChange}
+        className="hidden"
+      />
+
       {/* Reusable PageHeader Component Integration */}
       <PageHeader
         headerTitle="Team Task System"
         headerDescription="Manage and track your team's work"
       >
+        {/* Workload Analytics Toggle */}
+        <button
+          type="button"
+          onClick={onToggleAnalytics}
+          className={`flex items-center justify-center px-3 py-2 text-xs font-bold rounded-xl border transition-all shadow-2xs cursor-pointer min-h-[40px] ${
+            isAnalyticsOpen
+              ? 'bg-[#FE9F43] text-white border-[#FE9F43]'
+              : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+          }`}
+          title="Toggle visual workload charts"
+        >
+          <BarChart2 className="w-4 h-4 mr-1.5" />
+          Analytics
+        </button>
+
+        {/* Export JSON Dataset */}
+        <button
+          type="button"
+          onClick={onExportJson}
+          className="hidden sm:flex items-center justify-center px-3 py-2 text-xs font-bold rounded-xl bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all shadow-2xs cursor-pointer min-h-[40px]"
+          title="Download current tasks as JSON"
+        >
+          <Download className="w-4 h-4 mr-1.5 text-slate-500" />
+          Export
+        </button>
+
+        {/* Import JSON Dataset */}
+        <button
+          type="button"
+          onClick={() => fileInputRef.current?.click()}
+          className="hidden sm:flex items-center justify-center px-3 py-2 text-xs font-bold rounded-xl bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all shadow-2xs cursor-pointer min-h-[40px]"
+          title="Upload custom tasks JSON dataset"
+        >
+          <Upload className="w-4 h-4 mr-1.5 text-slate-500" />
+          Import
+        </button>
+
+        {/* Share Button */}
         <button
           type="button"
           onClick={onShareClick}
@@ -35,6 +100,7 @@ export const TaskHeader: React.FC<TaskHeaderProps> = ({
           Share
         </button>
 
+        {/* New Task Button */}
         <button
           type="button"
           onClick={onNewTaskClick}
@@ -45,7 +111,7 @@ export const TaskHeader: React.FC<TaskHeaderProps> = ({
         </button>
       </PageHeader>
 
-      {/* 4 Stat Cards with User's Exact Color Scheme */}
+      {/* 4 Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
         {/* Card 1: Brand Amber/Orange (#FE9F43) */}
         <div className="py-5 px-4 rounded-2xl bg-[#FE9F43] text-white shadow-xs flex items-center justify-between gap-3 min-h-[102px] transition-transform hover:scale-[1.01]">
