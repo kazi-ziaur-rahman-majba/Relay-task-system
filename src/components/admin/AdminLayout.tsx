@@ -1,8 +1,9 @@
 import Sidebar from "@/components/admin/Sidebar";
 import Header from "@/components/admin/Header";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Outlet } from "react-router-dom";
+import { TableSkeleton } from "@/components/skeleton";
 
 export default function AdminLayout() {
 	const [sidebarClick, setSidebarClick] = useState(false);
@@ -37,7 +38,9 @@ export default function AdminLayout() {
 				<Header sidebarClick={sidebarClick} />
 
 				<main className="flex-1 overflow-y-auto mt-14 p-2.5 sm:p-5 lg:p-5 bg-[#F7F7F7]">
-					<Outlet />
+					<Suspense fallback={<TableSkeleton rowsCount={8} />}>
+						<Outlet />
+					</Suspense>
 				</main>
 			</div>
 		</div>

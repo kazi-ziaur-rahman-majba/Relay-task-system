@@ -1,12 +1,14 @@
-import React from "react";
+import React, { lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import AdminLayout from "@/components/admin/AdminLayout";
-import DashboardPage from "@/pages/DashboardPage";
-import TasksPage from "@/pages/TasksPage";
-import UrgentPage from "@/pages/UrgentPage";
-import TeamPage from "@/pages/TeamPage";
-import SettingsPage from "@/pages/SettingsPage";
+
+// Lazy-loaded page components for Code-Splitting & bundle size optimization
+const DashboardPage = lazy(() => import("@/pages/DashboardPage"));
+const TasksPage = lazy(() => import("@/pages/TasksPage"));
+const UrgentPage = lazy(() => import("@/pages/UrgentPage"));
+const TeamPage = lazy(() => import("@/pages/TeamPage"));
+const SettingsPage = lazy(() => import("@/pages/SettingsPage"));
 
 const App: React.FC = () => {
   return (

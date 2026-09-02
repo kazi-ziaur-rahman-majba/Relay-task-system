@@ -11,6 +11,7 @@ const STORAGE_KEY = 'relay_tasks_data_v4';
 export function useTaskStorage() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   // Helper to persist tasks to LocalStorage safely
   const persistTasks = useCallback((nextTasks: Task[]) => {
@@ -22,35 +23,40 @@ export function useTaskStorage() {
   }, []);
 
   // Initial Hydration & Load Sequence
-  useEffect(() => {
-    async function hydrateState() {
-      setIsLoading(true);
-      try {
-        const stored = localStorage.getItem(STORAGE_KEY);
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            setTasks(parsed);
-            setIsLoading(false);
-            return;
-          }
+  const hydrateState = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setTasks(parsed);
+          setIsLoading(false);
+          return;
         }
-
-        // Fallback: Fetch seed dataset from /tasks.json
-        const res = await fetch('/tasks.json');
-        const seedData: Task[] = await res.json();
-
-        setTasks(seedData);
-        persistTasks(seedData);
-      } catch (err) {
-        console.error('Failed to hydrate task storage:', err);
-      } finally {
-        setIsLoading(false);
       }
-    }
 
-    hydrateState();
+      // Fallback: Fetch seed dataset from /tasks.json
+      const res = await fetch('/tasks.json');
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      const seedData: Task[] = await res.json();
+
+      setTasks(seedData);
+      persistTasks(seedData);
+    } catch (err) {
+      console.error('Failed to hydrate task storage:', err);
+      setError('Failed to load task dataset. Please check your connection and try again.');
+    } finally {
+      setIsLoading(false);
+    }
   }, [persistTasks]);
+
+  useEffect(() => {
+    hydrateState();
+  }, [hydrateState]);
 
   /**
    * Generates safe auto-incremented TSK-XXXX ID by scanning maximum numerical ID.
@@ -195,6 +201,8 @@ export function useTaskStorage() {
   return {
     tasks,
     isLoading,
+    error,
+    retry: hydrateState,
     createTask,
     updateTask,
     deleteTask,

@@ -2,19 +2,53 @@
 
 A high-performance, responsive, state-driven **Team Workload Task Management Dashboard** built for **WEBNS Technology Ltd.**
 
+> [!NOTE]
+> **Strict Non-Negotiables Compliance**: Built exclusively with **React 18 & TypeScript** (strict mode, zero `any` types) using custom **Tailwind CSS v4** layout architecture. No pre-built component UI kits (MUI, Ant Design, Chakra) were used.
+
 ---
 
-## 🌟 Executive Overview & Tech Stack
+## 📸 1. Screenshots & Responsive Viewports
 
-The **Relay Task System** is a client-side Single Page Application (SPA) designed to manage, filter, sort, paginate, and mutate a workload dataset of **250+ realistic engineering tasks**.
+### Desktop View (1280px Viewport) — High-Density Workload Table
+![Desktop View 1280px](./public/screenshots/desktop-1280.jpg)
 
-### Core Tech Stack:
-- **Framework**: React 18 (Functional Components, Custom Hooks)
-- **Language**: TypeScript (Strict Mode, 0 Any Types)
-- **Styling**: Tailwind CSS v4 (Zero third-party pre-built UI kits — MUI, Ant Design, or Chakra intentionally excluded)
-- **Routing & URL Engine**: React Router v6 (`useSearchParams` URL state sync)
-- **Icons**: Lucide React & React Icons
-- **Build Tooling**: Vite v5
+### Mobile View (375px Viewport) — Touch-Friendly Task Cards & Mobile Filter Drawer
+![Mobile View 375px](./public/screenshots/mobile-375.jpg)
+
+---
+
+## 🚀 2. Clean Clone & Local Run Instructions
+
+Follow these steps to run the application from a clean repository clone:
+
+### Prerequisites
+- **Node.js**: `>= 18.0.0`
+- **Package Manager**: `pnpm` (`>= 8.0.0`), `npm`, or `yarn`
+
+### Setup Steps
+```bash
+# 1. Clone the repository
+git clone https://github.com/kazi-ziaur-rahman-majba/Relay-task-system.git
+
+# 2. Navigate into project root directory
+cd Relay-task-system
+
+# 3. Install dependencies
+pnpm install
+
+# 4. Start Vite local development server
+pnpm dev
+```
+Open **[http://localhost:5173](http://localhost:5173)** in your browser.
+
+### Verification & Production Build
+```bash
+# Strict TypeScript compilation check (0 errors)
+npx tsc --noEmit
+
+# Production bundle build
+npx vite build
+```
 
 ---
 
@@ -133,9 +167,38 @@ Layout responsiveness is strictly controlled using standard Tailwind CSS breakpo
 
 ---
 
+## 🚦 Interaction States & System Resilience
+
+Aligned with the strict assessment criteria, the UI cleanly differentiates between 3 distinct system states:
+
+1. **Loading State**: Displays high-fidelity animated `TableSkeleton` rows to prevent Cumulative Layout Shift (CLS) during initial hydration.
+2. **Empty State**: Displays contextual "No tasks found" messaging with an explicit **Reset All Filters** action button when filters match 0 results.
+3. **Explicit Error State with Retry**:
+   - **Hook-Level Error Capture (`useTaskStorage.ts`)**: If JSON seed fetching (`/tasks.json`) or LocalStorage parsing fails, the store catches the exception, updates `error` state, and exposes a memoized `retry` (re-hydration) function.
+   - **Component-Level Error Capture (`TasksPage.tsx`)**: Tracks `ownersError` when fetching team members (`/team-members.json`).
+   - **UI Presentation**: Instead of showing generic spinners or broken layouts, the app renders a dedicated **Rose-Red Error Alert Card** featuring an `AlertTriangle` icon, explicit error message, and a **"🔄 Retry Loading"** action button that re-triggers dataset hydration seamlessly without a full page reload.
+
+```typescript
+// Error State Handling Mechanism in TasksPage.tsx
+{isLoading ? (
+  <TableSkeleton rowsCount={8} />
+) : (storageError || ownersError) ? (
+  <div className="p-10 text-center bg-rose-50/60 rounded-2xl border border-rose-200 space-y-4">
+    <AlertTriangle className="w-6 h-6 text-rose-600 mx-auto" />
+    <h3 className="text-base font-extrabold">Failed to Load Task Data</h3>
+    <p className="text-xs text-slate-600">{storageError || ownersError}</p>
+    <button onClick={() => { retryStorage(); loadTeamMembers(); }}>
+      <RotateCcw className="w-4 h-4" /> Retry Loading
+    </button>
+  </div>
+) : ...}
+```
+
+---
+
 ## ♿ Accessibility Practices Aligned with WCAG 2.1 AA
 
-- **Keyboard Shortcuts**: Pressing `/` focuses the search bar (guarded against active input elements). Pressing `Escape` closes active modal dialogs.
+- **Keyboard Shortcuts**: Pressing `/` focuses the search bar (guarded against active input elements). Pressing `?` opens shortcuts modal. Pressing `Escape` closes active modal dialogs.
 - **Modal Focus Management**: Modals feature ARIA tags (`role="dialog"`, `aria-modal="true"`, `aria-labelledby`), auto-focusing on the first input upon launch.
 - **Visual Accessibility**: Statuses and priorities pair text badges with high-contrast background and border colors, ensuring color-blind usability.
 
@@ -152,6 +215,31 @@ Layout responsiveness is strictly controlled using standard Tailwind CSS breakpo
 
 ---
 
+## 🤖 AI Tooling Disclosure & Usage
+
+In accordance with the assignment brief, AI assistance (Google Antigravity / Claude) was utilized during development for:
+1. **Boilerplate & Type Generation**: Generating strict TypeScript interfaces for normalized `Task` and `TaskOwner` entities.
+2. **Mock Dataset Generation**: Generating 250+ realistic tasks in `public/tasks.json` with edge cases (wildly varying title lengths, missing dates/owners, overdue dates, and inconveniently long names like *Bartholomew Montgomery-Wellington III*).
+3. **Responsive CSS Architecture & Accessibility Verification**: Streamlining Tailwind CSS v4 styling rules for touch targets ($\ge 44\text{px}$) and verifying WCAG contrast guidelines.
+
+*Note: All code structure, URL search parameter synchronization, data flow hooks, error state with retry handlers, and component partitioning were designed, reviewed, and fully understood for live walkthrough modifications.*
+
+---
+
+## 🤔 Decisions Least Confident About & Alternatives
+
+1. **LocalStorage vs. IndexedDB for Client Persistence**
+   - **Current Decision**: Used LocalStorage with JSON parsing (`useTaskStorage`).
+   - **Uncertainty**: LocalStorage operations are synchronous and blocking on the main thread, though negligible for ~250 items.
+   - **Alternative**: IndexedDB (via `idb` or Dexie.js) would provide async, non-blocking storage, better suited if the dataset scaled to 10,000+ items.
+
+2. **Client-Side Pagination vs. Virtualized Windowing**
+   - **Current Decision**: Paginated table rendering (10 items/page) synced with `?page=X`.
+   - **Uncertainty**: Pagination requires explicit page clicks, whereas infinite scrolling with virtualization feels more continuous on mobile.
+   - **Alternative**: `@tanstack/react-virtual` for virtualized rendering. We chose pagination because URL parameter syncing (`?page=2`) makes deep linking and view-sharing significantly cleaner for team members.
+
+---
+
 ## 🚀 Setup & Local Development Instructions
 
 ### Prerequisites
@@ -160,8 +248,14 @@ Layout responsiveness is strictly controlled using standard Tailwind CSS breakpo
 
 ### Installation
 ```bash
-# Clone the repository
+# Repository Link
+https://github.com/kazi-ziaur-rahman-majba/Relay-task-system
+
+# Repository Clone HTTPS Through
 git clone https://github.com/kazi-ziaur-rahman-majba/Relay-task-system.git
+
+# Repository Clone SSH Key Through
+git clone git@github.com:kazi-ziaur-rahman-majba/Relay-task-system.git
 
 # Navigate to project directory
 cd Relay-task-system
@@ -175,12 +269,3 @@ pnpm install
 pnpm dev
 ```
 Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Verification & Production Build
-```bash
-# Strict TypeScript compilation check
-npx tsc --noEmit
-
-# Production bundle build
-npx vite build
-```

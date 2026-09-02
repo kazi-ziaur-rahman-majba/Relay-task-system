@@ -1,5 +1,6 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import toast from 'react-hot-toast';
+import { AlertTriangle, RotateCcw } from 'lucide-react';
 import { TaskHeader } from '@/features/tasks/TaskHeader';
 import { TaskFilterBar } from '@/features/tasks/TaskFilterBar';
 import { TaskTableView } from '@/features/tasks/TaskTableView';
@@ -21,6 +22,8 @@ export default function TasksPage() {
   const {
     tasks: rawTasks,
     isLoading: isStorageLoading,
+    error: storageError,
+    retry: retryStorage,
     createTask,
     updateTask,
     deleteTask,
@@ -28,6 +31,7 @@ export default function TasksPage() {
 
   const [owners, setOwners] = useState<TaskOwner[]>([]);
   const [isOwnersLoading, setIsOwnersLoading] = useState<boolean>(true);
+  const [ownersError, setOwnersError] = useState<string | null>(null);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState<boolean>(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState<boolean>(false);
 
@@ -51,21 +55,27 @@ export default function TasksPage() {
   } = useUrlTaskState();
 
   // Load team members
-  useEffect(() => {
-    async function loadTeamMembers() {
-      try {
-        setIsOwnersLoading(true);
-        const res = await fetch('/team-members.json');
-        const usersData: TaskOwner[] = await res.json();
-        setOwners(usersData);
-      } catch (error) {
-        console.error('Failed to load team-members dataset:', error);
-      } finally {
-        setIsOwnersLoading(false);
+  const loadTeamMembers = useCallback(async () => {
+    try {
+      setIsOwnersLoading(true);
+      setOwnersError(null);
+      const res = await fetch('/team-members.json');
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
       }
+      const usersData: TaskOwner[] = await res.json();
+      setOwners(usersData);
+    } catch (error) {
+      console.error('Failed to load team-members dataset:', error);
+      setOwnersError('Failed to load team members dataset. Please check your connection and try again.');
+    } finally {
+      setIsOwnersLoading(false);
     }
-    loadTeamMembers();
   }, []);
+
+  useEffect(() => {
+    loadTeamMembers();
+  }, [loadTeamMembers]);
 
   // Keyboard shortcut listener for '?' key to launch Shortcuts Modal
   useEffect(() => {
@@ -160,9 +170,31 @@ export default function TasksPage() {
 
 
 
-        {/* Loading Skeleton or Data Table/Cards */}
+        {/* Loading Skeleton, Error State, Empty State, or Data Table/Cards */}
         {isLoading ? (
           <TableSkeleton rowsCount={8} />
+        ) : (storageError || ownersError) ? (
+          <div className="p-10 text-center bg-rose-50/60 rounded-2xl border border-rose-200 shadow-2xs space-y-4 my-4">
+            <div className="w-12 h-12 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center mx-auto">
+              <AlertTriangle className="w-6 h-6" />
+            </div>
+            <div className="space-y-1">
+              <h3 className="text-base font-extrabold text-slate-900">Failed to Load Task Data</h3>
+              <p className="text-xs text-slate-600 max-w-md mx-auto">
+                {storageError || ownersError}
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                retryStorage();
+                loadTeamMembers();
+              }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-xl transition-colors cursor-pointer"
+            >
+              <RotateCcw className="w-4 h-4" />
+              Retry Loading
+            </button>
+          </div>
         ) : totalItems === 0 ? (
           <div className="p-12 text-center bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-3">
             <p className="text-base font-extrabold text-slate-800">No tasks found matching your filters</p>
