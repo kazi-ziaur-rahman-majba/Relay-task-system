@@ -2,12 +2,14 @@
 
 A high-performance, responsive, state-driven **Team Workload Task Management Dashboard** built for **WEBNS Technology Ltd.**
 
+🌐 **Live Production Application**: [https://webns-task.netlify.app/](https://webns-task.netlify.app/)
+
 > [!NOTE]
 > **Strict Non-Negotiables Compliance**: Built exclusively with **React 19 & TypeScript** (strict mode, zero `any` types) using custom **Tailwind CSS v4** layout architecture. No pre-built component UI kits (MUI, Ant Design, Chakra) were used.
 
 ---
 
-## 📸 1. Screenshots & Responsive Viewports
+## 1. Screenshots & Responsive Viewports
 
 ### 💻 Desktop View (1280px Viewport) — Executive Dashboard & Workload Analytics
 ![Desktop Dashboard View](./public/screenshots/Desktop-Dashboard.png)
@@ -25,7 +27,10 @@ A high-performance, responsive, state-driven **Team Workload Task Management Das
 
 ## 🚀 2. Clean Clone & Local Run Instructions
 
-Follow these steps to run the application from a clean repository clone:
+> [!TIP]
+> **Live Deployed Application**: Test the live production build directly without local installation at: **[https://webns-task.netlify.app/](https://webns-task.netlify.app/)**
+
+Follow these steps to run the application locally from a clean repository clone:
 
 ### Prerequisites
 - **Node.js**: `>= 18.0.0`
@@ -53,18 +58,9 @@ pnpm dev
 ```
 Open **[http://localhost:5173](http://localhost:5173)** in your browser.
 
-### Verification & Production Build
-```bash
-# Strict TypeScript compilation & production build
-pnpm build
-
-# Preview production build locally
-pnpm preview
-```
-
 ---
 
-## 🏗️ System Architecture & Unidirectional Data Flow
+## System Architecture & Unidirectional Data Flow
 
 The application follows a strict unidirectional data flow connecting the URL state, LocalStorage persistent data mutators, the deterministic filtering engine, and responsive UI components:
 
@@ -145,7 +141,7 @@ Default values (`search=""`, `status=all`, `priority=all`, `ownerId=all`, `sort=
 
 ---
 
-## ⚡ Filtering, Sorting & Pagination Engine
+## Filtering, Sorting & Pagination Engine
 
 The pure functional pipeline (`src/utils/taskFilterEngine.ts`) decouples state mutations from display logic:
 
@@ -158,7 +154,7 @@ The pure functional pipeline (`src/utils/taskFilterEngine.ts`) decouples state m
 
 ---
 
-## 💾 LocalStorage Persistence Strategy (`useTaskStorage.ts`)
+## LocalStorage Persistence Strategy (`useTaskStorage.ts`)
 
 - **Key**: `relay_tasks_data`
 - **Hydration Flow**:
@@ -169,17 +165,7 @@ The pure functional pipeline (`src/utils/taskFilterEngine.ts`) decouples state m
 
 ---
 
-## 📱 Tailwind Breakpoint Architecture & Responsiveness
-
-Layout responsiveness is strictly controlled using standard Tailwind CSS breakpoint utilities:
-
-- **Mobile (`< md:` / `< 768px`)**: Renders `TaskCardView`, `MobileFilterDrawer`, and touch-friendly controls ($\ge 44\text{px} \times 44\text{px}$ touch targets).
-- **Tablet (`md:` / `768px - 1023px`)**: Renders `TaskTableView` with adaptive column widths.
-- **Desktop (`lg:` & `xl:` / `1024px+`)**: Renders high-density `TaskTableView`, expanded filter bar, and sticky headers.
-
----
-
-## 🚦 Interaction States & System Resilience
+## Interaction States & System Resilience
 
 Aligned with the strict assessment criteria, the UI cleanly differentiates between 3 distinct system states:
 
@@ -208,7 +194,7 @@ Aligned with the strict assessment criteria, the UI cleanly differentiates betwe
 
 ---
 
-## ♿ Accessibility Practices Aligned with WCAG 2.1 AA
+## Accessibility Practices Aligned with WCAG 2.1 AA
 
 - **Keyboard Shortcuts**: Pressing `/` focuses the search bar (guarded against active input elements). Pressing `?` opens shortcuts modal. Pressing `Escape` closes active modal dialogs.
 - **Modal Focus Management**: Modals feature ARIA tags (`role="dialog"`, `aria-modal="true"`, `aria-labelledby`), auto-focusing on the first input upon launch.
@@ -216,7 +202,7 @@ Aligned with the strict assessment criteria, the UI cleanly differentiates betwe
 
 ---
 
-## ⚖️ Technical Trade-offs & Decisions
+## Technical Trade-offs & Decisions
 
 1. **Why LocalStorage instead of a Real Database?**
    - The assessment brief explicitly specified client-side front-end architecture. LocalStorage provides persistent mutations without requiring backend infrastructure overhead.
@@ -227,7 +213,7 @@ Aligned with the strict assessment criteria, the UI cleanly differentiates betwe
 
 ---
 
-## 🤖 AI Tooling Disclosure & Usage
+## AI Tooling Disclosure & Usage
 
 In accordance with the assignment brief, AI assistance (Google Antigravity / Claude) was utilized during development for:
 1. **Boilerplate & Type Generation**: Generating strict TypeScript interfaces for normalized `Task` and `TaskOwner` entities.
@@ -235,19 +221,5 @@ In accordance with the assignment brief, AI assistance (Google Antigravity / Cla
 3. **Responsive CSS Architecture & Accessibility Verification**: Streamlining Tailwind CSS v4 styling rules for touch targets ($\ge 44\text{px}$) and verifying WCAG contrast guidelines.
 
 *Note: All code structure, URL search parameter synchronization, data flow hooks, error state with retry handlers, and component partitioning were designed, reviewed, and fully understood for live walkthrough modifications.*
-
----
-
-## 🤔 Decisions Least Confident About & Alternatives
-
-1. **LocalStorage vs. IndexedDB for Client Persistence**
-   - **Current Decision**: Used LocalStorage with JSON parsing (`useTaskStorage`).
-   - **Uncertainty**: LocalStorage operations are synchronous and blocking on the main thread, though negligible for ~250 items.
-   - **Alternative**: IndexedDB (via `idb` or Dexie.js) would provide async, non-blocking storage, better suited if the dataset scaled to 10,000+ items.
-
-2. **Client-Side Pagination vs. Virtualized Windowing**
-   - **Current Decision**: Paginated table rendering (10 items/page) synced with `?page=X`.
-   - **Uncertainty**: Pagination requires explicit page clicks, whereas infinite scrolling with virtualization feels more continuous on mobile.
-   - **Alternative**: `@tanstack/react-virtual` for virtualized rendering. We chose pagination because URL parameter syncing (`?page=2`) makes deep linking and view-sharing significantly cleaner for team members.
 
 ---
