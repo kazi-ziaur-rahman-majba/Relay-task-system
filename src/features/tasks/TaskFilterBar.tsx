@@ -214,6 +214,7 @@ export const TaskFilterBar: React.FC<TaskFilterBarProps> = ({
             onChange={(e) => onSortByChange(e.target.value as TaskSortField)}
             className="px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 font-bold focus:ring-2 focus:ring-[#FE9F43] focus:outline-none cursor-pointer"
           >
+            <option value="updatedAt">Last Updated</option>
             <option value="id">Task ID</option>
             <option value="createdAt">Created Date</option>
             <option value="dueDate">Due Date</option>

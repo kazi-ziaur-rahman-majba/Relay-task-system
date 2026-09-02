@@ -31,651 +31,6 @@
   },
   {
     "id": "TSK-0003",
-    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0003",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-01T14:49:55.200Z",
-    "updatedAt": "2026-08-01T14:49:55.200Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0004",
-    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0004",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-23T12:00:00.000Z",
-    "createdAt": "2026-08-01T17:44:52.800Z",
-    "updatedAt": "2026-08-01T17:44:52.800Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0005",
-    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0005",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "backlog",
-    "priority": "low",
-    "ownerId": "USR-001",
-    "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-01T20:39:50.400Z",
-    "updatedAt": "2026-08-01T20:39:50.400Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0006",
-    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0006",
-    "description": null,
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-008",
-    "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-01T23:34:48.000Z",
-    "updatedAt": "2026-08-01T23:34:48.000Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0007",
-    "title": "Implement database query indexing for task filter search by owner and status #TSK-0007",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-001",
-    "dueDate": "2026-09-07T12:00:00.000Z",
-    "createdAt": "2026-08-02T02:29:45.600Z",
-    "updatedAt": "2026-08-02T02:29:45.600Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0008",
-    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0008",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-007",
-    "dueDate": null,
-    "createdAt": "2026-08-02T05:24:43.200Z",
-    "updatedAt": "2026-08-02T05:24:43.200Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0009",
-    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0009",
-    "description": null,
-    "status": "backlog",
-    "priority": "urgent",
-    "ownerId": null,
-    "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-08-02T08:19:40.800Z",
-    "updatedAt": "2026-08-02T08:19:40.800Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0010",
-    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0010",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-007",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-02T11:14:38.400Z",
-    "updatedAt": "2026-08-02T11:14:38.400Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0011",
-    "title": "Fix typo in onboarding modal #TSK-0011",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-008",
-    "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-02T14:09:36.000Z",
-    "updatedAt": "2026-08-02T14:09:36.000Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0012",
-    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0012",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-008",
-    "dueDate": "2026-10-01T12:00:00.000Z",
-    "createdAt": "2026-08-02T17:04:33.600Z",
-    "updatedAt": "2026-08-02T17:04:33.600Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0013",
-    "title": "Add export to CSV functionality for filtered task search results #TSK-0013",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "in_progress",
-    "priority": "urgent",
-    "ownerId": "USR-002",
-    "dueDate": "2026-08-26T12:00:00.000Z",
-    "createdAt": "2026-08-02T19:59:31.200Z",
-    "updatedAt": "2026-08-02T19:59:31.200Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0014",
-    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0014",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-001",
-    "dueDate": "2026-10-03T12:00:00.000Z",
-    "createdAt": "2026-08-02T22:54:28.800Z",
-    "updatedAt": "2026-08-02T22:54:28.800Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0015",
-    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0015",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-009",
-    "dueDate": null,
-    "createdAt": "2026-08-03T01:49:26.400Z",
-    "updatedAt": "2026-08-03T01:49:26.400Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0016",
-    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0016",
-    "description": null,
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-006",
-    "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-03T04:44:24.000Z",
-    "updatedAt": "2026-08-03T04:44:24.000Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0017",
-    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0017",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "backlog",
-    "priority": "urgent",
-    "ownerId": null,
-    "dueDate": "2026-09-02T12:00:00.000Z",
-    "createdAt": "2026-08-03T07:39:21.600Z",
-    "updatedAt": "2026-08-03T07:39:21.600Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0018",
-    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) - Extended scope verification details for ticket #TSK-0018 including edge case handling and cross-browser visual QA testing across mobile viewports",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-009",
-    "dueDate": "2026-10-07T12:00:00.000Z",
-    "createdAt": "2026-08-03T10:34:19.200Z",
-    "updatedAt": "2026-08-03T10:34:19.200Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0019",
-    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0019",
-    "description": null,
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-001",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-03T13:29:16.800Z",
-    "updatedAt": "2026-08-03T13:29:16.800Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0020",
-    "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0020",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-002",
-    "dueDate": "2026-10-09T12:00:00.000Z",
-    "createdAt": "2026-08-03T16:24:14.400Z",
-    "updatedAt": "2026-08-03T16:24:14.400Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0021",
-    "title": "Short task #TSK-0021",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "backlog",
-    "priority": "low",
-    "ownerId": "USR-013",
-    "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-03T19:19:12.000Z",
-    "updatedAt": "2026-08-03T19:19:12.000Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0022",
-    "title": "Fix bug #TSK-0022",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-010",
-    "dueDate": null,
-    "createdAt": "2026-08-03T22:14:09.600Z",
-    "updatedAt": "2026-08-03T22:14:09.600Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0023",
-    "title": "Update dependencies #TSK-0023",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-08-04T01:09:07.200Z",
-    "updatedAt": "2026-08-04T01:09:07.200Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0024",
-    "title": "Add unit test #TSK-0024",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-004",
-    "dueDate": "2026-10-13T12:00:00.000Z",
-    "createdAt": "2026-08-04T04:04:04.800Z",
-    "updatedAt": "2026-08-04T04:04:04.800Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0025",
-    "title": "Clean code #TSK-0025",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "backlog",
-    "priority": "urgent",
-    "ownerId": null,
-    "dueDate": "2026-09-10T12:00:00.000Z",
-    "createdAt": "2026-08-04T06:59:02.400Z",
-    "updatedAt": "2026-08-04T06:59:02.400Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0026",
-    "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0026",
-    "description": null,
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-04T09:54:00.000Z",
-    "updatedAt": "2026-08-04T09:54:00.000Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0027",
-    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0027",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-08-04T12:48:57.600Z",
-    "updatedAt": "2026-08-04T12:48:57.600Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0028",
-    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0028",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-005",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-04T15:43:55.200Z",
-    "updatedAt": "2026-08-04T15:43:55.200Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0029",
-    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0029",
-    "description": null,
-    "status": "backlog",
-    "priority": "low",
-    "ownerId": "USR-009",
-    "dueDate": null,
-    "createdAt": "2026-08-04T18:38:52.800Z",
-    "updatedAt": "2026-08-04T18:38:52.800Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0030",
-    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0030",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-003",
-    "dueDate": "2026-10-19T12:00:00.000Z",
-    "createdAt": "2026-08-04T21:33:50.400Z",
-    "updatedAt": "2026-08-04T21:33:50.400Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0031",
-    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0031",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-004",
-    "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-05T00:28:48.000Z",
-    "updatedAt": "2026-08-05T00:28:48.000Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0032",
-    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0032",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": null,
-    "dueDate": "2026-10-21T12:00:00.000Z",
-    "createdAt": "2026-08-05T03:23:45.600Z",
-    "updatedAt": "2026-08-05T03:23:45.600Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0033",
-    "title": "Implement database query indexing for task filter search by owner and status #TSK-0033",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "backlog",
-    "priority": "urgent",
-    "ownerId": "USR-006",
-    "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-05T06:18:43.200Z",
-    "updatedAt": "2026-08-05T06:18:43.200Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0034",
-    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0034",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": null,
-    "dueDate": "2026-10-23T12:00:00.000Z",
-    "createdAt": "2026-08-05T09:13:40.800Z",
-    "updatedAt": "2026-08-05T09:13:40.800Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0035",
-    "title": "Add dark mode theme support to analytics dashboard charts - Extended scope verification details for ticket #TSK-0035 including edge case handling and cross-browser visual QA testing across mobile viewports",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": null,
-    "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-05T12:08:38.400Z",
-    "updatedAt": "2026-08-05T12:08:38.400Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0036",
-    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0036",
-    "description": null,
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-006",
-    "dueDate": null,
-    "createdAt": "2026-08-05T15:03:36.000Z",
-    "updatedAt": "2026-08-05T15:03:36.000Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0037",
-    "title": "Fix typo in onboarding modal #TSK-0037",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-005",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-05T17:58:33.600Z",
-    "updatedAt": "2026-08-05T17:58:33.600Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0038",
-    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0038",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-001",
-    "dueDate": "2026-10-27T12:00:00.000Z",
-    "createdAt": "2026-08-05T20:53:31.200Z",
-    "updatedAt": "2026-08-05T20:53:31.200Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0039",
-    "title": "Add export to CSV functionality for filtered task search results #TSK-0039",
-    "description": null,
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-08-05T23:48:28.800Z",
-    "updatedAt": "2026-08-05T23:48:28.800Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0040",
-    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0040",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-011",
-    "dueDate": "2026-10-29T12:00:00.000Z",
-    "createdAt": "2026-08-06T02:43:26.400Z",
-    "updatedAt": "2026-08-06T02:43:26.400Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0041",
-    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0041",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "backlog",
-    "priority": "urgent",
-    "ownerId": "USR-003",
-    "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-06T05:38:24.000Z",
-    "updatedAt": "2026-08-06T05:38:24.000Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0042",
-    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0042",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-003",
-    "dueDate": "2026-10-31T12:00:00.000Z",
-    "createdAt": "2026-08-06T08:33:21.600Z",
-    "updatedAt": "2026-08-06T08:33:21.600Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0043",
-    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0043",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "backlog",
-    "priority": "high",
-    "ownerId": "USR-005",
-    "dueDate": null,
-    "createdAt": "2026-08-06T11:28:19.200Z",
-    "updatedAt": "2026-08-06T11:28:19.200Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0044",
-    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0044",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "backlog",
-    "priority": "medium",
-    "ownerId": "USR-010",
-    "dueDate": "2026-11-02T12:00:00.000Z",
-    "createdAt": "2026-08-06T14:23:16.800Z",
-    "updatedAt": "2026-08-06T14:23:16.800Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0045",
-    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0045",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "backlog",
-    "priority": "low",
-    "ownerId": "USR-011",
-    "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-08-06T17:18:14.400Z",
-    "updatedAt": "2026-08-06T17:18:14.400Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0046",
     "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0046",
     "description": null,
     "status": "todo",
@@ -690,7 +45,7 @@
     ]
   },
   {
-    "id": "TSK-0047",
+    "id": "TSK-0004",
     "title": "Short task #TSK-0047",
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "todo",
@@ -705,22 +60,7 @@
     ]
   },
   {
-    "id": "TSK-0048",
-    "title": "Fix bug #TSK-0048",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "in_progress",
-    "priority": "urgent",
-    "ownerId": "USR-006",
-    "dueDate": "2026-08-26T12:00:00.000Z",
-    "createdAt": "2026-08-07T02:03:07.200Z",
-    "updatedAt": "2026-08-07T02:03:07.200Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0049",
+    "id": "TSK-0005",
     "title": "Update dependencies #TSK-0049",
     "description": null,
     "status": "todo",
@@ -735,7 +75,112 @@
     ]
   },
   {
-    "id": "TSK-0050",
+    "id": "TSK-0006",
+    "title": "Add export to CSV functionality for filtered task search results #TSK-0013",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "ownerId": "USR-002",
+    "dueDate": "2026-08-26T12:00:00.000Z",
+    "createdAt": "2026-08-02T19:59:31.200Z",
+    "updatedAt": "2026-08-02T19:59:31.200Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0007",
+    "title": "Fix bug #TSK-0048",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "ownerId": "USR-006",
+    "dueDate": "2026-08-26T12:00:00.000Z",
+    "createdAt": "2026-08-07T02:03:07.200Z",
+    "updatedAt": "2026-08-07T02:03:07.200Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0008",
+    "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0156",
+    "description": null,
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": null,
+    "dueDate": "2026-08-15T12:00:00.000Z",
+    "createdAt": "2026-08-20T04:58:48.000Z",
+    "updatedAt": "2026-08-20T04:58:48.000Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0009",
+    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0157",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": "USR-003",
+    "dueDate": "2026-09-07T12:00:00.000Z",
+    "createdAt": "2026-08-20T07:53:45.600Z",
+    "updatedAt": "2026-08-20T07:53:45.600Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0010",
+    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0191",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "done",
+    "priority": "medium",
+    "ownerId": "USR-001",
+    "dueDate": "2026-08-20T12:00:00.000Z",
+    "createdAt": "2026-08-24T11:02:24.000Z",
+    "updatedAt": "2026-08-24T11:02:24.000Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0011",
+    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0003",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-03T12:00:00.000Z",
+    "createdAt": "2026-08-01T14:49:55.200Z",
+    "updatedAt": "2026-08-01T14:49:55.200Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0012",
+    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0004",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-23T12:00:00.000Z",
+    "createdAt": "2026-08-01T17:44:52.800Z",
+    "updatedAt": "2026-08-01T17:44:52.800Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0013",
     "title": "Add unit test #TSK-0050",
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "todo",
@@ -750,7 +195,7 @@
     ]
   },
   {
-    "id": "TSK-0051",
+    "id": "TSK-0014",
     "title": "Clean code #TSK-0051",
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "todo",
@@ -765,7 +210,7 @@
     ]
   },
   {
-    "id": "TSK-0052",
+    "id": "TSK-0015",
     "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs - Extended scope verification details for ticket #TSK-0052 including edge case handling and cross-browser visual QA testing across mobile viewports",
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "todo",
@@ -780,652 +225,7 @@
     ]
   },
   {
-    "id": "TSK-0053",
-    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0053",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "todo",
-    "priority": "low",
-    "ownerId": "USR-014",
-    "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-08-07T16:37:55.200Z",
-    "updatedAt": "2026-08-07T16:37:55.200Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0054",
-    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0054",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-11-12T12:00:00.000Z",
-    "createdAt": "2026-08-07T19:32:52.800Z",
-    "updatedAt": "2026-08-07T19:32:52.800Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0055",
-    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0055",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-001",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-07T22:27:50.400Z",
-    "updatedAt": "2026-08-07T22:27:50.400Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0056",
-    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0056",
-    "description": null,
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-004",
-    "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-08T01:22:48.000Z",
-    "updatedAt": "2026-08-08T01:22:48.000Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0057",
-    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0057",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "todo",
-    "priority": "urgent",
-    "ownerId": "USR-012",
-    "dueDate": null,
-    "createdAt": "2026-08-08T04:17:45.600Z",
-    "updatedAt": "2026-08-08T04:17:45.600Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0058",
-    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0058",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-007",
-    "dueDate": "2026-11-16T12:00:00.000Z",
-    "createdAt": "2026-08-08T07:12:43.200Z",
-    "updatedAt": "2026-08-08T07:12:43.200Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0059",
-    "title": "Implement database query indexing for task filter search by owner and status #TSK-0059",
-    "description": null,
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-09-14T12:00:00.000Z",
-    "createdAt": "2026-08-08T10:07:40.800Z",
-    "updatedAt": "2026-08-08T10:07:40.800Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0060",
-    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0060",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": null,
-    "dueDate": "2026-11-18T12:00:00.000Z",
-    "createdAt": "2026-08-08T13:02:38.400Z",
-    "updatedAt": "2026-08-08T13:02:38.400Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0061",
-    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0061",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-005",
-    "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-08T15:57:36.000Z",
-    "updatedAt": "2026-08-08T15:57:36.000Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0062",
-    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0062",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-11-20T12:00:00.000Z",
-    "createdAt": "2026-08-08T18:52:33.600Z",
-    "updatedAt": "2026-08-08T18:52:33.600Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0063",
-    "title": "Fix typo in onboarding modal #TSK-0063",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": null,
-    "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-08T21:47:31.200Z",
-    "updatedAt": "2026-08-08T21:47:31.200Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0064",
-    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0064",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-010",
-    "dueDate": null,
-    "createdAt": "2026-08-09T00:42:28.800Z",
-    "updatedAt": "2026-08-09T00:42:28.800Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0065",
-    "title": "Add export to CSV functionality for filtered task search results #TSK-0065",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "todo",
-    "priority": "urgent",
-    "ownerId": "USR-001",
-    "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-09T03:37:26.400Z",
-    "updatedAt": "2026-08-09T03:37:26.400Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0066",
-    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0066",
-    "description": null,
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-006",
-    "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-09T06:32:24.000Z",
-    "updatedAt": "2026-08-09T06:32:24.000Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0067",
-    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0067",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-07T12:00:00.000Z",
-    "createdAt": "2026-08-09T09:27:21.600Z",
-    "updatedAt": "2026-08-09T09:27:21.600Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0068",
-    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0068",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-003",
-    "dueDate": "2026-11-26T12:00:00.000Z",
-    "createdAt": "2026-08-09T12:22:19.200Z",
-    "updatedAt": "2026-08-09T12:22:19.200Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0069",
-    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage - Extended scope verification details for ticket #TSK-0069 including edge case handling and cross-browser visual QA testing across mobile viewports",
-    "description": null,
-    "status": "todo",
-    "priority": "low",
-    "ownerId": null,
-    "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-08-09T15:17:16.800Z",
-    "updatedAt": "2026-08-09T15:17:16.800Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0070",
-    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0070",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-009",
-    "dueDate": "2026-11-28T12:00:00.000Z",
-    "createdAt": "2026-08-09T18:12:14.400Z",
-    "updatedAt": "2026-08-09T18:12:14.400Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0071",
-    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0071",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-014",
-    "dueDate": null,
-    "createdAt": "2026-08-09T21:07:12.000Z",
-    "updatedAt": "2026-08-09T21:07:12.000Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0072",
-    "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0072",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-007",
-    "dueDate": "2026-11-30T12:00:00.000Z",
-    "createdAt": "2026-08-10T00:02:09.600Z",
-    "updatedAt": "2026-08-10T00:02:09.600Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0073",
-    "title": "Short task #TSK-0073",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "todo",
-    "priority": "urgent",
-    "ownerId": "USR-010",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-10T02:57:07.200Z",
-    "updatedAt": "2026-08-10T02:57:07.200Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0074",
-    "title": "Fix bug #TSK-0074",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-009",
-    "dueDate": "2026-12-02T12:00:00.000Z",
-    "createdAt": "2026-08-10T05:52:04.800Z",
-    "updatedAt": "2026-08-10T05:52:04.800Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0075",
-    "title": "Update dependencies #TSK-0075",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-08-10T08:47:02.400Z",
-    "updatedAt": "2026-08-10T08:47:02.400Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0076",
-    "title": "Add unit test #TSK-0076",
-    "description": null,
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-008",
-    "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-10T11:42:00.000Z",
-    "updatedAt": "2026-08-10T11:42:00.000Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0077",
-    "title": "Clean code #TSK-0077",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "todo",
-    "priority": "low",
-    "ownerId": null,
-    "dueDate": "2026-09-02T12:00:00.000Z",
-    "createdAt": "2026-08-10T14:36:57.600Z",
-    "updatedAt": "2026-08-10T14:36:57.600Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0078",
-    "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0078",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-006",
-    "dueDate": null,
-    "createdAt": "2026-08-10T17:31:55.200Z",
-    "updatedAt": "2026-08-10T17:31:55.200Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0079",
-    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0079",
-    "description": null,
-    "status": "todo",
-    "priority": "high",
-    "ownerId": null,
-    "dueDate": "2026-09-04T12:00:00.000Z",
-    "createdAt": "2026-08-10T20:26:52.800Z",
-    "updatedAt": "2026-08-10T20:26:52.800Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0080",
-    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0080",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-003",
-    "dueDate": "2026-12-08T12:00:00.000Z",
-    "createdAt": "2026-08-10T23:21:50.400Z",
-    "updatedAt": "2026-08-10T23:21:50.400Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0081",
-    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0081",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "todo",
-    "priority": "urgent",
-    "ownerId": "USR-011",
-    "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-11T02:16:48.000Z",
-    "updatedAt": "2026-08-11T02:16:48.000Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0082",
-    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0082",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-011",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-11T05:11:45.600Z",
-    "updatedAt": "2026-08-11T05:11:45.600Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0083",
-    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0083",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-08-11T08:06:43.200Z",
-    "updatedAt": "2026-08-11T08:06:43.200Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0084",
-    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0084",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-008",
-    "dueDate": "2026-12-12T12:00:00.000Z",
-    "createdAt": "2026-08-11T11:01:40.800Z",
-    "updatedAt": "2026-08-11T11:01:40.800Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0085",
-    "title": "Implement database query indexing for task filter search by owner and status #TSK-0085",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": null,
-    "dueDate": null,
-    "createdAt": "2026-08-11T13:56:38.400Z",
-    "updatedAt": "2026-08-11T13:56:38.400Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0086",
-    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables - Extended scope verification details for ticket #TSK-0086 including edge case handling and cross-browser visual QA testing across mobile viewports",
-    "description": null,
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-008",
-    "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-11T16:51:36.000Z",
-    "updatedAt": "2026-08-11T16:51:36.000Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0087",
-    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0087",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-001",
-    "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-08-11T19:46:33.600Z",
-    "updatedAt": "2026-08-11T19:46:33.600Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0088",
-    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0088",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-005",
-    "dueDate": "2026-12-16T12:00:00.000Z",
-    "createdAt": "2026-08-11T22:41:31.200Z",
-    "updatedAt": "2026-08-11T22:41:31.200Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0089",
-    "title": "Fix typo in onboarding modal #TSK-0089",
-    "description": null,
-    "status": "todo",
-    "priority": "urgent",
-    "ownerId": "USR-010",
-    "dueDate": "2026-09-14T12:00:00.000Z",
-    "createdAt": "2026-08-12T01:36:28.800Z",
-    "updatedAt": "2026-08-12T01:36:28.800Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0090",
-    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0090",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-008",
-    "dueDate": "2026-12-18T12:00:00.000Z",
-    "createdAt": "2026-08-12T04:31:26.400Z",
-    "updatedAt": "2026-08-12T04:31:26.400Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0091",
-    "title": "Add export to CSV functionality for filtered task search results #TSK-0091",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-004",
-    "dueDate": "2026-10-15T12:00:00.000Z",
-    "createdAt": "2026-08-12T07:26:24.000Z",
-    "updatedAt": "2026-08-12T07:26:24.000Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0092",
-    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0092",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-006",
-    "dueDate": "2026-09-18T12:00:00.000Z",
-    "createdAt": "2026-08-12T10:21:21.600Z",
-    "updatedAt": "2026-08-12T10:21:21.600Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0093",
-    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0093",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "todo",
-    "priority": "low",
-    "ownerId": "USR-007",
-    "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-12T13:16:19.200Z",
-    "updatedAt": "2026-08-12T13:16:19.200Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0094",
-    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0094",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "todo",
-    "priority": "high",
-    "ownerId": "USR-005",
-    "dueDate": "2026-09-23T12:00:00.000Z",
-    "createdAt": "2026-08-12T16:11:16.800Z",
-    "updatedAt": "2026-08-12T16:11:16.800Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0095",
-    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0095",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "todo",
-    "priority": "medium",
-    "ownerId": "USR-008",
-    "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-12T19:06:14.400Z",
-    "updatedAt": "2026-08-12T19:06:14.400Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0096",
+    "id": "TSK-0016",
     "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0096",
     "description": null,
     "status": "in_progress",
@@ -1440,7 +240,7 @@
     ]
   },
   {
-    "id": "TSK-0097",
+    "id": "TSK-0017",
     "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0097",
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_progress",
@@ -1455,7 +255,127 @@
     ]
   },
   {
-    "id": "TSK-0098",
+    "id": "TSK-0018",
+    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0158",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-006",
+    "dueDate": "2026-11-26T12:00:00.000Z",
+    "createdAt": "2026-08-20T10:48:43.200Z",
+    "updatedAt": "2026-08-20T10:48:43.200Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0019",
+    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0160",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": "USR-011",
+    "dueDate": "2026-11-28T12:00:00.000Z",
+    "createdAt": "2026-08-20T16:38:38.400Z",
+    "updatedAt": "2026-08-20T16:38:38.400Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0020",
+    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0192",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "done",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-10-01T12:00:00.000Z",
+    "createdAt": "2026-08-24T13:57:21.600Z",
+    "updatedAt": "2026-08-24T13:57:21.600Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0021",
+    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0005",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "backlog",
+    "priority": "low",
+    "ownerId": "USR-001",
+    "dueDate": "2026-09-05T12:00:00.000Z",
+    "createdAt": "2026-08-01T20:39:50.400Z",
+    "updatedAt": "2026-08-01T20:39:50.400Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0022",
+    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0006",
+    "description": null,
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-008",
+    "dueDate": "2026-08-25T12:00:00.000Z",
+    "createdAt": "2026-08-01T23:34:48.000Z",
+    "updatedAt": "2026-08-01T23:34:48.000Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0023",
+    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0053",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "todo",
+    "priority": "low",
+    "ownerId": "USR-014",
+    "dueDate": "2026-09-08T12:00:00.000Z",
+    "createdAt": "2026-08-07T16:37:55.200Z",
+    "updatedAt": "2026-08-07T16:37:55.200Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0024",
+    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0054",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-11-12T12:00:00.000Z",
+    "createdAt": "2026-08-07T19:32:52.800Z",
+    "updatedAt": "2026-08-07T19:32:52.800Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0025",
+    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0055",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-001",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-07T22:27:50.400Z",
+    "updatedAt": "2026-08-07T22:27:50.400Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0026",
     "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0098",
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_progress",
@@ -1470,7 +390,7 @@
     ]
   },
   {
-    "id": "TSK-0099",
+    "id": "TSK-0027",
     "title": "Short task #TSK-0099",
     "description": null,
     "status": "in_progress",
@@ -1485,7 +405,127 @@
     ]
   },
   {
-    "id": "TSK-0100",
+    "id": "TSK-0028",
+    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0161",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "in_review",
+    "priority": "urgent",
+    "ownerId": "USR-001",
+    "dueDate": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-20T19:33:36.000Z",
+    "updatedAt": "2026-08-20T19:33:36.000Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0029",
+    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0162",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": null,
+    "createdAt": "2026-08-20T22:28:33.600Z",
+    "updatedAt": "2026-08-20T22:28:33.600Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0030",
+    "title": "Fix typo in onboarding modal #TSK-0193",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "done",
+    "priority": "urgent",
+    "ownerId": "USR-005",
+    "dueDate": "2026-09-13T12:00:00.000Z",
+    "createdAt": "2026-08-24T16:52:19.200Z",
+    "updatedAt": "2026-08-24T16:52:19.200Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0031",
+    "title": "Implement database query indexing for task filter search by owner and status #TSK-0007",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-001",
+    "dueDate": "2026-09-07T12:00:00.000Z",
+    "createdAt": "2026-08-02T02:29:45.600Z",
+    "updatedAt": "2026-08-02T02:29:45.600Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0032",
+    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0008",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-007",
+    "dueDate": null,
+    "createdAt": "2026-08-02T05:24:43.200Z",
+    "updatedAt": "2026-08-02T05:24:43.200Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0033",
+    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0056",
+    "description": null,
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-004",
+    "dueDate": "2026-08-15T12:00:00.000Z",
+    "createdAt": "2026-08-08T01:22:48.000Z",
+    "updatedAt": "2026-08-08T01:22:48.000Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0034",
+    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0057",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "todo",
+    "priority": "urgent",
+    "ownerId": "USR-012",
+    "dueDate": null,
+    "createdAt": "2026-08-08T04:17:45.600Z",
+    "updatedAt": "2026-08-08T04:17:45.600Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0035",
+    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0058",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-007",
+    "dueDate": "2026-11-16T12:00:00.000Z",
+    "createdAt": "2026-08-08T07:12:43.200Z",
+    "updatedAt": "2026-08-08T07:12:43.200Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0036",
     "title": "Fix bug #TSK-0100",
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_progress",
@@ -1500,7 +540,7 @@
     ]
   },
   {
-    "id": "TSK-0101",
+    "id": "TSK-0037",
     "title": "Update dependencies #TSK-0101",
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "in_progress",
@@ -1515,7 +555,127 @@
     ]
   },
   {
-    "id": "TSK-0102",
+    "id": "TSK-0038",
+    "title": "Implement database query indexing for task filter search by owner and status #TSK-0163",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": "USR-008",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-21T01:23:31.200Z",
+    "updatedAt": "2026-08-21T01:23:31.200Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0039",
+    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0164",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": null,
+    "dueDate": "2026-12-02T12:00:00.000Z",
+    "createdAt": "2026-08-21T04:18:28.800Z",
+    "updatedAt": "2026-08-21T04:18:28.800Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0040",
+    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0194",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "done",
+    "priority": "medium",
+    "ownerId": "USR-001",
+    "dueDate": "2026-10-03T12:00:00.000Z",
+    "createdAt": "2026-08-24T19:47:16.800Z",
+    "updatedAt": "2026-08-24T19:47:16.800Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0041",
+    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0009",
+    "description": null,
+    "status": "backlog",
+    "priority": "urgent",
+    "ownerId": null,
+    "dueDate": "2026-09-09T12:00:00.000Z",
+    "createdAt": "2026-08-02T08:19:40.800Z",
+    "updatedAt": "2026-08-02T08:19:40.800Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0042",
+    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0010",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-007",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-02T11:14:38.400Z",
+    "updatedAt": "2026-08-02T11:14:38.400Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0043",
+    "title": "Implement database query indexing for task filter search by owner and status #TSK-0059",
+    "description": null,
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-09-14T12:00:00.000Z",
+    "createdAt": "2026-08-08T10:07:40.800Z",
+    "updatedAt": "2026-08-08T10:07:40.800Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0044",
+    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0060",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": null,
+    "dueDate": "2026-11-18T12:00:00.000Z",
+    "createdAt": "2026-08-08T13:02:38.400Z",
+    "updatedAt": "2026-08-08T13:02:38.400Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0045",
+    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0061",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-005",
+    "dueDate": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-08T15:57:36.000Z",
+    "updatedAt": "2026-08-08T15:57:36.000Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0046",
     "title": "Add unit test #TSK-0102",
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "in_progress",
@@ -1530,7 +690,7 @@
     ]
   },
   {
-    "id": "TSK-0103",
+    "id": "TSK-0047",
     "title": "Clean code - Extended scope verification details for ticket #TSK-0103 including edge case handling and cross-browser visual QA testing across mobile viewports",
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_progress",
@@ -1545,7 +705,127 @@
     ]
   },
   {
-    "id": "TSK-0104",
+    "id": "TSK-0048",
+    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0165",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "in_review",
+    "priority": "low",
+    "ownerId": "USR-011",
+    "dueDate": "2026-09-15T12:00:00.000Z",
+    "createdAt": "2026-08-21T07:13:26.400Z",
+    "updatedAt": "2026-08-21T07:13:26.400Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0049",
+    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0166",
+    "description": null,
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": "USR-003",
+    "dueDate": "2026-08-25T12:00:00.000Z",
+    "createdAt": "2026-08-21T10:08:24.000Z",
+    "updatedAt": "2026-08-21T10:08:24.000Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0050",
+    "title": "Add export to CSV functionality for filtered task search results #TSK-0195",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "done",
+    "priority": "medium",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-15T12:00:00.000Z",
+    "createdAt": "2026-08-24T22:42:14.400Z",
+    "updatedAt": "2026-08-24T22:42:14.400Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0051",
+    "title": "Fix typo in onboarding modal #TSK-0011",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-008",
+    "dueDate": "2026-08-20T12:00:00.000Z",
+    "createdAt": "2026-08-02T14:09:36.000Z",
+    "updatedAt": "2026-08-02T14:09:36.000Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0052",
+    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0012",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-008",
+    "dueDate": "2026-10-01T12:00:00.000Z",
+    "createdAt": "2026-08-02T17:04:33.600Z",
+    "updatedAt": "2026-08-02T17:04:33.600Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0053",
+    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0062",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-11-20T12:00:00.000Z",
+    "createdAt": "2026-08-08T18:52:33.600Z",
+    "updatedAt": "2026-08-08T18:52:33.600Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0054",
+    "title": "Fix typo in onboarding modal #TSK-0063",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": null,
+    "dueDate": "2026-09-03T12:00:00.000Z",
+    "createdAt": "2026-08-08T21:47:31.200Z",
+    "updatedAt": "2026-08-08T21:47:31.200Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0055",
+    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0064",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-010",
+    "dueDate": null,
+    "createdAt": "2026-08-09T00:42:28.800Z",
+    "updatedAt": "2026-08-09T00:42:28.800Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0056",
     "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0104",
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_progress",
@@ -1560,7 +840,7 @@
     ]
   },
   {
-    "id": "TSK-0105",
+    "id": "TSK-0057",
     "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0105",
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "in_progress",
@@ -1575,7 +855,127 @@
     ]
   },
   {
-    "id": "TSK-0106",
+    "id": "TSK-0058",
+    "title": "Fix typo in onboarding modal #TSK-0167",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-015",
+    "dueDate": "2026-09-02T12:00:00.000Z",
+    "createdAt": "2026-08-21T13:03:21.600Z",
+    "updatedAt": "2026-08-21T13:03:21.600Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0059",
+    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0168",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-12-06T12:00:00.000Z",
+    "createdAt": "2026-08-21T15:58:19.200Z",
+    "updatedAt": "2026-08-21T15:58:19.200Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0060",
+    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0196",
+    "description": null,
+    "status": "done",
+    "priority": "high",
+    "ownerId": "USR-012",
+    "dueDate": "2026-08-15T12:00:00.000Z",
+    "createdAt": "2026-08-25T01:37:12.000Z",
+    "updatedAt": "2026-08-25T01:37:12.000Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0061",
+    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0014",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-001",
+    "dueDate": "2026-10-03T12:00:00.000Z",
+    "createdAt": "2026-08-02T22:54:28.800Z",
+    "updatedAt": "2026-08-02T22:54:28.800Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0062",
+    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0015",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-009",
+    "dueDate": null,
+    "createdAt": "2026-08-03T01:49:26.400Z",
+    "updatedAt": "2026-08-03T01:49:26.400Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0063",
+    "title": "Add export to CSV functionality for filtered task search results #TSK-0065",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "todo",
+    "priority": "urgent",
+    "ownerId": "USR-001",
+    "dueDate": "2026-09-05T12:00:00.000Z",
+    "createdAt": "2026-08-09T03:37:26.400Z",
+    "updatedAt": "2026-08-09T03:37:26.400Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0064",
+    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0066",
+    "description": null,
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-006",
+    "dueDate": "2026-08-25T12:00:00.000Z",
+    "createdAt": "2026-08-09T06:32:24.000Z",
+    "updatedAt": "2026-08-09T06:32:24.000Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0065",
+    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0067",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-07T12:00:00.000Z",
+    "createdAt": "2026-08-09T09:27:21.600Z",
+    "updatedAt": "2026-08-09T09:27:21.600Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0066",
     "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0106",
     "description": null,
     "status": "in_progress",
@@ -1590,7 +990,7 @@
     ]
   },
   {
-    "id": "TSK-0107",
+    "id": "TSK-0067",
     "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0107",
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_progress",
@@ -1605,7 +1005,127 @@
     ]
   },
   {
-    "id": "TSK-0108",
+    "id": "TSK-0068",
+    "title": "Add export to CSV functionality for filtered task search results #TSK-0169",
+    "description": null,
+    "status": "in_review",
+    "priority": "urgent",
+    "ownerId": "USR-005",
+    "dueDate": null,
+    "createdAt": "2026-08-21T18:53:16.800Z",
+    "updatedAt": "2026-08-21T18:53:16.800Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0069",
+    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0170",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-001",
+    "dueDate": "2026-12-08T12:00:00.000Z",
+    "createdAt": "2026-08-21T21:48:14.400Z",
+    "updatedAt": "2026-08-21T21:48:14.400Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0070",
+    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0197",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "done",
+    "priority": "low",
+    "ownerId": "USR-003",
+    "dueDate": null,
+    "createdAt": "2026-08-25T04:32:09.600Z",
+    "updatedAt": "2026-08-25T04:32:09.600Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0071",
+    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0016",
+    "description": null,
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-006",
+    "dueDate": "2026-08-15T12:00:00.000Z",
+    "createdAt": "2026-08-03T04:44:24.000Z",
+    "updatedAt": "2026-08-03T04:44:24.000Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0072",
+    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0017",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "backlog",
+    "priority": "urgent",
+    "ownerId": null,
+    "dueDate": "2026-09-02T12:00:00.000Z",
+    "createdAt": "2026-08-03T07:39:21.600Z",
+    "updatedAt": "2026-08-03T07:39:21.600Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0073",
+    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0068",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-003",
+    "dueDate": "2026-11-26T12:00:00.000Z",
+    "createdAt": "2026-08-09T12:22:19.200Z",
+    "updatedAt": "2026-08-09T12:22:19.200Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0074",
+    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage - Extended scope verification details for ticket #TSK-0069 including edge case handling and cross-browser visual QA testing across mobile viewports",
+    "description": null,
+    "status": "todo",
+    "priority": "low",
+    "ownerId": null,
+    "dueDate": "2026-09-09T12:00:00.000Z",
+    "createdAt": "2026-08-09T15:17:16.800Z",
+    "updatedAt": "2026-08-09T15:17:16.800Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0075",
+    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0070",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-009",
+    "dueDate": "2026-11-28T12:00:00.000Z",
+    "createdAt": "2026-08-09T18:12:14.400Z",
+    "updatedAt": "2026-08-09T18:12:14.400Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0076",
     "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0108",
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_progress",
@@ -1620,7 +1140,7 @@
     ]
   },
   {
-    "id": "TSK-0109",
+    "id": "TSK-0077",
     "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0109",
     "description": null,
     "status": "in_progress",
@@ -1635,7 +1155,127 @@
     ]
   },
   {
-    "id": "TSK-0110",
+    "id": "TSK-0078",
+    "title": "Implement optimistic UI updates for task drag-and-drop stage movement - Extended scope verification details for ticket #TSK-0171 including edge case handling and cross-browser visual QA testing across mobile viewports",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-010",
+    "dueDate": "2026-08-20T12:00:00.000Z",
+    "createdAt": "2026-08-22T00:43:12.000Z",
+    "updatedAt": "2026-08-22T00:43:12.000Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0079",
+    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0172",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": "USR-003",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-22T03:38:09.600Z",
+    "updatedAt": "2026-08-22T03:38:09.600Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0080",
+    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0198",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "done",
+    "priority": "medium",
+    "ownerId": "USR-013",
+    "dueDate": "2026-10-07T12:00:00.000Z",
+    "createdAt": "2026-08-25T07:27:07.200Z",
+    "updatedAt": "2026-08-25T07:27:07.200Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0081",
+    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) - Extended scope verification details for ticket #TSK-0018 including edge case handling and cross-browser visual QA testing across mobile viewports",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-009",
+    "dueDate": "2026-10-07T12:00:00.000Z",
+    "createdAt": "2026-08-03T10:34:19.200Z",
+    "updatedAt": "2026-08-03T10:34:19.200Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0082",
+    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0019",
+    "description": null,
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-001",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-03T13:29:16.800Z",
+    "updatedAt": "2026-08-03T13:29:16.800Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0083",
+    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0071",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-014",
+    "dueDate": null,
+    "createdAt": "2026-08-09T21:07:12.000Z",
+    "updatedAt": "2026-08-09T21:07:12.000Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0084",
+    "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0072",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-007",
+    "dueDate": "2026-11-30T12:00:00.000Z",
+    "createdAt": "2026-08-10T00:02:09.600Z",
+    "updatedAt": "2026-08-10T00:02:09.600Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0085",
+    "title": "Short task #TSK-0073",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "todo",
+    "priority": "urgent",
+    "ownerId": "USR-010",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-10T02:57:07.200Z",
+    "updatedAt": "2026-08-10T02:57:07.200Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0086",
     "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0110",
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_progress",
@@ -1650,7 +1290,7 @@
     ]
   },
   {
-    "id": "TSK-0111",
+    "id": "TSK-0087",
     "title": "Implement database query indexing for task filter search by owner and status #TSK-0111",
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "in_progress",
@@ -1665,7 +1305,127 @@
     ]
   },
   {
-    "id": "TSK-0112",
+    "id": "TSK-0088",
+    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0173",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "in_review",
+    "priority": "low",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-08T12:00:00.000Z",
+    "createdAt": "2026-08-22T06:33:07.200Z",
+    "updatedAt": "2026-08-22T06:33:07.200Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0089",
+    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0174",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-006",
+    "dueDate": "2026-12-12T12:00:00.000Z",
+    "createdAt": "2026-08-22T09:28:04.800Z",
+    "updatedAt": "2026-08-22T09:28:04.800Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0090",
+    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0199",
+    "description": null,
+    "status": "done",
+    "priority": "high",
+    "ownerId": "USR-003",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-25T10:22:04.800Z",
+    "updatedAt": "2026-08-25T10:22:04.800Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0091",
+    "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0020",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-002",
+    "dueDate": "2026-10-09T12:00:00.000Z",
+    "createdAt": "2026-08-03T16:24:14.400Z",
+    "updatedAt": "2026-08-03T16:24:14.400Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0092",
+    "title": "Short task #TSK-0021",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "backlog",
+    "priority": "low",
+    "ownerId": "USR-013",
+    "dueDate": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-03T19:19:12.000Z",
+    "updatedAt": "2026-08-03T19:19:12.000Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0093",
+    "title": "Fix bug #TSK-0074",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-009",
+    "dueDate": "2026-12-02T12:00:00.000Z",
+    "createdAt": "2026-08-10T05:52:04.800Z",
+    "updatedAt": "2026-08-10T05:52:04.800Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0094",
+    "title": "Update dependencies #TSK-0075",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-09-15T12:00:00.000Z",
+    "createdAt": "2026-08-10T08:47:02.400Z",
+    "updatedAt": "2026-08-10T08:47:02.400Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0095",
+    "title": "Add unit test #TSK-0076",
+    "description": null,
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-008",
+    "dueDate": "2026-08-15T12:00:00.000Z",
+    "createdAt": "2026-08-10T11:42:00.000Z",
+    "updatedAt": "2026-08-10T11:42:00.000Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0096",
     "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0112",
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "in_progress",
@@ -1680,7 +1440,7 @@
     ]
   },
   {
-    "id": "TSK-0113",
+    "id": "TSK-0097",
     "title": "Add dark mode theme support to analytics dashboard charts #TSK-0113",
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_progress",
@@ -1695,7 +1455,127 @@
     ]
   },
   {
-    "id": "TSK-0114",
+    "id": "TSK-0098",
+    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0175",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": "USR-014",
+    "dueDate": "2026-09-10T12:00:00.000Z",
+    "createdAt": "2026-08-22T12:23:02.400Z",
+    "updatedAt": "2026-08-22T12:23:02.400Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0099",
+    "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0176",
+    "description": null,
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-013",
+    "dueDate": null,
+    "createdAt": "2026-08-22T15:18:00.000Z",
+    "updatedAt": "2026-08-22T15:18:00.000Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0100",
+    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0200",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "done",
+    "priority": "medium",
+    "ownerId": "USR-001",
+    "dueDate": "2026-10-09T12:00:00.000Z",
+    "createdAt": "2026-08-25T13:17:02.400Z",
+    "updatedAt": "2026-08-25T13:17:02.400Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0101",
+    "title": "Fix bug #TSK-0022",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-010",
+    "dueDate": null,
+    "createdAt": "2026-08-03T22:14:09.600Z",
+    "updatedAt": "2026-08-03T22:14:09.600Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0102",
+    "title": "Update dependencies #TSK-0023",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-08T12:00:00.000Z",
+    "createdAt": "2026-08-04T01:09:07.200Z",
+    "updatedAt": "2026-08-04T01:09:07.200Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0103",
+    "title": "Clean code #TSK-0077",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "todo",
+    "priority": "low",
+    "ownerId": null,
+    "dueDate": "2026-09-02T12:00:00.000Z",
+    "createdAt": "2026-08-10T14:36:57.600Z",
+    "updatedAt": "2026-08-10T14:36:57.600Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0104",
+    "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0078",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-006",
+    "dueDate": null,
+    "createdAt": "2026-08-10T17:31:55.200Z",
+    "updatedAt": "2026-08-10T17:31:55.200Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0105",
+    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0079",
+    "description": null,
+    "status": "todo",
+    "priority": "high",
+    "ownerId": null,
+    "dueDate": "2026-09-04T12:00:00.000Z",
+    "createdAt": "2026-08-10T20:26:52.800Z",
+    "updatedAt": "2026-08-10T20:26:52.800Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0106",
     "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0114",
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_progress",
@@ -1710,7 +1590,7 @@
     ]
   },
   {
-    "id": "TSK-0115",
+    "id": "TSK-0107",
     "title": "Fix typo in onboarding modal #TSK-0115",
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "in_progress",
@@ -1722,6 +1602,126 @@
     "tags": [
       "security",
       "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0108",
+    "title": "Short task #TSK-0177",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "in_review",
+    "priority": "urgent",
+    "ownerId": "USR-009",
+    "dueDate": "2026-09-12T12:00:00.000Z",
+    "createdAt": "2026-08-22T18:12:57.600Z",
+    "updatedAt": "2026-08-22T18:12:57.600Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0109",
+    "title": "Fix bug #TSK-0178",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": "USR-002",
+    "dueDate": "2026-12-16T12:00:00.000Z",
+    "createdAt": "2026-08-22T21:07:55.200Z",
+    "updatedAt": "2026-08-22T21:07:55.200Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0110",
+    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0201",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "done",
+    "priority": "urgent",
+    "ownerId": "USR-001",
+    "dueDate": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-25T16:12:00.000Z",
+    "updatedAt": "2026-08-25T16:12:00.000Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0111",
+    "title": "Add unit test #TSK-0024",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-004",
+    "dueDate": "2026-10-13T12:00:00.000Z",
+    "createdAt": "2026-08-04T04:04:04.800Z",
+    "updatedAt": "2026-08-04T04:04:04.800Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0112",
+    "title": "Clean code #TSK-0025",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "backlog",
+    "priority": "urgent",
+    "ownerId": null,
+    "dueDate": "2026-09-10T12:00:00.000Z",
+    "createdAt": "2026-08-04T06:59:02.400Z",
+    "updatedAt": "2026-08-04T06:59:02.400Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0113",
+    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0080",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-003",
+    "dueDate": "2026-12-08T12:00:00.000Z",
+    "createdAt": "2026-08-10T23:21:50.400Z",
+    "updatedAt": "2026-08-10T23:21:50.400Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0114",
+    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0081",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "todo",
+    "priority": "urgent",
+    "ownerId": "USR-011",
+    "dueDate": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-11T02:16:48.000Z",
+    "updatedAt": "2026-08-11T02:16:48.000Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0115",
+    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0082",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-011",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-11T05:11:45.600Z",
+    "updatedAt": "2026-08-11T05:11:45.600Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
     ]
   },
   {
@@ -1756,921 +1756,6 @@
   },
   {
     "id": "TSK-0118",
-    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0118",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": "USR-015",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-15T14:10:19.200Z",
-    "updatedAt": "2026-08-15T14:10:19.200Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0119",
-    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0119",
-    "description": null,
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-001",
-    "dueDate": "2026-09-14T12:00:00.000Z",
-    "createdAt": "2026-08-15T17:05:16.800Z",
-    "updatedAt": "2026-08-15T17:05:16.800Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0120",
-    "title": "Fix layout shifting when lazy loading user avatars in task rows - Extended scope verification details for ticket #TSK-0120 including edge case handling and cross-browser visual QA testing across mobile viewports",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-008",
-    "dueDate": null,
-    "createdAt": "2026-08-15T20:00:14.400Z",
-    "updatedAt": "2026-08-15T20:00:14.400Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0121",
-    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0121",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "in_progress",
-    "priority": "urgent",
-    "ownerId": "USR-002",
-    "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-15T22:55:12.000Z",
-    "updatedAt": "2026-08-15T22:55:12.000Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0122",
-    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0122",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-006",
-    "dueDate": "2026-10-21T12:00:00.000Z",
-    "createdAt": "2026-08-16T01:50:09.600Z",
-    "updatedAt": "2026-08-16T01:50:09.600Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0123",
-    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0123",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-16T04:45:07.200Z",
-    "updatedAt": "2026-08-16T04:45:07.200Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0124",
-    "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0124",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": "USR-013",
-    "dueDate": "2026-10-23T12:00:00.000Z",
-    "createdAt": "2026-08-16T07:40:04.800Z",
-    "updatedAt": "2026-08-16T07:40:04.800Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0125",
-    "title": "Short task #TSK-0125",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "in_progress",
-    "priority": "low",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-16T10:35:02.400Z",
-    "updatedAt": "2026-08-16T10:35:02.400Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0126",
-    "title": "Fix bug #TSK-0126",
-    "description": null,
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-007",
-    "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-16T13:30:00.000Z",
-    "updatedAt": "2026-08-16T13:30:00.000Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0127",
-    "title": "Update dependencies #TSK-0127",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": "USR-011",
-    "dueDate": null,
-    "createdAt": "2026-08-16T16:24:57.600Z",
-    "updatedAt": "2026-08-16T16:24:57.600Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0128",
-    "title": "Add unit test #TSK-0128",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-002",
-    "dueDate": "2026-10-27T12:00:00.000Z",
-    "createdAt": "2026-08-16T19:19:55.200Z",
-    "updatedAt": "2026-08-16T19:19:55.200Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0129",
-    "title": "Clean code #TSK-0129",
-    "description": null,
-    "status": "in_progress",
-    "priority": "urgent",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-08-16T22:14:52.800Z",
-    "updatedAt": "2026-08-16T22:14:52.800Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0130",
-    "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0130",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": "USR-011",
-    "dueDate": "2026-10-29T12:00:00.000Z",
-    "createdAt": "2026-08-17T01:09:50.400Z",
-    "updatedAt": "2026-08-17T01:09:50.400Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0131",
-    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0131",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-012",
-    "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-17T04:04:48.000Z",
-    "updatedAt": "2026-08-17T04:04:48.000Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0132",
-    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0132",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-001",
-    "dueDate": "2026-10-31T12:00:00.000Z",
-    "createdAt": "2026-08-17T06:59:45.600Z",
-    "updatedAt": "2026-08-17T06:59:45.600Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0133",
-    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0133",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": "USR-010",
-    "dueDate": "2026-09-13T12:00:00.000Z",
-    "createdAt": "2026-08-17T09:54:43.200Z",
-    "updatedAt": "2026-08-17T09:54:43.200Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0134",
-    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0134",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-002",
-    "dueDate": null,
-    "createdAt": "2026-08-17T12:49:40.800Z",
-    "updatedAt": "2026-08-17T12:49:40.800Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0135",
-    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0135",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-009",
-    "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-08-17T15:44:38.400Z",
-    "updatedAt": "2026-08-17T15:44:38.400Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0136",
-    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0136",
-    "description": null,
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": "USR-005",
-    "dueDate": "2026-10-08T12:00:00.000Z",
-    "createdAt": "2026-08-17T18:39:36.000Z",
-    "updatedAt": "2026-08-17T18:39:36.000Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0137",
-    "title": "Implement database query indexing for task filter search by owner and status - Extended scope verification details for ticket #TSK-0137 including edge case handling and cross-browser visual QA testing across mobile viewports",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "in_progress",
-    "priority": "urgent",
-    "ownerId": "USR-003",
-    "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-08-17T21:34:33.600Z",
-    "updatedAt": "2026-08-17T21:34:33.600Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0138",
-    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0138",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": null,
-    "dueDate": "2026-11-06T12:00:00.000Z",
-    "createdAt": "2026-08-18T00:29:31.200Z",
-    "updatedAt": "2026-08-18T00:29:31.200Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0139",
-    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0139",
-    "description": null,
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": null,
-    "dueDate": "2026-09-04T12:00:00.000Z",
-    "createdAt": "2026-08-18T03:24:28.800Z",
-    "updatedAt": "2026-08-18T03:24:28.800Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0140",
-    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0140",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": null,
-    "dueDate": "2026-11-08T12:00:00.000Z",
-    "createdAt": "2026-08-18T06:19:26.400Z",
-    "updatedAt": "2026-08-18T06:19:26.400Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0141",
-    "title": "Fix typo in onboarding modal #TSK-0141",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "in_progress",
-    "priority": "low",
-    "ownerId": "USR-002",
-    "dueDate": null,
-    "createdAt": "2026-08-18T09:14:24.000Z",
-    "updatedAt": "2026-08-18T09:14:24.000Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0142",
-    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0142",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": "USR-009",
-    "dueDate": "2026-11-10T12:00:00.000Z",
-    "createdAt": "2026-08-18T12:09:21.600Z",
-    "updatedAt": "2026-08-18T12:09:21.600Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0143",
-    "title": "Add export to CSV functionality for filtered task search results #TSK-0143",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": null,
-    "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-08-18T15:04:19.200Z",
-    "updatedAt": "2026-08-18T15:04:19.200Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0144",
-    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0144",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-005",
-    "dueDate": "2026-11-12T12:00:00.000Z",
-    "createdAt": "2026-08-18T17:59:16.800Z",
-    "updatedAt": "2026-08-18T17:59:16.800Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0145",
-    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0145",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "in_progress",
-    "priority": "urgent",
-    "ownerId": "USR-010",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-18T20:54:14.400Z",
-    "updatedAt": "2026-08-18T20:54:14.400Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0146",
-    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0146",
-    "description": null,
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-003",
-    "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-18T23:49:12.000Z",
-    "updatedAt": "2026-08-18T23:49:12.000Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0147",
-    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0147",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-009",
-    "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-08-19T02:44:09.600Z",
-    "updatedAt": "2026-08-19T02:44:09.600Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0148",
-    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0148",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": "USR-002",
-    "dueDate": null,
-    "createdAt": "2026-08-19T05:39:07.200Z",
-    "updatedAt": "2026-08-19T05:39:07.200Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0149",
-    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0149",
-    "description": null,
-    "status": "in_progress",
-    "priority": "low",
-    "ownerId": null,
-    "dueDate": "2026-09-14T12:00:00.000Z",
-    "createdAt": "2026-08-19T08:34:04.800Z",
-    "updatedAt": "2026-08-19T08:34:04.800Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0150",
-    "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0150",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": null,
-    "dueDate": "2026-11-18T12:00:00.000Z",
-    "createdAt": "2026-08-19T11:29:02.400Z",
-    "updatedAt": "2026-08-19T11:29:02.400Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0151",
-    "title": "Short task #TSK-0151",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": "USR-005",
-    "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-19T14:24:00.000Z",
-    "updatedAt": "2026-08-19T14:24:00.000Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0152",
-    "title": "Fix bug #TSK-0152",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-012",
-    "dueDate": "2026-11-20T12:00:00.000Z",
-    "createdAt": "2026-08-19T17:18:57.600Z",
-    "updatedAt": "2026-08-19T17:18:57.600Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0153",
-    "title": "Update dependencies #TSK-0153",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "in_progress",
-    "priority": "urgent",
-    "ownerId": "USR-001",
-    "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-19T20:13:55.200Z",
-    "updatedAt": "2026-08-19T20:13:55.200Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0154",
-    "title": "Add unit test - Extended scope verification details for ticket #TSK-0154 including edge case handling and cross-browser visual QA testing across mobile viewports",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "in_progress",
-    "priority": "high",
-    "ownerId": null,
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-19T23:08:52.800Z",
-    "updatedAt": "2026-08-19T23:08:52.800Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0155",
-    "title": "Clean code #TSK-0155",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "in_progress",
-    "priority": "medium",
-    "ownerId": "USR-009",
-    "dueDate": null,
-    "createdAt": "2026-08-20T02:03:50.400Z",
-    "updatedAt": "2026-08-20T02:03:50.400Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0156",
-    "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0156",
-    "description": null,
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": null,
-    "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-20T04:58:48.000Z",
-    "updatedAt": "2026-08-20T04:58:48.000Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0157",
-    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0157",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": "USR-003",
-    "dueDate": "2026-09-07T12:00:00.000Z",
-    "createdAt": "2026-08-20T07:53:45.600Z",
-    "updatedAt": "2026-08-20T07:53:45.600Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0158",
-    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0158",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-006",
-    "dueDate": "2026-11-26T12:00:00.000Z",
-    "createdAt": "2026-08-20T10:48:43.200Z",
-    "updatedAt": "2026-08-20T10:48:43.200Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0159",
-    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0159",
-    "description": null,
-    "status": "in_progress",
-    "priority": "urgent",
-    "ownerId": "USR-014",
-    "dueDate": "2026-08-26T12:00:00.000Z",
-    "createdAt": "2026-08-20T13:43:40.800Z",
-    "updatedAt": "2026-08-20T13:43:40.800Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0160",
-    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0160",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": "USR-011",
-    "dueDate": "2026-11-28T12:00:00.000Z",
-    "createdAt": "2026-08-20T16:38:38.400Z",
-    "updatedAt": "2026-08-20T16:38:38.400Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0161",
-    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0161",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "in_review",
-    "priority": "urgent",
-    "ownerId": "USR-001",
-    "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-20T19:33:36.000Z",
-    "updatedAt": "2026-08-20T19:33:36.000Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0162",
-    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0162",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": null,
-    "createdAt": "2026-08-20T22:28:33.600Z",
-    "updatedAt": "2026-08-20T22:28:33.600Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0163",
-    "title": "Implement database query indexing for task filter search by owner and status #TSK-0163",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": "USR-008",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-21T01:23:31.200Z",
-    "updatedAt": "2026-08-21T01:23:31.200Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0164",
-    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0164",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": null,
-    "dueDate": "2026-12-02T12:00:00.000Z",
-    "createdAt": "2026-08-21T04:18:28.800Z",
-    "updatedAt": "2026-08-21T04:18:28.800Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0165",
-    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0165",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "in_review",
-    "priority": "low",
-    "ownerId": "USR-011",
-    "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-08-21T07:13:26.400Z",
-    "updatedAt": "2026-08-21T07:13:26.400Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0166",
-    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0166",
-    "description": null,
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": "USR-003",
-    "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-21T10:08:24.000Z",
-    "updatedAt": "2026-08-21T10:08:24.000Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0167",
-    "title": "Fix typo in onboarding modal #TSK-0167",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-015",
-    "dueDate": "2026-09-02T12:00:00.000Z",
-    "createdAt": "2026-08-21T13:03:21.600Z",
-    "updatedAt": "2026-08-21T13:03:21.600Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0168",
-    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0168",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-12-06T12:00:00.000Z",
-    "createdAt": "2026-08-21T15:58:19.200Z",
-    "updatedAt": "2026-08-21T15:58:19.200Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0169",
-    "title": "Add export to CSV functionality for filtered task search results #TSK-0169",
-    "description": null,
-    "status": "in_review",
-    "priority": "urgent",
-    "ownerId": "USR-005",
-    "dueDate": null,
-    "createdAt": "2026-08-21T18:53:16.800Z",
-    "updatedAt": "2026-08-21T18:53:16.800Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0170",
-    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0170",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-001",
-    "dueDate": "2026-12-08T12:00:00.000Z",
-    "createdAt": "2026-08-21T21:48:14.400Z",
-    "updatedAt": "2026-08-21T21:48:14.400Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0171",
-    "title": "Implement optimistic UI updates for task drag-and-drop stage movement - Extended scope verification details for ticket #TSK-0171 including edge case handling and cross-browser visual QA testing across mobile viewports",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-010",
-    "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-22T00:43:12.000Z",
-    "updatedAt": "2026-08-22T00:43:12.000Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0172",
-    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0172",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": "USR-003",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-22T03:38:09.600Z",
-    "updatedAt": "2026-08-22T03:38:09.600Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0173",
-    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0173",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "in_review",
-    "priority": "low",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-08-22T06:33:07.200Z",
-    "updatedAt": "2026-08-22T06:33:07.200Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0174",
-    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0174",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-006",
-    "dueDate": "2026-12-12T12:00:00.000Z",
-    "createdAt": "2026-08-22T09:28:04.800Z",
-    "updatedAt": "2026-08-22T09:28:04.800Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0175",
-    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0175",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": "USR-014",
-    "dueDate": "2026-09-10T12:00:00.000Z",
-    "createdAt": "2026-08-22T12:23:02.400Z",
-    "updatedAt": "2026-08-22T12:23:02.400Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0176",
-    "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0176",
-    "description": null,
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-013",
-    "dueDate": null,
-    "createdAt": "2026-08-22T15:18:00.000Z",
-    "updatedAt": "2026-08-22T15:18:00.000Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0177",
-    "title": "Short task #TSK-0177",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "in_review",
-    "priority": "urgent",
-    "ownerId": "USR-009",
-    "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-08-22T18:12:57.600Z",
-    "updatedAt": "2026-08-22T18:12:57.600Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0178",
-    "title": "Fix bug #TSK-0178",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": "USR-002",
-    "dueDate": "2026-12-16T12:00:00.000Z",
-    "createdAt": "2026-08-22T21:07:55.200Z",
-    "updatedAt": "2026-08-22T21:07:55.200Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0179",
     "title": "Update dependencies #TSK-0179",
     "description": null,
     "status": "in_review",
@@ -2685,7 +1770,7 @@
     ]
   },
   {
-    "id": "TSK-0180",
+    "id": "TSK-0119",
     "title": "Add unit test #TSK-0180",
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_review",
@@ -2700,322 +1785,7 @@
     ]
   },
   {
-    "id": "TSK-0181",
-    "title": "Clean code #TSK-0181",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": null,
-    "dueDate": "2026-10-02T12:00:00.000Z",
-    "createdAt": "2026-08-23T05:52:48.000Z",
-    "updatedAt": "2026-08-23T05:52:48.000Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0182",
-    "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0182",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-09-21T12:00:00.000Z",
-    "createdAt": "2026-08-23T08:47:45.600Z",
-    "updatedAt": "2026-08-23T08:47:45.600Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0183",
-    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0183",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": null,
-    "createdAt": "2026-08-23T11:42:43.200Z",
-    "updatedAt": "2026-08-23T11:42:43.200Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0184",
-    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0184",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-23T12:00:00.000Z",
-    "createdAt": "2026-08-23T14:37:40.800Z",
-    "updatedAt": "2026-08-23T14:37:40.800Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0185",
-    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0185",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "in_review",
-    "priority": "urgent",
-    "ownerId": "USR-007",
-    "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-23T17:32:38.400Z",
-    "updatedAt": "2026-08-23T17:32:38.400Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0186",
-    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0186",
-    "description": null,
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-23T20:27:36.000Z",
-    "updatedAt": "2026-08-23T20:27:36.000Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0187",
-    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0187",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": "USR-004",
-    "dueDate": "2026-09-07T12:00:00.000Z",
-    "createdAt": "2026-08-23T23:22:33.600Z",
-    "updatedAt": "2026-08-23T23:22:33.600Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0188",
-    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges - Extended scope verification details for ticket #TSK-0188 including edge case handling and cross-browser visual QA testing across mobile viewports",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "in_review",
-    "priority": "medium",
-    "ownerId": "USR-013",
-    "dueDate": "2026-09-27T12:00:00.000Z",
-    "createdAt": "2026-08-24T02:17:31.200Z",
-    "updatedAt": "2026-08-24T02:17:31.200Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0189",
-    "title": "Implement database query indexing for task filter search by owner and status #TSK-0189",
-    "description": null,
-    "status": "in_review",
-    "priority": "low",
-    "ownerId": "USR-006",
-    "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-08-24T05:12:28.800Z",
-    "updatedAt": "2026-08-24T05:12:28.800Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0190",
-    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0190",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "in_review",
-    "priority": "high",
-    "ownerId": "USR-010",
-    "dueDate": null,
-    "createdAt": "2026-08-24T08:07:26.400Z",
-    "updatedAt": "2026-08-24T08:07:26.400Z",
-    "tags": [
-      "mobile-fix",
-      "frontend"
-    ]
-  },
-  {
-    "id": "TSK-0191",
-    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0191",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "done",
-    "priority": "medium",
-    "ownerId": "USR-001",
-    "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-24T11:02:24.000Z",
-    "updatedAt": "2026-08-24T11:02:24.000Z",
-    "tags": [
-      "documentation",
-      "backend"
-    ]
-  },
-  {
-    "id": "TSK-0192",
-    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0192",
-    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
-    "status": "done",
-    "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-10-01T12:00:00.000Z",
-    "createdAt": "2026-08-24T13:57:21.600Z",
-    "updatedAt": "2026-08-24T13:57:21.600Z",
-    "tags": [
-      "accessibility",
-      "bug"
-    ]
-  },
-  {
-    "id": "TSK-0193",
-    "title": "Fix typo in onboarding modal #TSK-0193",
-    "description": "Need to comply with updated data retention guidelines by end of Q3.",
-    "status": "done",
-    "priority": "urgent",
-    "ownerId": "USR-005",
-    "dueDate": "2026-09-13T12:00:00.000Z",
-    "createdAt": "2026-08-24T16:52:19.200Z",
-    "updatedAt": "2026-08-24T16:52:19.200Z",
-    "tags": [
-      "frontend",
-      "feature"
-    ]
-  },
-  {
-    "id": "TSK-0194",
-    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0194",
-    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
-    "status": "done",
-    "priority": "medium",
-    "ownerId": "USR-001",
-    "dueDate": "2026-10-03T12:00:00.000Z",
-    "createdAt": "2026-08-24T19:47:16.800Z",
-    "updatedAt": "2026-08-24T19:47:16.800Z",
-    "tags": [
-      "backend",
-      "design"
-    ]
-  },
-  {
-    "id": "TSK-0195",
-    "title": "Add export to CSV functionality for filtered task search results #TSK-0195",
-    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
-    "status": "done",
-    "priority": "medium",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-08-24T22:42:14.400Z",
-    "updatedAt": "2026-08-24T22:42:14.400Z",
-    "tags": [
-      "bug",
-      "performance"
-    ]
-  },
-  {
-    "id": "TSK-0196",
-    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0196",
-    "description": null,
-    "status": "done",
-    "priority": "high",
-    "ownerId": "USR-012",
-    "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-25T01:37:12.000Z",
-    "updatedAt": "2026-08-25T01:37:12.000Z",
-    "tags": [
-      "feature",
-      "security"
-    ]
-  },
-  {
-    "id": "TSK-0197",
-    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0197",
-    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
-    "status": "done",
-    "priority": "low",
-    "ownerId": "USR-003",
-    "dueDate": null,
-    "createdAt": "2026-08-25T04:32:09.600Z",
-    "updatedAt": "2026-08-25T04:32:09.600Z",
-    "tags": [
-      "design",
-      "database"
-    ]
-  },
-  {
-    "id": "TSK-0198",
-    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0198",
-    "description": "Clean up legacy CSS variables and align design system tokens.",
-    "status": "done",
-    "priority": "medium",
-    "ownerId": "USR-013",
-    "dueDate": "2026-10-07T12:00:00.000Z",
-    "createdAt": "2026-08-25T07:27:07.200Z",
-    "updatedAt": "2026-08-25T07:27:07.200Z",
-    "tags": [
-      "performance",
-      "devops"
-    ]
-  },
-  {
-    "id": "TSK-0199",
-    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0199",
-    "description": null,
-    "status": "done",
-    "priority": "high",
-    "ownerId": "USR-003",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-25T10:22:04.800Z",
-    "updatedAt": "2026-08-25T10:22:04.800Z",
-    "tags": [
-      "security",
-      "mobile-fix"
-    ]
-  },
-  {
-    "id": "TSK-0200",
-    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0200",
-    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
-    "status": "done",
-    "priority": "medium",
-    "ownerId": "USR-001",
-    "dueDate": "2026-10-09T12:00:00.000Z",
-    "createdAt": "2026-08-25T13:17:02.400Z",
-    "updatedAt": "2026-08-25T13:17:02.400Z",
-    "tags": [
-      "database",
-      "documentation"
-    ]
-  },
-  {
-    "id": "TSK-0201",
-    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0201",
-    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
-    "status": "done",
-    "priority": "urgent",
-    "ownerId": "USR-001",
-    "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-25T16:12:00.000Z",
-    "updatedAt": "2026-08-25T16:12:00.000Z",
-    "tags": [
-      "devops",
-      "accessibility"
-    ]
-  },
-  {
-    "id": "TSK-0202",
+    "id": "TSK-0120",
     "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0202",
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "done",
@@ -3030,7 +1800,142 @@
     ]
   },
   {
-    "id": "TSK-0203",
+    "id": "TSK-0121",
+    "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0026",
+    "description": null,
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-08-25T12:00:00.000Z",
+    "createdAt": "2026-08-04T09:54:00.000Z",
+    "updatedAt": "2026-08-04T09:54:00.000Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0122",
+    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0027",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-12T12:00:00.000Z",
+    "createdAt": "2026-08-04T12:48:57.600Z",
+    "updatedAt": "2026-08-04T12:48:57.600Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0123",
+    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0083",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-08T12:00:00.000Z",
+    "createdAt": "2026-08-11T08:06:43.200Z",
+    "updatedAt": "2026-08-11T08:06:43.200Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0124",
+    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0084",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-008",
+    "dueDate": "2026-12-12T12:00:00.000Z",
+    "createdAt": "2026-08-11T11:01:40.800Z",
+    "updatedAt": "2026-08-11T11:01:40.800Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0125",
+    "title": "Implement database query indexing for task filter search by owner and status #TSK-0085",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": null,
+    "dueDate": null,
+    "createdAt": "2026-08-11T13:56:38.400Z",
+    "updatedAt": "2026-08-11T13:56:38.400Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0126",
+    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0118",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": "USR-015",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-15T14:10:19.200Z",
+    "updatedAt": "2026-08-15T14:10:19.200Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0127",
+    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0119",
+    "description": null,
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-001",
+    "dueDate": "2026-09-14T12:00:00.000Z",
+    "createdAt": "2026-08-15T17:05:16.800Z",
+    "updatedAt": "2026-08-15T17:05:16.800Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0128",
+    "title": "Clean code #TSK-0181",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": null,
+    "dueDate": "2026-10-02T12:00:00.000Z",
+    "createdAt": "2026-08-23T05:52:48.000Z",
+    "updatedAt": "2026-08-23T05:52:48.000Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0129",
+    "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0182",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-09-21T12:00:00.000Z",
+    "createdAt": "2026-08-23T08:47:45.600Z",
+    "updatedAt": "2026-08-23T08:47:45.600Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0130",
     "title": "Short task #TSK-0203",
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "done",
@@ -3045,7 +1950,142 @@
     ]
   },
   {
-    "id": "TSK-0204",
+    "id": "TSK-0131",
+    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0028",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-005",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-04T15:43:55.200Z",
+    "updatedAt": "2026-08-04T15:43:55.200Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0132",
+    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0029",
+    "description": null,
+    "status": "backlog",
+    "priority": "low",
+    "ownerId": "USR-009",
+    "dueDate": null,
+    "createdAt": "2026-08-04T18:38:52.800Z",
+    "updatedAt": "2026-08-04T18:38:52.800Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0133",
+    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables - Extended scope verification details for ticket #TSK-0086 including edge case handling and cross-browser visual QA testing across mobile viewports",
+    "description": null,
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-008",
+    "dueDate": "2026-08-25T12:00:00.000Z",
+    "createdAt": "2026-08-11T16:51:36.000Z",
+    "updatedAt": "2026-08-11T16:51:36.000Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0134",
+    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0087",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-001",
+    "dueDate": "2026-09-12T12:00:00.000Z",
+    "createdAt": "2026-08-11T19:46:33.600Z",
+    "updatedAt": "2026-08-11T19:46:33.600Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0135",
+    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0088",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-005",
+    "dueDate": "2026-12-16T12:00:00.000Z",
+    "createdAt": "2026-08-11T22:41:31.200Z",
+    "updatedAt": "2026-08-11T22:41:31.200Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0136",
+    "title": "Fix layout shifting when lazy loading user avatars in task rows - Extended scope verification details for ticket #TSK-0120 including edge case handling and cross-browser visual QA testing across mobile viewports",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-008",
+    "dueDate": null,
+    "createdAt": "2026-08-15T20:00:14.400Z",
+    "updatedAt": "2026-08-15T20:00:14.400Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0137",
+    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0121",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "ownerId": "USR-002",
+    "dueDate": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-15T22:55:12.000Z",
+    "updatedAt": "2026-08-15T22:55:12.000Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0138",
+    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0183",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": null,
+    "createdAt": "2026-08-23T11:42:43.200Z",
+    "updatedAt": "2026-08-23T11:42:43.200Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0139",
+    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0184",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-23T12:00:00.000Z",
+    "createdAt": "2026-08-23T14:37:40.800Z",
+    "updatedAt": "2026-08-23T14:37:40.800Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0140",
     "title": "Fix bug #TSK-0204",
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "done",
@@ -3060,7 +2100,142 @@
     ]
   },
   {
-    "id": "TSK-0205",
+    "id": "TSK-0141",
+    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0030",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-003",
+    "dueDate": "2026-10-19T12:00:00.000Z",
+    "createdAt": "2026-08-04T21:33:50.400Z",
+    "updatedAt": "2026-08-04T21:33:50.400Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0142",
+    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0031",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-004",
+    "dueDate": "2026-08-20T12:00:00.000Z",
+    "createdAt": "2026-08-05T00:28:48.000Z",
+    "updatedAt": "2026-08-05T00:28:48.000Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0143",
+    "title": "Fix typo in onboarding modal #TSK-0089",
+    "description": null,
+    "status": "todo",
+    "priority": "urgent",
+    "ownerId": "USR-010",
+    "dueDate": "2026-09-14T12:00:00.000Z",
+    "createdAt": "2026-08-12T01:36:28.800Z",
+    "updatedAt": "2026-08-12T01:36:28.800Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0144",
+    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0090",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-008",
+    "dueDate": "2026-12-18T12:00:00.000Z",
+    "createdAt": "2026-08-12T04:31:26.400Z",
+    "updatedAt": "2026-08-12T04:31:26.400Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0145",
+    "title": "Add export to CSV functionality for filtered task search results #TSK-0091",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-004",
+    "dueDate": "2026-10-15T12:00:00.000Z",
+    "createdAt": "2026-08-12T07:26:24.000Z",
+    "updatedAt": "2026-08-12T07:26:24.000Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0146",
+    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0122",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-006",
+    "dueDate": "2026-10-21T12:00:00.000Z",
+    "createdAt": "2026-08-16T01:50:09.600Z",
+    "updatedAt": "2026-08-16T01:50:09.600Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0147",
+    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0123",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-09-03T12:00:00.000Z",
+    "createdAt": "2026-08-16T04:45:07.200Z",
+    "updatedAt": "2026-08-16T04:45:07.200Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0148",
+    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0185",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "in_review",
+    "priority": "urgent",
+    "ownerId": "USR-007",
+    "dueDate": "2026-09-05T12:00:00.000Z",
+    "createdAt": "2026-08-23T17:32:38.400Z",
+    "updatedAt": "2026-08-23T17:32:38.400Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0149",
+    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0186",
+    "description": null,
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-08-25T12:00:00.000Z",
+    "createdAt": "2026-08-23T20:27:36.000Z",
+    "updatedAt": "2026-08-23T20:27:36.000Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0150",
     "title": "Update dependencies - Extended scope verification details for ticket #TSK-0205 including edge case handling and cross-browser visual QA testing across mobile viewports",
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "done",
@@ -3075,7 +2250,142 @@
     ]
   },
   {
-    "id": "TSK-0206",
+    "id": "TSK-0151",
+    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0032",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": null,
+    "dueDate": "2026-10-21T12:00:00.000Z",
+    "createdAt": "2026-08-05T03:23:45.600Z",
+    "updatedAt": "2026-08-05T03:23:45.600Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0152",
+    "title": "Implement database query indexing for task filter search by owner and status #TSK-0033",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "backlog",
+    "priority": "urgent",
+    "ownerId": "USR-006",
+    "dueDate": "2026-09-03T12:00:00.000Z",
+    "createdAt": "2026-08-05T06:18:43.200Z",
+    "updatedAt": "2026-08-05T06:18:43.200Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0153",
+    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0092",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-006",
+    "dueDate": "2026-09-18T12:00:00.000Z",
+    "createdAt": "2026-08-12T10:21:21.600Z",
+    "updatedAt": "2026-08-12T10:21:21.600Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0154",
+    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0093",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "todo",
+    "priority": "low",
+    "ownerId": "USR-007",
+    "dueDate": "2026-09-03T12:00:00.000Z",
+    "createdAt": "2026-08-12T13:16:19.200Z",
+    "updatedAt": "2026-08-12T13:16:19.200Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0155",
+    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0094",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "todo",
+    "priority": "high",
+    "ownerId": "USR-005",
+    "dueDate": "2026-09-23T12:00:00.000Z",
+    "createdAt": "2026-08-12T16:11:16.800Z",
+    "updatedAt": "2026-08-12T16:11:16.800Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0156",
+    "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0124",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": "USR-013",
+    "dueDate": "2026-10-23T12:00:00.000Z",
+    "createdAt": "2026-08-16T07:40:04.800Z",
+    "updatedAt": "2026-08-16T07:40:04.800Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0157",
+    "title": "Short task #TSK-0125",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "in_progress",
+    "priority": "low",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-05T12:00:00.000Z",
+    "createdAt": "2026-08-16T10:35:02.400Z",
+    "updatedAt": "2026-08-16T10:35:02.400Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0158",
+    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0187",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": "USR-004",
+    "dueDate": "2026-09-07T12:00:00.000Z",
+    "createdAt": "2026-08-23T23:22:33.600Z",
+    "updatedAt": "2026-08-23T23:22:33.600Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0159",
+    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges - Extended scope verification details for ticket #TSK-0188 including edge case handling and cross-browser visual QA testing across mobile viewports",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "in_review",
+    "priority": "medium",
+    "ownerId": "USR-013",
+    "dueDate": "2026-09-27T12:00:00.000Z",
+    "createdAt": "2026-08-24T02:17:31.200Z",
+    "updatedAt": "2026-08-24T02:17:31.200Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0160",
     "title": "Add unit test #TSK-0206",
     "description": null,
     "status": "done",
@@ -3090,7 +2400,142 @@
     ]
   },
   {
-    "id": "TSK-0207",
+    "id": "TSK-0161",
+    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0034",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": null,
+    "dueDate": "2026-10-23T12:00:00.000Z",
+    "createdAt": "2026-08-05T09:13:40.800Z",
+    "updatedAt": "2026-08-05T09:13:40.800Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0162",
+    "title": "Add dark mode theme support to analytics dashboard charts - Extended scope verification details for ticket #TSK-0035 including edge case handling and cross-browser visual QA testing across mobile viewports",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": null,
+    "dueDate": "2026-09-05T12:00:00.000Z",
+    "createdAt": "2026-08-05T12:08:38.400Z",
+    "updatedAt": "2026-08-05T12:08:38.400Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0163",
+    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0095",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "todo",
+    "priority": "medium",
+    "ownerId": "USR-008",
+    "dueDate": "2026-09-05T12:00:00.000Z",
+    "createdAt": "2026-08-12T19:06:14.400Z",
+    "updatedAt": "2026-08-12T19:06:14.400Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0164",
+    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0036",
+    "description": null,
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-006",
+    "dueDate": null,
+    "createdAt": "2026-08-05T15:03:36.000Z",
+    "updatedAt": "2026-08-05T15:03:36.000Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0165",
+    "title": "Fix typo in onboarding modal #TSK-0037",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-005",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-05T17:58:33.600Z",
+    "updatedAt": "2026-08-05T17:58:33.600Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0166",
+    "title": "Fix bug #TSK-0126",
+    "description": null,
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-007",
+    "dueDate": "2026-08-25T12:00:00.000Z",
+    "createdAt": "2026-08-16T13:30:00.000Z",
+    "updatedAt": "2026-08-16T13:30:00.000Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0167",
+    "title": "Update dependencies #TSK-0127",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": "USR-011",
+    "dueDate": null,
+    "createdAt": "2026-08-16T16:24:57.600Z",
+    "updatedAt": "2026-08-16T16:24:57.600Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0168",
+    "title": "Implement database query indexing for task filter search by owner and status #TSK-0189",
+    "description": null,
+    "status": "in_review",
+    "priority": "low",
+    "ownerId": "USR-006",
+    "dueDate": "2026-09-09T12:00:00.000Z",
+    "createdAt": "2026-08-24T05:12:28.800Z",
+    "updatedAt": "2026-08-24T05:12:28.800Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0169",
+    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0190",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "in_review",
+    "priority": "high",
+    "ownerId": "USR-010",
+    "dueDate": null,
+    "createdAt": "2026-08-24T08:07:26.400Z",
+    "updatedAt": "2026-08-24T08:07:26.400Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0170",
     "title": "Clean code #TSK-0207",
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "done",
@@ -3105,7 +2550,142 @@
     ]
   },
   {
-    "id": "TSK-0208",
+    "id": "TSK-0171",
+    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0038",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-001",
+    "dueDate": "2026-10-27T12:00:00.000Z",
+    "createdAt": "2026-08-05T20:53:31.200Z",
+    "updatedAt": "2026-08-05T20:53:31.200Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0172",
+    "title": "Add export to CSV functionality for filtered task search results #TSK-0039",
+    "description": null,
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-011",
+    "dueDate": "2026-09-09T12:00:00.000Z",
+    "createdAt": "2026-08-05T23:48:28.800Z",
+    "updatedAt": "2026-08-05T23:48:28.800Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0173",
+    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0040",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-011",
+    "dueDate": "2026-10-29T12:00:00.000Z",
+    "createdAt": "2026-08-06T02:43:26.400Z",
+    "updatedAt": "2026-08-06T02:43:26.400Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0174",
+    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0041",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "backlog",
+    "priority": "urgent",
+    "ownerId": "USR-003",
+    "dueDate": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-06T05:38:24.000Z",
+    "updatedAt": "2026-08-06T05:38:24.000Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0175",
+    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0042",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-003",
+    "dueDate": "2026-10-31T12:00:00.000Z",
+    "createdAt": "2026-08-06T08:33:21.600Z",
+    "updatedAt": "2026-08-06T08:33:21.600Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0176",
+    "title": "Add unit test #TSK-0128",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-002",
+    "dueDate": "2026-10-27T12:00:00.000Z",
+    "createdAt": "2026-08-16T19:19:55.200Z",
+    "updatedAt": "2026-08-16T19:19:55.200Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0177",
+    "title": "Clean code #TSK-0129",
+    "description": null,
+    "status": "in_progress",
+    "priority": "urgent",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-09T12:00:00.000Z",
+    "createdAt": "2026-08-16T22:14:52.800Z",
+    "updatedAt": "2026-08-16T22:14:52.800Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0178",
+    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0043",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "backlog",
+    "priority": "high",
+    "ownerId": "USR-005",
+    "dueDate": null,
+    "createdAt": "2026-08-06T11:28:19.200Z",
+    "updatedAt": "2026-08-06T11:28:19.200Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0179",
+    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0044",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "backlog",
+    "priority": "medium",
+    "ownerId": "USR-010",
+    "dueDate": "2026-11-02T12:00:00.000Z",
+    "createdAt": "2026-08-06T14:23:16.800Z",
+    "updatedAt": "2026-08-06T14:23:16.800Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0180",
     "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0208",
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "done",
@@ -3120,7 +2700,142 @@
     ]
   },
   {
-    "id": "TSK-0209",
+    "id": "TSK-0181",
+    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0045",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "backlog",
+    "priority": "low",
+    "ownerId": "USR-011",
+    "dueDate": "2026-09-15T12:00:00.000Z",
+    "createdAt": "2026-08-06T17:18:14.400Z",
+    "updatedAt": "2026-08-06T17:18:14.400Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0182",
+    "title": "Comprehensive refactoring of the entire authentication workflow including multi-factor authentication fallback options, SMS OTP validation, biometric login integration for mobile devices, and session invalidation triggers across all active web browser tabs #TSK-0130",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": "USR-011",
+    "dueDate": "2026-10-29T12:00:00.000Z",
+    "createdAt": "2026-08-17T01:09:50.400Z",
+    "updatedAt": "2026-08-17T01:09:50.400Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0183",
+    "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0131",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-012",
+    "dueDate": "2026-08-20T12:00:00.000Z",
+    "createdAt": "2026-08-17T04:04:48.000Z",
+    "updatedAt": "2026-08-17T04:04:48.000Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0184",
+    "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0132",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-001",
+    "dueDate": "2026-10-31T12:00:00.000Z",
+    "createdAt": "2026-08-17T06:59:45.600Z",
+    "updatedAt": "2026-08-17T06:59:45.600Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0185",
+    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0133",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": "USR-010",
+    "dueDate": "2026-09-13T12:00:00.000Z",
+    "createdAt": "2026-08-17T09:54:43.200Z",
+    "updatedAt": "2026-08-17T09:54:43.200Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0186",
+    "title": "Investigate intermittent memory leak in WebSocket connection handler during high-frequency telemetry events #TSK-0134",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-002",
+    "dueDate": null,
+    "createdAt": "2026-08-17T12:49:40.800Z",
+    "updatedAt": "2026-08-17T12:49:40.800Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0187",
+    "title": "Redesign mobile navigation drawer with touch gesture support and bottom sheet filter controls for small screen viewports #TSK-0135",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-009",
+    "dueDate": "2026-09-15T12:00:00.000Z",
+    "createdAt": "2026-08-17T15:44:38.400Z",
+    "updatedAt": "2026-08-17T15:44:38.400Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0188",
+    "title": "Audit accessibility compliance for color contrast ratios against WCAG 2.1 AA standards across all status badges #TSK-0136",
+    "description": null,
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": "USR-005",
+    "dueDate": "2026-10-08T12:00:00.000Z",
+    "createdAt": "2026-08-17T18:39:36.000Z",
+    "updatedAt": "2026-08-17T18:39:36.000Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0189",
+    "title": "Implement database query indexing for task filter search by owner and status - Extended scope verification details for ticket #TSK-0137 including edge case handling and cross-browser visual QA testing across mobile viewports",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "in_progress",
+    "priority": "urgent",
+    "ownerId": "USR-003",
+    "dueDate": "2026-09-15T12:00:00.000Z",
+    "createdAt": "2026-08-17T21:34:33.600Z",
+    "updatedAt": "2026-08-17T21:34:33.600Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0190",
     "title": "Fix OAuth2 token refresh race condition on slow 3G network connections #TSK-0209",
     "description": null,
     "status": "done",
@@ -3135,7 +2850,142 @@
     ]
   },
   {
-    "id": "TSK-0210",
+    "id": "TSK-0191",
+    "title": "Migrate CSS global styles to Tailwind CSS v4 design tokens and theme variables #TSK-0138",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": null,
+    "dueDate": "2026-11-06T12:00:00.000Z",
+    "createdAt": "2026-08-18T00:29:31.200Z",
+    "updatedAt": "2026-08-18T00:29:31.200Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0192",
+    "title": "Add dark mode theme support to analytics dashboard charts #TSK-0139",
+    "description": null,
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": null,
+    "dueDate": "2026-09-04T12:00:00.000Z",
+    "createdAt": "2026-08-18T03:24:28.800Z",
+    "updatedAt": "2026-08-18T03:24:28.800Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0193",
+    "title": "Setup end-to-end automated visual regression testing with Playwright #TSK-0140",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": null,
+    "dueDate": "2026-11-08T12:00:00.000Z",
+    "createdAt": "2026-08-18T06:19:26.400Z",
+    "updatedAt": "2026-08-18T06:19:26.400Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0194",
+    "title": "Fix typo in onboarding modal #TSK-0141",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "in_progress",
+    "priority": "low",
+    "ownerId": "USR-002",
+    "dueDate": null,
+    "createdAt": "2026-08-18T09:14:24.000Z",
+    "updatedAt": "2026-08-18T09:14:24.000Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0195",
+    "title": "Optimize initial bundle size by dynamic importing heavy chart dependencies #TSK-0142",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": "USR-009",
+    "dueDate": "2026-11-10T12:00:00.000Z",
+    "createdAt": "2026-08-18T12:09:21.600Z",
+    "updatedAt": "2026-08-18T12:09:21.600Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0196",
+    "title": "Add export to CSV functionality for filtered task search results #TSK-0143",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": null,
+    "dueDate": "2026-09-08T12:00:00.000Z",
+    "createdAt": "2026-08-18T15:04:19.200Z",
+    "updatedAt": "2026-08-18T15:04:19.200Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0197",
+    "title": "Resolve CORS policy error when making requests to staging API gateway #TSK-0144",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-005",
+    "dueDate": "2026-11-12T12:00:00.000Z",
+    "createdAt": "2026-08-18T17:59:16.800Z",
+    "updatedAt": "2026-08-18T17:59:16.800Z",
+    "tags": [
+      "accessibility",
+      "bug"
+    ]
+  },
+  {
+    "id": "TSK-0198",
+    "title": "Implement optimistic UI updates for task drag-and-drop stage movement #TSK-0145",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "ownerId": "USR-010",
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-18T20:54:14.400Z",
+    "updatedAt": "2026-08-18T20:54:14.400Z",
+    "tags": [
+      "frontend",
+      "feature"
+    ]
+  },
+  {
+    "id": "TSK-0199",
+    "title": "Fix layout shifting when lazy loading user avatars in task rows #TSK-0146",
+    "description": null,
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-003",
+    "dueDate": "2026-08-25T12:00:00.000Z",
+    "createdAt": "2026-08-18T23:49:12.000Z",
+    "updatedAt": "2026-08-18T23:49:12.000Z",
+    "tags": [
+      "backend",
+      "design"
+    ]
+  },
+  {
+    "id": "TSK-0200",
     "title": "Refactor legacy table pagination component to support virtualization for large datasets exceeding 10,000 rows #TSK-0210",
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "done",
@@ -3150,7 +3000,142 @@
     ]
   },
   {
-    "id": "TSK-0211",
+    "id": "TSK-0201",
+    "title": "Write comprehensive README covering product trade-offs, architecture decisions, and AI tooling usage #TSK-0147",
+    "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-009",
+    "dueDate": "2026-09-12T12:00:00.000Z",
+    "createdAt": "2026-08-19T02:44:09.600Z",
+    "updatedAt": "2026-08-19T02:44:09.600Z",
+    "tags": [
+      "bug",
+      "performance"
+    ]
+  },
+  {
+    "id": "TSK-0202",
+    "title": "Implement debounced search filter with keyboard shortcut focus handler (slash key) #TSK-0148",
+    "description": "Clean up legacy CSS variables and align design system tokens.",
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": "USR-002",
+    "dueDate": null,
+    "createdAt": "2026-08-19T05:39:07.200Z",
+    "updatedAt": "2026-08-19T05:39:07.200Z",
+    "tags": [
+      "feature",
+      "security"
+    ]
+  },
+  {
+    "id": "TSK-0203",
+    "title": "Fix iOS Safari height calculation bug with dynamic vh units in mobile modal drawer #TSK-0149",
+    "description": null,
+    "status": "in_progress",
+    "priority": "low",
+    "ownerId": null,
+    "dueDate": "2026-09-14T12:00:00.000Z",
+    "createdAt": "2026-08-19T08:34:04.800Z",
+    "updatedAt": "2026-08-19T08:34:04.800Z",
+    "tags": [
+      "design",
+      "database"
+    ]
+  },
+  {
+    "id": "TSK-0204",
+    "title": "Comprehensive security code audit for XSS vulnerabilities in rich text renderer #TSK-0150",
+    "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": null,
+    "dueDate": "2026-11-18T12:00:00.000Z",
+    "createdAt": "2026-08-19T11:29:02.400Z",
+    "updatedAt": "2026-08-19T11:29:02.400Z",
+    "tags": [
+      "performance",
+      "devops"
+    ]
+  },
+  {
+    "id": "TSK-0205",
+    "title": "Short task #TSK-0151",
+    "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": "USR-005",
+    "dueDate": "2026-08-20T12:00:00.000Z",
+    "createdAt": "2026-08-19T14:24:00.000Z",
+    "updatedAt": "2026-08-19T14:24:00.000Z",
+    "tags": [
+      "security",
+      "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0206",
+    "title": "Fix bug #TSK-0152",
+    "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-012",
+    "dueDate": "2026-11-20T12:00:00.000Z",
+    "createdAt": "2026-08-19T17:18:57.600Z",
+    "updatedAt": "2026-08-19T17:18:57.600Z",
+    "tags": [
+      "database",
+      "documentation"
+    ]
+  },
+  {
+    "id": "TSK-0207",
+    "title": "Update dependencies #TSK-0153",
+    "description": "Need to comply with updated data retention guidelines by end of Q3.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "ownerId": "USR-001",
+    "dueDate": "2026-09-03T12:00:00.000Z",
+    "createdAt": "2026-08-19T20:13:55.200Z",
+    "updatedAt": "2026-08-19T20:13:55.200Z",
+    "tags": [
+      "devops",
+      "accessibility"
+    ]
+  },
+  {
+    "id": "TSK-0208",
+    "title": "Add unit test - Extended scope verification details for ticket #TSK-0154 including edge case handling and cross-browser visual QA testing across mobile viewports",
+    "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
+    "status": "in_progress",
+    "priority": "high",
+    "ownerId": null,
+    "dueDate": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-19T23:08:52.800Z",
+    "updatedAt": "2026-08-19T23:08:52.800Z",
+    "tags": [
+      "mobile-fix",
+      "frontend"
+    ]
+  },
+  {
+    "id": "TSK-0209",
+    "title": "Clean code #TSK-0155",
+    "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
+    "status": "in_progress",
+    "priority": "medium",
+    "ownerId": "USR-009",
+    "dueDate": null,
+    "createdAt": "2026-08-20T02:03:50.400Z",
+    "updatedAt": "2026-08-20T02:03:50.400Z",
+    "tags": [
+      "documentation",
+      "backend"
+    ]
+  },
+  {
+    "id": "TSK-0210",
     "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0211",
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "done",
@@ -3162,6 +3147,21 @@
     "tags": [
       "security",
       "mobile-fix"
+    ]
+  },
+  {
+    "id": "TSK-0211",
+    "title": "Update privacy policy and GDPR consent modal in user settings dashboard #TSK-0159",
+    "description": null,
+    "status": "in_progress",
+    "priority": "urgent",
+    "ownerId": "USR-014",
+    "dueDate": "2026-08-26T12:00:00.000Z",
+    "createdAt": "2026-08-20T13:43:40.800Z",
+    "updatedAt": "2026-08-20T13:43:40.800Z",
+    "tags": [
+      "bug",
+      "performance"
     ]
   },
   {

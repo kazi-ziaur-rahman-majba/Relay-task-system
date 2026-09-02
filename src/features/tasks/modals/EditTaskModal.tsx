@@ -68,11 +68,6 @@ export const EditTaskModal: React.FC<EditTaskModalProps> = ({
       return;
     }
 
-    if (title.trim().length > 200) {
-      setTitleError('Task title cannot exceed 200 characters.');
-      return;
-    }
-
     setTitleError(null);
 
     onSubmit(task.id, {
@@ -139,7 +134,6 @@ export const EditTaskModal: React.FC<EditTaskModalProps> = ({
               className={`w-full px-3.5 py-2.5 bg-slate-50 border rounded-xl font-bold text-slate-900 focus:outline-none focus:ring-2 transition-all min-h-[44px] ${
                 titleError ? 'border-rose-400 focus:ring-rose-400' : 'border-slate-200 focus:ring-[#FE9F43]'
               }`}
-              maxLength={200}
               aria-invalid={Boolean(titleError)}
               aria-describedby={titleError ? 'edit-task-title-error' : undefined}
             />

@@ -103,9 +103,16 @@ export function sortTasks(
       return isAsc ? titleA.localeCompare(titleB) : titleB.localeCompare(titleA);
     }
 
-    // Default: createdAt
-    const dateA = new Date(a.createdAt).getTime();
-    const dateB = new Date(b.createdAt).getTime();
+    if (sortBy === 'createdAt') {
+      const dateA = new Date(a.createdAt).getTime();
+      const dateB = new Date(b.createdAt).getTime();
+
+      return isAsc ? dateA - dateB : dateB - dateA;
+    }
+
+    // Default: updatedAt (Last Updated)
+    const dateA = new Date(a.updatedAt || a.createdAt).getTime();
+    const dateB = new Date(b.updatedAt || b.createdAt).getTime();
 
     return isAsc ? dateA - dateB : dateB - dateA;
   });

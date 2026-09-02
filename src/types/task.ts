@@ -17,6 +17,7 @@ export type TaskPriority =
   | 'low';
 
 export type TaskSortField =
+  | 'updatedAt'
   | 'id'
   | 'dueDate'
   | 'priority'

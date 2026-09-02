@@ -47,13 +47,19 @@ git clone https://github.com/kazi-ziaur-rahman-majba/Relay-task-system.git
 # Repository Clone SSH Key Through
 git clone git@github.com:kazi-ziaur-rahman-majba/Relay-task-system.git
 
-# 2. Navigate into project root directory
-cd Relay-task-system
+### Option A: Running with Docker (Recommended & Containerized)
+```bash
+# Build and run containerized app via Docker Compose
+docker compose up --build -d
+```
+Open **[http://localhost:8080](http://localhost:8080)** in your browser.
 
-# 3. Install dependencies
+### Option B: Local Node.js Development
+```bash
+# 1. Install dependencies
 pnpm install
 
-# 4. Start Vite local development server
+# 2. Start Vite local development server
 pnpm dev
 ```
 Open **[http://localhost:5173](http://localhost:5173)** in your browser.
@@ -119,6 +125,30 @@ To eliminate data duplication across hundreds of task records, the architecture 
   "updatedAt": "2026-08-31T12:00:00.000Z"
 }
 ```
+
+### 3. Data Model Rationale & Workflow Stages
+
+#### Included Fields & Purpose
+- `id`: Unique identifier (`TSK-XXXX`) for instant lookup.
+- `title`: Primary headline description (supports wildly varying lengths).
+- `description`: Detailed context, repro steps, or acceptance criteria (optional).
+- `status`: Workflow stage (Enum: `backlog`, `todo`, `in_progress`, `in_review`, `done`).
+- `priority`: Urgency level (Enum: `urgent`, `high`, `medium`, `low`).
+- `ownerId`: Foreign key linking to single team member (`USR-XXX` or `null` for unassigned).
+- `dueDate`: ISO date string for tracking overdue / today / future tasks (`null` allowed).
+- `createdAt` / `updatedAt`: Timestamps for audit trail and sorting.
+
+#### Fields Deliberately Left Out & Rationale
+- **Subtasks & Epics**: Avoided multi-level hierarchy to prevent administrative overhead. An 8–15 person team needs flat, highly scannable tasks, not deep nested ticket trees.
+- **Attachments & Media Uploads**: Keeps LocalStorage payload lightweight and avoids storage bloat.
+- **Multi-Assignee Support**: Kept a strict single `ownerId` per task to enforce clear accountability ("who owns it").
+
+#### Workflow Stages Rationale (5 Stages)
+1. 📥 **Backlog**: Triage area for raw ideas and unscheduled work.
+2. 📋 **To Do**: Prioritized items ready for immediate action in the current cycle.
+3. ⚡ **In Progress**: Active work currently being executed by an owner.
+4. 👀 **In Review**: QA / peer review checkpoint ensuring quality before release.
+5. ✅ **Done**: Verified completed tasks archived from active backlog view.
 
 ---
 
@@ -202,14 +232,31 @@ Aligned with the strict assessment criteria, the UI cleanly differentiates betwe
 
 ---
 
-## Technical Trade-offs & Decisions
+## What We Decided NOT to Build & Why
 
-1. **Why LocalStorage instead of a Real Database?**
-   - The assessment brief explicitly specified client-side front-end architecture. LocalStorage provides persistent mutations without requiring backend infrastructure overhead.
-2. **Why Pagination instead of Virtualization?**
-   - The 250 task dataset renders smoothly in DOM slices of 10 items per page, offering simpler navigation and URL sharing than infinite scrolling.
-3. **Why Normalized Owner Data?**
-   - Storing `ownerId` foreign keys instead of embedded owner objects prevents duplicating user records 30+ times across task objects.
+1. **Kanban Drag-and-Drop Board View**:
+   - *Rationale*: Multi-column kanban boards break down on mobile viewports (375px) where columns get squished or force dual-axis scrolling. A high-density table (desktop) transitioning to responsive touch cards (mobile) provides far superior scannability and speed for scanning 250+ tasks.
+2. **Bulk Multi-Select Operations**:
+   - *Rationale*: Added unnecessary UI complexity and increased risk of destructive bulk edits for a tight 8–15 person team. Single quick-action status updates inside cards/tables provide sufficient efficiency.
+3. **Rich-Text Markdown Editor in Description**:
+   - *Rationale*: Plain-text descriptions prevent messy inline HTML formatting, ensuring consistent scannability and line clamping across table rows.
+
+---
+
+## Decisions Least Confident About & Alternatives
+
+1. **Client-Side Filtering/LocalStorage vs. Real PostgreSQL Backend**:
+   - *Current Decision*: Built as a pure client-side React app with seed JSON and LocalStorage persistence.
+   - *Trade-off*: Zero infrastructure overhead and instant setup, but lacks real-time multi-user syncing across team members' devices.
+   - *Alternative*: Provisioning a PostgreSQL database with an Express REST API & WebSockets for live multi-user sync (bonus points area).
+2. **Table-to-Card Layout Switch on Mobile (`md:` breakpoint)**:
+   - *Current Decision*: Replacing table rows with full-width stacked cards below 768px.
+   - *Trade-off*: Sacrifices horizontal columnar alignment, but completely eliminates frustrating horizontal table scrollbars on mobile thumbs.
+   - *Alternative*: Fixed horizontal scrolling table with frozen sticky left columns.
+3. **Strict Single Assignee (`ownerId`) constraint**:
+   - *Current Decision*: Each task can only have one owner or be unassigned.
+   - *Trade-off*: Prevents ambiguity, but doesn't model shared pair-programming tasks well.
+   - *Alternative*: Allowing an array of `coOwners[]` while maintaining one `primaryOwnerId`.
 
 ---
 
