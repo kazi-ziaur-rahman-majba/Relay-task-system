@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
+import { useMemo } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,82 +8,70 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { FiGrid } from "react-icons/fi";
+import { Users, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
+// Value labels plugin to render numbers next to thin bars
 const valueLabels = {
-  id: "valueLabels",
-  afterDatasetsDraw(chart: any, args: any, pluginOptions: any) {
+  id: "horizontalValueLabels",
+  afterDatasetsDraw(chart: any) {
     const dataset = chart?.data?.datasets?.[0];
     if (!dataset) return;
 
     const { ctx, chartArea } = chart;
     const meta = chart.getDatasetMeta(0);
     ctx.save();
-    ctx.font = "12px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
-    ctx.fillStyle = pluginOptions?.color || "#1f2544";
+    ctx.font = "600 11px system-ui, -apple-system, sans-serif";
+    ctx.fillStyle = "#051A2C";
 
     meta.data.forEach((bar: any, i: number) => {
       const v = dataset.data[i];
       if (v == null) return;
-      const x = Math.min(bar.x + 8, chartArea.right - 16);
+      const x = Math.min(bar.x + 8, chartArea.right - 24);
       const y = bar.y + 4;
-      ctx.fillText(String(v), x, y);
+      ctx.fillText(`${v}`, x, y);
     });
 
     ctx.restore();
   },
 };
 
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+interface HorizontalChartProps {
+  labels: string[];
+  data: number[];
+  title?: string;
+  subtitle?: string;
+  barColor?: string;
+}
 
-// Example data matching screenshot
-const DATA_2022 = [40, 20, 350, 350, 100, 150, 55, 50, 30, 330, 360, 20];
-const DATA_2021 = [30, 15, 280, 220, 90, 120, 40, 35, 25, 200, 240, 18];
+export default function HorizontalChart({
+  labels,
+  data: values,
+  title = "Assigned Tasks by Member",
+  subtitle = "Current task workload distribution across team members",
+  barColor = "#FE9F43",
+}: HorizontalChartProps) {
+  const maxValue = Math.max(...values, 10);
+  const suggestedMax = Math.ceil(maxValue * 1.18);
 
-export default function NewAgentsBar({
-  title = "New added agent",
-  data2022 = DATA_2022,
-  data2021 = DATA_2021,
-  barColor = "#fe9f43",
-  cardBg = "#ffffff",
-}) {
-  const [year, setYear] = useState(2022);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
-  const values = year === 2022 ? data2022 : data2021;
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const suggestedMax = Math.ceil(Math.max(...values) * 1.1);
-
-  const data = useMemo(
+  const chartData = useMemo(
     () => ({
-      labels: months,
+      labels,
       datasets: [
         {
+          label: "Assigned Tasks",
           data: values,
           backgroundColor: barColor,
-          borderRadius: {
-            topRight: windowWidth < 768 ? 6 : 10,
-            bottomRight: windowWidth < 768 ? 6 : 10,
-            topLeft: 0,
-            bottomLeft: 0,
-          },
+          borderRadius: 6,
           borderSkipped: false,
-          barThickness: windowWidth < 768 ? 10 : windowWidth < 1024 ? 12 : 14,
-          maxBarThickness: windowWidth < 768 ? 14 : windowWidth < 1024 ? 16 : 20,
+          barThickness: 8,
+          maxBarThickness: 9,
         },
       ],
     }),
-    [values, barColor, windowWidth]
+    [labels, values, barColor]
   );
 
   const options = useMemo(
@@ -91,18 +79,28 @@ export default function NewAgentsBar({
       indexAxis: "y" as const,
       responsive: true,
       maintainAspectRatio: false,
-      layout: { 
-        padding: { 
-          top: 8, 
-          right: 8, 
-          bottom: 8, 
-          left: 8 
-        } 
+      layout: {
+        padding: {
+          top: 2,
+          right: 24,
+          bottom: 2,
+          left: 0,
+        },
       },
       plugins: {
         legend: { display: false },
-        tooltip: { enabled: false },
-        valueLabels: { color: "#1f2544" },
+        tooltip: {
+          enabled: true,
+          backgroundColor: "#051A2C",
+          titleFont: { size: 12, weight: "bold" as const },
+          bodyFont: { size: 11 },
+          padding: 8,
+          cornerRadius: 8,
+          displayColors: false,
+          callbacks: {
+            label: (item: any) => `${item.raw} assigned tasks`,
+          },
+        },
       },
       scales: {
         x: {
@@ -113,84 +111,58 @@ export default function NewAgentsBar({
         },
         y: {
           grid: { display: false, drawBorder: false },
-          ticks: { 
-            color: "#6b7280", 
-            font: { 
-              size: windowWidth < 768 ? 10 : 12 
-            }, 
-            padding: windowWidth < 768 ? 4 : 8 
+          ticks: {
+            color: "#475569",
+            font: {
+              size: 10,
+              weight: "normal" as const,
+            },
+            padding: 4,
           },
         },
       },
     }),
-    [suggestedMax, windowWidth]
+    [suggestedMax]
   );
 
   return (
-    <div
-      className="w-full rounded-2xl shadow-sm"
-      style={{
-        background: cardBg,
-        padding: windowWidth < 768 ? 12 : 16,
-      }}
-    >
-      <div className="flex flex-col lg:flex-row items-start gap-3 lg:gap-4">
-        <div className="w-full">
-          <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
-            <span className="bg-[var(--color-primary-light)] text-[var(--color-primary)] p-1.5 lg:p-2 rounded-full">
-              <FiGrid size={windowWidth < 768 ? 16 : 20} />
-            </span>
-            <p className="text-lg lg:text-xl font-bold">{title}</p>
+    <div className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-3 flex flex-col justify-between">
+      {/* Header */}
+      <div className="flex items-center justify-between gap-3 border-b border-slate-100 pb-3">
+        <div className="flex items-center gap-2.5">
+          <div className="w-9 h-9 rounded-xl bg-amber-50 text-[#FE9F43] flex items-center justify-center font-bold shrink-0">
+            <Users className="w-5 h-5" />
           </div>
-
-          <div className="border-b border-gray-300 mb-3 lg:mb-4"></div>
-
-          <div 
-            className="relative w-full"
-            style={{ 
-              height: windowWidth < 768 ? 280 : windowWidth < 1024 ? 320 : 360 
-            }}
-          >
-            <Bar data={data} options={options} plugins={[valueLabels]} />
+          <div>
+            <h2 className="text-base font-bold text-slate-900 leading-tight">
+              {title}
+            </h2>
+            <p className="text-xs text-slate-500 font-normal mt-0.5">
+              {subtitle}
+            </p>
           </div>
         </div>
 
+        <Link
+          to="/team"
+          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#FE9F43] hover:text-[#FF6E22] bg-amber-50 hover:bg-amber-100/80 rounded-xl transition-colors shrink-0"
+        >
+          <span>View Team</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
+      </div>
 
-        {/* <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          <button
-            onClick={() => setYear(2022)}
-            style={{
-              border: "1px solid #e5e7eb",
-              background: year === 2022 ? "#FFF5EC" : "#fff",
-              color: year === 2022 ? "#fe9f43" : "#374151",
-              borderRadius: 10,
-              padding: "6px 10px",
-              fontSize: 12,
-              fontWeight: 600,
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-            }}
-          >
-            2022
-          </button>
-          <button
-            onClick={() => setYear(2021)}
-            style={{
-              border: "1px solid #e5e7eb",
-              background: year === 2021 ? "#FFF5EC" : "#fff",
-              color: year === 2021 ? "#fe9f43" : "#6b7280",
-              borderRadius: 10,
-              padding: "6px 10px",
-              fontSize: 12,
-              fontWeight: 600,
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-            }}
-          >
-            2021
-          </button>
-        </div> */}
+      {/* Thin Horizontal Bar Chart Container */}
+      <div className="relative w-full h-[270px] sm:h-[280px] pt-1">
+        {values.length === 0 ? (
+          <div className="h-full flex items-center justify-center text-xs text-slate-400 font-medium">
+            No member workload data available.
+          </div>
+        ) : (
+          <Bar data={chartData} options={options} plugins={[valueLabels]} />
+        )}
       </div>
     </div>
   );
 }
+

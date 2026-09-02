@@ -3,7 +3,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { menu } from "@/navigation/sidebar";
 import { Link, useLocation } from "react-router-dom";
-import { MotionDiv } from "@/utils/framer.motion";
 
 const Header = ({ sidebarClick }: { sidebarClick: boolean }) => {
     const { pathname } = useLocation();

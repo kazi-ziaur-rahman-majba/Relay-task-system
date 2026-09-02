@@ -11,6 +11,7 @@ import { EditTaskModal } from '@/features/tasks/modals/EditTaskModal';
 import { DeleteConfirmModal } from '@/features/tasks/modals/DeleteConfirmModal';
 import { ShortcutsModal } from '@/features/tasks/modals/ShortcutsModal';
 import { TaskDetailDrawer } from '@/features/tasks/modals/TaskDetailDrawer';
+import { TableSkeleton } from '@/components/skeleton';
 import { TaskOwner, PopulatedTask, TaskStatus, CreateTaskInput, UpdateTaskInput } from '@/types/task';
 import { useUrlTaskState } from '@/hooks/useUrlTaskState';
 import { useTaskStorage } from '@/hooks/useTaskStorage';
@@ -23,7 +24,6 @@ export default function TasksPage() {
     createTask,
     updateTask,
     deleteTask,
-    resetToDefaultSeed,
   } = useTaskStorage();
 
   const [owners, setOwners] = useState<TaskOwner[]>([]);
@@ -162,10 +162,7 @@ export default function TasksPage() {
 
         {/* Loading Skeleton or Data Table/Cards */}
         {isLoading ? (
-          <div className="p-8 text-center bg-white rounded-2xl border border-slate-200 shadow-2xs">
-            <div className="inline-block w-8 h-8 border-4 border-[#FE9F43] border-t-transparent rounded-full animate-spin mb-2" />
-            <p className="text-xs text-slate-500 font-bold">Loading tasks dataset...</p>
-          </div>
+          <TableSkeleton rowsCount={8} />
         ) : totalItems === 0 ? (
           <div className="p-12 text-center bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-3">
             <p className="text-base font-extrabold text-slate-800">No tasks found matching your filters</p>

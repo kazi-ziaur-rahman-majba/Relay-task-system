@@ -6,6 +6,7 @@ import { TaskCardView } from '@/features/tasks/TaskCardView';
 import { EditTaskModal } from '@/features/tasks/modals/EditTaskModal';
 import { DeleteConfirmModal } from '@/features/tasks/modals/DeleteConfirmModal';
 import { TaskDetailDrawer } from '@/features/tasks/modals/TaskDetailDrawer';
+import { TableSkeleton } from '@/components/skeleton';
 import { TaskOwner, PopulatedTask, TaskStatus, UpdateTaskInput } from '@/types/task';
 import { useTaskStorage } from '@/hooks/useTaskStorage';
 import { isBefore, isToday, startOfDay } from 'date-fns';
@@ -141,10 +142,7 @@ export default function UrgentPage() {
 
         {/* Task Table / Cards */}
         {isLoading ? (
-          <div className="p-8 text-center bg-white rounded-2xl border border-slate-200 shadow-2xs">
-            <div className="inline-block w-8 h-8 border-4 border-[#FE9F43] border-t-transparent rounded-full animate-spin mb-2" />
-            <p className="text-xs text-slate-500 font-bold">Loading urgent workload...</p>
-          </div>
+          <TableSkeleton rowsCount={6} />
         ) : urgentTasks.length === 0 ? (
           <div className="p-12 text-center bg-white rounded-2xl border border-slate-200 shadow-2xs space-y-2">
             <h3 className="text-base font-extrabold text-slate-800">All clear! No urgent or overdue tasks.</h3>

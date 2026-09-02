@@ -5,10 +5,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "backlog",
     "priority": "urgent",
-    "ownerId": null,
-    "dueDate": null,
-    "createdAt": "2026-08-21T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "ownerId": "USR-011",
+    "dueDate": "2026-10-26T12:00:00.000Z",
+    "createdAt": "2026-08-01T09:00:00.000Z",
+    "updatedAt": "2026-08-01T09:00:00.000Z",
     "tags": [
       "frontend",
       "feature"
@@ -20,10 +20,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-002",
-    "dueDate": "2026-09-21T12:00:00.000Z",
-    "createdAt": "2026-08-20T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "ownerId": "USR-011",
+    "dueDate": "2026-09-24T12:00:00.000Z",
+    "createdAt": "2026-08-01T11:54:57.600Z",
+    "updatedAt": "2026-08-01T11:54:57.600Z",
     "tags": [
       "backend",
       "design"
@@ -35,10 +35,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-011",
     "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-19T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-01T14:49:55.200Z",
+    "updatedAt": "2026-08-01T14:49:55.200Z",
     "tags": [
       "bug",
       "performance"
@@ -50,10 +50,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "backlog",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-011",
     "dueDate": "2026-09-23T12:00:00.000Z",
-    "createdAt": "2026-08-18T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-01T17:44:52.800Z",
+    "updatedAt": "2026-08-01T17:44:52.800Z",
     "tags": [
       "feature",
       "security"
@@ -65,10 +65,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "backlog",
     "priority": "low",
-    "ownerId": "USR-005",
+    "ownerId": "USR-011",
     "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-17T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-01T20:39:50.400Z",
+    "updatedAt": "2026-08-01T20:39:50.400Z",
     "tags": [
       "design",
       "database"
@@ -80,10 +80,10 @@
     "description": null,
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-011",
     "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-16T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-01T23:34:48.000Z",
+    "updatedAt": "2026-08-01T23:34:48.000Z",
     "tags": [
       "performance",
       "devops"
@@ -95,10 +95,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "backlog",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-011",
     "dueDate": "2026-09-07T12:00:00.000Z",
-    "createdAt": "2026-08-15T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-02T02:29:45.600Z",
+    "updatedAt": "2026-08-02T02:29:45.600Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -110,10 +110,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-011",
     "dueDate": null,
-    "createdAt": "2026-08-14T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-02T05:24:43.200Z",
+    "updatedAt": "2026-08-02T05:24:43.200Z",
     "tags": [
       "database",
       "documentation"
@@ -125,10 +125,10 @@
     "description": null,
     "status": "backlog",
     "priority": "urgent",
-    "ownerId": "USR-009",
+    "ownerId": "USR-011",
     "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-08-13T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-02T08:19:40.800Z",
+    "updatedAt": "2026-08-02T08:19:40.800Z",
     "tags": [
       "devops",
       "accessibility"
@@ -140,10 +140,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "backlog",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-011",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-12T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-02T11:14:38.400Z",
+    "updatedAt": "2026-08-02T11:14:38.400Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -157,8 +157,8 @@
     "priority": "medium",
     "ownerId": "USR-011",
     "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-11T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-02T14:09:36.000Z",
+    "updatedAt": "2026-08-02T14:09:36.000Z",
     "tags": [
       "documentation",
       "backend"
@@ -170,10 +170,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-011",
     "dueDate": "2026-10-01T12:00:00.000Z",
-    "createdAt": "2026-08-10T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-02T17:04:33.600Z",
+    "updatedAt": "2026-08-02T17:04:33.600Z",
     "tags": [
       "accessibility",
       "bug"
@@ -185,10 +185,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": null,
+    "ownerId": "USR-011",
     "dueDate": "2026-08-26T12:00:00.000Z",
-    "createdAt": "2026-08-09T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-02T19:59:31.200Z",
+    "updatedAt": "2026-08-02T19:59:31.200Z",
     "tags": [
       "frontend",
       "feature"
@@ -200,10 +200,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-011",
     "dueDate": "2026-10-03T12:00:00.000Z",
-    "createdAt": "2026-08-08T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-02T22:54:28.800Z",
+    "updatedAt": "2026-08-02T22:54:28.800Z",
     "tags": [
       "backend",
       "design"
@@ -215,10 +215,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-011",
     "dueDate": null,
-    "createdAt": "2026-08-07T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-03T01:49:26.400Z",
+    "updatedAt": "2026-08-03T01:49:26.400Z",
     "tags": [
       "bug",
       "performance"
@@ -230,10 +230,10 @@
     "description": null,
     "status": "backlog",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-011",
     "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-06T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-03T04:44:24.000Z",
+    "updatedAt": "2026-08-03T04:44:24.000Z",
     "tags": [
       "feature",
       "security"
@@ -245,10 +245,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "backlog",
     "priority": "urgent",
-    "ownerId": "USR-005",
+    "ownerId": "USR-011",
     "dueDate": "2026-09-02T12:00:00.000Z",
-    "createdAt": "2026-08-05T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-03T07:39:21.600Z",
+    "updatedAt": "2026-08-03T07:39:21.600Z",
     "tags": [
       "design",
       "database"
@@ -260,10 +260,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-011",
     "dueDate": "2026-10-07T12:00:00.000Z",
-    "createdAt": "2026-08-04T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-03T10:34:19.200Z",
+    "updatedAt": "2026-08-03T10:34:19.200Z",
     "tags": [
       "performance",
       "devops"
@@ -275,10 +275,10 @@
     "description": null,
     "status": "backlog",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-011",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-03T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-03T13:29:16.800Z",
+    "updatedAt": "2026-08-03T13:29:16.800Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -290,10 +290,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-011",
     "dueDate": "2026-10-09T12:00:00.000Z",
-    "createdAt": "2026-08-02T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-03T16:24:14.400Z",
+    "updatedAt": "2026-08-03T16:24:14.400Z",
     "tags": [
       "database",
       "documentation"
@@ -305,10 +305,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "backlog",
     "priority": "low",
-    "ownerId": "USR-009",
+    "ownerId": "USR-011",
     "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-01T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-03T19:19:12.000Z",
+    "updatedAt": "2026-08-03T19:19:12.000Z",
     "tags": [
       "devops",
       "accessibility"
@@ -320,10 +320,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "backlog",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-011",
     "dueDate": null,
-    "createdAt": "2026-07-31T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-03T22:14:09.600Z",
+    "updatedAt": "2026-08-03T22:14:09.600Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -337,8 +337,8 @@
     "priority": "medium",
     "ownerId": "USR-011",
     "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-07-30T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-04T01:09:07.200Z",
+    "updatedAt": "2026-08-04T01:09:07.200Z",
     "tags": [
       "documentation",
       "backend"
@@ -350,10 +350,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-011",
     "dueDate": "2026-10-13T12:00:00.000Z",
-    "createdAt": "2026-07-29T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-04T04:04:04.800Z",
+    "updatedAt": "2026-08-04T04:04:04.800Z",
     "tags": [
       "accessibility",
       "bug"
@@ -365,10 +365,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "backlog",
     "priority": "urgent",
-    "ownerId": null,
+    "ownerId": "USR-011",
     "dueDate": "2026-09-10T12:00:00.000Z",
-    "createdAt": "2026-07-28T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-04T06:59:02.400Z",
+    "updatedAt": "2026-08-04T06:59:02.400Z",
     "tags": [
       "frontend",
       "feature"
@@ -380,10 +380,10 @@
     "description": null,
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-011",
     "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-07-27T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-04T09:54:00.000Z",
+    "updatedAt": "2026-08-04T09:54:00.000Z",
     "tags": [
       "backend",
       "design"
@@ -395,10 +395,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-011",
     "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-07-26T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-04T12:48:57.600Z",
+    "updatedAt": "2026-08-04T12:48:57.600Z",
     "tags": [
       "bug",
       "performance"
@@ -410,10 +410,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "backlog",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-011",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-07-25T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-04T15:43:55.200Z",
+    "updatedAt": "2026-08-04T15:43:55.200Z",
     "tags": [
       "feature",
       "security"
@@ -425,10 +425,10 @@
     "description": null,
     "status": "backlog",
     "priority": "low",
-    "ownerId": "USR-005",
+    "ownerId": "USR-011",
     "dueDate": null,
-    "createdAt": "2026-07-24T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-04T18:38:52.800Z",
+    "updatedAt": "2026-08-04T18:38:52.800Z",
     "tags": [
       "design",
       "database"
@@ -440,10 +440,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-011",
     "dueDate": "2026-10-19T12:00:00.000Z",
-    "createdAt": "2026-07-23T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-04T21:33:50.400Z",
+    "updatedAt": "2026-08-04T21:33:50.400Z",
     "tags": [
       "performance",
       "devops"
@@ -455,10 +455,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "backlog",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-011",
     "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-07-22T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-05T00:28:48.000Z",
+    "updatedAt": "2026-08-05T00:28:48.000Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -470,10 +470,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-011",
     "dueDate": "2026-10-21T12:00:00.000Z",
-    "createdAt": "2026-07-21T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-05T03:23:45.600Z",
+    "updatedAt": "2026-08-05T03:23:45.600Z",
     "tags": [
       "database",
       "documentation"
@@ -485,10 +485,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "backlog",
     "priority": "urgent",
-    "ownerId": "USR-009",
+    "ownerId": "USR-011",
     "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-07-20T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-05T06:18:43.200Z",
+    "updatedAt": "2026-08-05T06:18:43.200Z",
     "tags": [
       "devops",
       "accessibility"
@@ -500,10 +500,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "backlog",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-011",
     "dueDate": "2026-10-23T12:00:00.000Z",
-    "createdAt": "2026-07-19T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-05T09:13:40.800Z",
+    "updatedAt": "2026-08-05T09:13:40.800Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -517,8 +517,8 @@
     "priority": "medium",
     "ownerId": "USR-011",
     "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-07-18T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-05T12:08:38.400Z",
+    "updatedAt": "2026-08-05T12:08:38.400Z",
     "tags": [
       "documentation",
       "backend"
@@ -530,10 +530,10 @@
     "description": null,
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-002",
     "dueDate": null,
-    "createdAt": "2026-07-17T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-05T15:03:36.000Z",
+    "updatedAt": "2026-08-05T15:03:36.000Z",
     "tags": [
       "accessibility",
       "bug"
@@ -545,10 +545,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "backlog",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-002",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-07-16T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-05T17:58:33.600Z",
+    "updatedAt": "2026-08-05T17:58:33.600Z",
     "tags": [
       "frontend",
       "feature"
@@ -562,8 +562,8 @@
     "priority": "medium",
     "ownerId": "USR-002",
     "dueDate": "2026-10-27T12:00:00.000Z",
-    "createdAt": "2026-07-15T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-05T20:53:31.200Z",
+    "updatedAt": "2026-08-05T20:53:31.200Z",
     "tags": [
       "backend",
       "design"
@@ -575,10 +575,10 @@
     "description": null,
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-002",
     "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-07-14T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-05T23:48:28.800Z",
+    "updatedAt": "2026-08-05T23:48:28.800Z",
     "tags": [
       "bug",
       "performance"
@@ -590,10 +590,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "backlog",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-002",
     "dueDate": "2026-10-29T12:00:00.000Z",
-    "createdAt": "2026-07-13T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-06T02:43:26.400Z",
+    "updatedAt": "2026-08-06T02:43:26.400Z",
     "tags": [
       "feature",
       "security"
@@ -605,10 +605,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "backlog",
     "priority": "urgent",
-    "ownerId": "USR-005",
+    "ownerId": "USR-002",
     "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-07-12T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-06T05:38:24.000Z",
+    "updatedAt": "2026-08-06T05:38:24.000Z",
     "tags": [
       "design",
       "database"
@@ -620,10 +620,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-002",
     "dueDate": "2026-10-31T12:00:00.000Z",
-    "createdAt": "2026-07-11T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-06T08:33:21.600Z",
+    "updatedAt": "2026-08-06T08:33:21.600Z",
     "tags": [
       "performance",
       "devops"
@@ -635,10 +635,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "backlog",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-002",
     "dueDate": null,
-    "createdAt": "2026-07-10T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-06T11:28:19.200Z",
+    "updatedAt": "2026-08-06T11:28:19.200Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -650,10 +650,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "backlog",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-002",
     "dueDate": "2026-11-02T12:00:00.000Z",
-    "createdAt": "2026-07-09T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-06T14:23:16.800Z",
+    "updatedAt": "2026-08-06T14:23:16.800Z",
     "tags": [
       "database",
       "documentation"
@@ -665,10 +665,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "backlog",
     "priority": "low",
-    "ownerId": "USR-009",
+    "ownerId": "USR-002",
     "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-07-08T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-06T17:18:14.400Z",
+    "updatedAt": "2026-08-06T17:18:14.400Z",
     "tags": [
       "devops",
       "accessibility"
@@ -680,10 +680,10 @@
     "description": null,
     "status": "todo",
     "priority": "high",
-    "ownerId": "USR-010",
-    "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-21T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "ownerId": "USR-002",
+    "dueDate": "2026-10-20T12:00:00.000Z",
+    "createdAt": "2026-08-06T20:13:12.000Z",
+    "updatedAt": "2026-08-06T20:13:12.000Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -695,10 +695,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-011",
-    "dueDate": "2026-09-02T12:00:00.000Z",
-    "createdAt": "2026-08-20T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "ownerId": "USR-002",
+    "dueDate": "2026-09-20T12:00:00.000Z",
+    "createdAt": "2026-08-06T23:08:09.600Z",
+    "updatedAt": "2026-08-06T23:08:09.600Z",
     "tags": [
       "documentation",
       "backend"
@@ -710,10 +710,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": "USR-012",
+    "ownerId": "USR-002",
     "dueDate": "2026-08-26T12:00:00.000Z",
-    "createdAt": "2026-08-19T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-07T02:03:07.200Z",
+    "updatedAt": "2026-08-07T02:03:07.200Z",
     "tags": [
       "accessibility",
       "bug"
@@ -725,10 +725,10 @@
     "description": null,
     "status": "todo",
     "priority": "urgent",
-    "ownerId": null,
+    "ownerId": "USR-002",
     "dueDate": "2026-09-04T12:00:00.000Z",
-    "createdAt": "2026-08-18T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-07T04:58:04.800Z",
+    "updatedAt": "2026-08-07T04:58:04.800Z",
     "tags": [
       "frontend",
       "feature"
@@ -742,8 +742,8 @@
     "priority": "medium",
     "ownerId": "USR-002",
     "dueDate": null,
-    "createdAt": "2026-08-17T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-07T07:53:02.400Z",
+    "updatedAt": "2026-08-07T07:53:02.400Z",
     "tags": [
       "backend",
       "design"
@@ -755,10 +755,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-002",
     "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-16T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-07T10:48:00.000Z",
+    "updatedAt": "2026-08-07T10:48:00.000Z",
     "tags": [
       "bug",
       "performance"
@@ -770,10 +770,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "todo",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-002",
     "dueDate": "2026-11-10T12:00:00.000Z",
-    "createdAt": "2026-08-15T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-07T13:42:57.600Z",
+    "updatedAt": "2026-08-07T13:42:57.600Z",
     "tags": [
       "feature",
       "security"
@@ -785,10 +785,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "todo",
     "priority": "low",
-    "ownerId": "USR-005",
+    "ownerId": "USR-002",
     "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-08-14T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-07T16:37:55.200Z",
+    "updatedAt": "2026-08-07T16:37:55.200Z",
     "tags": [
       "design",
       "database"
@@ -800,10 +800,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-002",
     "dueDate": "2026-11-12T12:00:00.000Z",
-    "createdAt": "2026-08-13T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-07T19:32:52.800Z",
+    "updatedAt": "2026-08-07T19:32:52.800Z",
     "tags": [
       "performance",
       "devops"
@@ -815,10 +815,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "todo",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-002",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-12T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-07T22:27:50.400Z",
+    "updatedAt": "2026-08-07T22:27:50.400Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -830,10 +830,10 @@
     "description": null,
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-002",
     "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-11T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-08T01:22:48.000Z",
+    "updatedAt": "2026-08-08T01:22:48.000Z",
     "tags": [
       "database",
       "documentation"
@@ -845,10 +845,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "todo",
     "priority": "urgent",
-    "ownerId": "USR-009",
+    "ownerId": "USR-002",
     "dueDate": null,
-    "createdAt": "2026-08-10T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-08T04:17:45.600Z",
+    "updatedAt": "2026-08-08T04:17:45.600Z",
     "tags": [
       "devops",
       "accessibility"
@@ -860,10 +860,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "todo",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-002",
     "dueDate": "2026-11-16T12:00:00.000Z",
-    "createdAt": "2026-08-09T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-08T07:12:43.200Z",
+    "updatedAt": "2026-08-08T07:12:43.200Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -875,10 +875,10 @@
     "description": null,
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-002",
     "dueDate": "2026-09-14T12:00:00.000Z",
-    "createdAt": "2026-08-08T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-08T10:07:40.800Z",
+    "updatedAt": "2026-08-08T10:07:40.800Z",
     "tags": [
       "documentation",
       "backend"
@@ -890,10 +890,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-002",
     "dueDate": "2026-11-18T12:00:00.000Z",
-    "createdAt": "2026-08-07T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-08T13:02:38.400Z",
+    "updatedAt": "2026-08-08T13:02:38.400Z",
     "tags": [
       "accessibility",
       "bug"
@@ -905,10 +905,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "todo",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-002",
     "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-06T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-08T15:57:36.000Z",
+    "updatedAt": "2026-08-08T15:57:36.000Z",
     "tags": [
       "frontend",
       "feature"
@@ -922,8 +922,8 @@
     "priority": "medium",
     "ownerId": "USR-002",
     "dueDate": "2026-11-20T12:00:00.000Z",
-    "createdAt": "2026-08-05T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-08T18:52:33.600Z",
+    "updatedAt": "2026-08-08T18:52:33.600Z",
     "tags": [
       "backend",
       "design"
@@ -935,10 +935,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-002",
     "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-04T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-08T21:47:31.200Z",
+    "updatedAt": "2026-08-08T21:47:31.200Z",
     "tags": [
       "bug",
       "performance"
@@ -950,10 +950,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "todo",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-002",
     "dueDate": null,
-    "createdAt": "2026-08-03T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-09T00:42:28.800Z",
+    "updatedAt": "2026-08-09T00:42:28.800Z",
     "tags": [
       "feature",
       "security"
@@ -965,10 +965,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "todo",
     "priority": "urgent",
-    "ownerId": "USR-005",
+    "ownerId": "USR-002",
     "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-02T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-09T03:37:26.400Z",
+    "updatedAt": "2026-08-09T03:37:26.400Z",
     "tags": [
       "design",
       "database"
@@ -980,10 +980,10 @@
     "description": null,
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-001",
     "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-01T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-09T06:32:24.000Z",
+    "updatedAt": "2026-08-09T06:32:24.000Z",
     "tags": [
       "performance",
       "devops"
@@ -995,10 +995,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "todo",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-001",
     "dueDate": "2026-09-07T12:00:00.000Z",
-    "createdAt": "2026-07-31T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-09T09:27:21.600Z",
+    "updatedAt": "2026-08-09T09:27:21.600Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -1010,10 +1010,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-001",
     "dueDate": "2026-11-26T12:00:00.000Z",
-    "createdAt": "2026-07-30T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-09T12:22:19.200Z",
+    "updatedAt": "2026-08-09T12:22:19.200Z",
     "tags": [
       "database",
       "documentation"
@@ -1025,10 +1025,10 @@
     "description": null,
     "status": "todo",
     "priority": "low",
-    "ownerId": "USR-009",
+    "ownerId": "USR-001",
     "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-07-29T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-09T15:17:16.800Z",
+    "updatedAt": "2026-08-09T15:17:16.800Z",
     "tags": [
       "devops",
       "accessibility"
@@ -1040,10 +1040,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "todo",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-001",
     "dueDate": "2026-11-28T12:00:00.000Z",
-    "createdAt": "2026-07-28T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-09T18:12:14.400Z",
+    "updatedAt": "2026-08-09T18:12:14.400Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -1055,10 +1055,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-001",
     "dueDate": null,
-    "createdAt": "2026-07-27T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-09T21:07:12.000Z",
+    "updatedAt": "2026-08-09T21:07:12.000Z",
     "tags": [
       "documentation",
       "backend"
@@ -1070,10 +1070,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-001",
     "dueDate": "2026-11-30T12:00:00.000Z",
-    "createdAt": "2026-07-26T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-10T00:02:09.600Z",
+    "updatedAt": "2026-08-10T00:02:09.600Z",
     "tags": [
       "accessibility",
       "bug"
@@ -1085,10 +1085,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "todo",
     "priority": "urgent",
-    "ownerId": null,
+    "ownerId": "USR-001",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-07-25T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-10T02:57:07.200Z",
+    "updatedAt": "2026-08-10T02:57:07.200Z",
     "tags": [
       "frontend",
       "feature"
@@ -1100,10 +1100,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-001",
     "dueDate": "2026-12-02T12:00:00.000Z",
-    "createdAt": "2026-07-24T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-10T05:52:04.800Z",
+    "updatedAt": "2026-08-10T05:52:04.800Z",
     "tags": [
       "backend",
       "design"
@@ -1115,10 +1115,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-001",
     "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-07-23T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-10T08:47:02.400Z",
+    "updatedAt": "2026-08-10T08:47:02.400Z",
     "tags": [
       "bug",
       "performance"
@@ -1130,10 +1130,10 @@
     "description": null,
     "status": "todo",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-001",
     "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-07-22T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-10T11:42:00.000Z",
+    "updatedAt": "2026-08-10T11:42:00.000Z",
     "tags": [
       "feature",
       "security"
@@ -1145,10 +1145,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "todo",
     "priority": "low",
-    "ownerId": "USR-005",
+    "ownerId": "USR-001",
     "dueDate": "2026-09-02T12:00:00.000Z",
-    "createdAt": "2026-07-21T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-10T14:36:57.600Z",
+    "updatedAt": "2026-08-10T14:36:57.600Z",
     "tags": [
       "design",
       "database"
@@ -1160,10 +1160,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-001",
     "dueDate": null,
-    "createdAt": "2026-07-20T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-10T17:31:55.200Z",
+    "updatedAt": "2026-08-10T17:31:55.200Z",
     "tags": [
       "performance",
       "devops"
@@ -1175,10 +1175,10 @@
     "description": null,
     "status": "todo",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-001",
     "dueDate": "2026-09-04T12:00:00.000Z",
-    "createdAt": "2026-07-19T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-10T20:26:52.800Z",
+    "updatedAt": "2026-08-10T20:26:52.800Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -1190,10 +1190,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-001",
     "dueDate": "2026-12-08T12:00:00.000Z",
-    "createdAt": "2026-07-18T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-10T23:21:50.400Z",
+    "updatedAt": "2026-08-10T23:21:50.400Z",
     "tags": [
       "database",
       "documentation"
@@ -1205,10 +1205,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "todo",
     "priority": "urgent",
-    "ownerId": "USR-009",
+    "ownerId": "USR-001",
     "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-07-17T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-11T02:16:48.000Z",
+    "updatedAt": "2026-08-11T02:16:48.000Z",
     "tags": [
       "devops",
       "accessibility"
@@ -1220,10 +1220,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "todo",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-001",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-07-16T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-11T05:11:45.600Z",
+    "updatedAt": "2026-08-11T05:11:45.600Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -1235,10 +1235,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-001",
     "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-07-15T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-11T08:06:43.200Z",
+    "updatedAt": "2026-08-11T08:06:43.200Z",
     "tags": [
       "documentation",
       "backend"
@@ -1250,10 +1250,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-001",
     "dueDate": "2026-12-12T12:00:00.000Z",
-    "createdAt": "2026-07-14T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-11T11:01:40.800Z",
+    "updatedAt": "2026-08-11T11:01:40.800Z",
     "tags": [
       "accessibility",
       "bug"
@@ -1265,10 +1265,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "todo",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-001",
     "dueDate": null,
-    "createdAt": "2026-07-13T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-11T13:56:38.400Z",
+    "updatedAt": "2026-08-11T13:56:38.400Z",
     "tags": [
       "frontend",
       "feature"
@@ -1280,10 +1280,10 @@
     "description": null,
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-001",
     "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-07-12T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-11T16:51:36.000Z",
+    "updatedAt": "2026-08-11T16:51:36.000Z",
     "tags": [
       "backend",
       "design"
@@ -1295,10 +1295,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-001",
     "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-07-11T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-11T19:46:33.600Z",
+    "updatedAt": "2026-08-11T19:46:33.600Z",
     "tags": [
       "bug",
       "performance"
@@ -1310,10 +1310,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "todo",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-001",
     "dueDate": "2026-12-16T12:00:00.000Z",
-    "createdAt": "2026-07-10T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-11T22:41:31.200Z",
+    "updatedAt": "2026-08-11T22:41:31.200Z",
     "tags": [
       "feature",
       "security"
@@ -1325,10 +1325,10 @@
     "description": null,
     "status": "todo",
     "priority": "urgent",
-    "ownerId": "USR-005",
+    "ownerId": "USR-001",
     "dueDate": "2026-09-14T12:00:00.000Z",
-    "createdAt": "2026-07-09T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-12T01:36:28.800Z",
+    "updatedAt": "2026-08-12T01:36:28.800Z",
     "tags": [
       "design",
       "database"
@@ -1340,10 +1340,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-001",
     "dueDate": "2026-12-18T12:00:00.000Z",
-    "createdAt": "2026-07-08T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-12T04:31:26.400Z",
+    "updatedAt": "2026-08-12T04:31:26.400Z",
     "tags": [
       "performance",
       "devops"
@@ -1355,10 +1355,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "todo",
     "priority": "high",
-    "ownerId": null,
-    "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-21T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "ownerId": "USR-001",
+    "dueDate": "2026-10-15T12:00:00.000Z",
+    "createdAt": "2026-08-12T07:26:24.000Z",
+    "updatedAt": "2026-08-12T07:26:24.000Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -1370,10 +1370,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-008",
-    "dueDate": null,
-    "createdAt": "2026-08-20T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "ownerId": "USR-003",
+    "dueDate": "2026-09-18T12:00:00.000Z",
+    "createdAt": "2026-08-12T10:21:21.600Z",
+    "updatedAt": "2026-08-12T10:21:21.600Z",
     "tags": [
       "database",
       "documentation"
@@ -1385,10 +1385,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "todo",
     "priority": "low",
-    "ownerId": "USR-009",
+    "ownerId": "USR-003",
     "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-19T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-12T13:16:19.200Z",
+    "updatedAt": "2026-08-12T13:16:19.200Z",
     "tags": [
       "devops",
       "accessibility"
@@ -1400,10 +1400,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "todo",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-003",
     "dueDate": "2026-09-23T12:00:00.000Z",
-    "createdAt": "2026-08-18T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-12T16:11:16.800Z",
+    "updatedAt": "2026-08-12T16:11:16.800Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -1415,10 +1415,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "todo",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-003",
     "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-17T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-12T19:06:14.400Z",
+    "updatedAt": "2026-08-12T19:06:14.400Z",
     "tags": [
       "documentation",
       "backend"
@@ -1430,10 +1430,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-003",
     "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-16T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-12T22:01:12.000Z",
+    "updatedAt": "2026-08-12T22:01:12.000Z",
     "tags": [
       "accessibility",
       "bug"
@@ -1445,10 +1445,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": null,
+    "ownerId": "USR-003",
     "dueDate": "2026-09-07T12:00:00.000Z",
-    "createdAt": "2026-08-15T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-13T00:56:09.600Z",
+    "updatedAt": "2026-08-13T00:56:09.600Z",
     "tags": [
       "frontend",
       "feature"
@@ -1460,10 +1460,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-003",
     "dueDate": "2026-09-27T12:00:00.000Z",
-    "createdAt": "2026-08-14T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-13T03:51:07.200Z",
+    "updatedAt": "2026-08-13T03:51:07.200Z",
     "tags": [
       "backend",
       "design"
@@ -1477,8 +1477,8 @@
     "priority": "medium",
     "ownerId": "USR-003",
     "dueDate": null,
-    "createdAt": "2026-08-13T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-13T06:46:04.800Z",
+    "updatedAt": "2026-08-13T06:46:04.800Z",
     "tags": [
       "bug",
       "performance"
@@ -1490,10 +1490,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-003",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-12T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-13T09:41:02.400Z",
+    "updatedAt": "2026-08-13T09:41:02.400Z",
     "tags": [
       "feature",
       "security"
@@ -1505,10 +1505,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "in_progress",
     "priority": "low",
-    "ownerId": "USR-005",
+    "ownerId": "USR-003",
     "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-11T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-13T12:36:00.000Z",
+    "updatedAt": "2026-08-13T12:36:00.000Z",
     "tags": [
       "design",
       "database"
@@ -1520,10 +1520,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-003",
     "dueDate": "2026-10-01T12:00:00.000Z",
-    "createdAt": "2026-08-10T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-13T15:30:57.600Z",
+    "updatedAt": "2026-08-13T15:30:57.600Z",
     "tags": [
       "performance",
       "devops"
@@ -1535,10 +1535,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": null,
+    "ownerId": "USR-003",
     "dueDate": "2026-08-26T12:00:00.000Z",
-    "createdAt": "2026-08-09T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-13T18:25:55.200Z",
+    "updatedAt": "2026-08-13T18:25:55.200Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -1550,10 +1550,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-003",
     "dueDate": "2026-10-03T12:00:00.000Z",
-    "createdAt": "2026-08-08T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-13T21:20:52.800Z",
+    "updatedAt": "2026-08-13T21:20:52.800Z",
     "tags": [
       "database",
       "documentation"
@@ -1565,10 +1565,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": "USR-009",
+    "ownerId": "USR-003",
     "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-08-07T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-14T00:15:50.400Z",
+    "updatedAt": "2026-08-14T00:15:50.400Z",
     "tags": [
       "devops",
       "accessibility"
@@ -1580,10 +1580,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-003",
     "dueDate": null,
-    "createdAt": "2026-08-06T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-14T03:10:48.000Z",
+    "updatedAt": "2026-08-14T03:10:48.000Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -1595,10 +1595,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-003",
     "dueDate": "2026-09-02T12:00:00.000Z",
-    "createdAt": "2026-08-05T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-14T06:05:45.600Z",
+    "updatedAt": "2026-08-14T06:05:45.600Z",
     "tags": [
       "documentation",
       "backend"
@@ -1610,10 +1610,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-003",
     "dueDate": "2026-10-07T12:00:00.000Z",
-    "createdAt": "2026-08-04T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-14T09:00:43.200Z",
+    "updatedAt": "2026-08-14T09:00:43.200Z",
     "tags": [
       "accessibility",
       "bug"
@@ -1625,10 +1625,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-003",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-03T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-14T11:55:40.800Z",
+    "updatedAt": "2026-08-14T11:55:40.800Z",
     "tags": [
       "frontend",
       "feature"
@@ -1640,10 +1640,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-003",
     "dueDate": "2026-10-09T12:00:00.000Z",
-    "createdAt": "2026-08-02T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-14T14:50:38.400Z",
+    "updatedAt": "2026-08-14T14:50:38.400Z",
     "tags": [
       "backend",
       "design"
@@ -1657,8 +1657,8 @@
     "priority": "medium",
     "ownerId": "USR-003",
     "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-01T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-14T17:45:36.000Z",
+    "updatedAt": "2026-08-14T17:45:36.000Z",
     "tags": [
       "bug",
       "performance"
@@ -1670,10 +1670,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-003",
     "dueDate": "2026-10-11T12:00:00.000Z",
-    "createdAt": "2026-07-31T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-14T20:40:33.600Z",
+    "updatedAt": "2026-08-14T20:40:33.600Z",
     "tags": [
       "feature",
       "security"
@@ -1685,10 +1685,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": "USR-005",
+    "ownerId": "USR-003",
     "dueDate": null,
-    "createdAt": "2026-07-30T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-14T23:35:31.200Z",
+    "updatedAt": "2026-08-14T23:35:31.200Z",
     "tags": [
       "design",
       "database"
@@ -1700,10 +1700,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-005",
     "dueDate": "2026-10-13T12:00:00.000Z",
-    "createdAt": "2026-07-29T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-15T02:30:28.800Z",
+    "updatedAt": "2026-08-15T02:30:28.800Z",
     "tags": [
       "performance",
       "devops"
@@ -1715,10 +1715,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-005",
     "dueDate": "2026-09-10T12:00:00.000Z",
-    "createdAt": "2026-07-28T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-15T05:25:26.400Z",
+    "updatedAt": "2026-08-15T05:25:26.400Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -1730,10 +1730,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-005",
     "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-07-27T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-15T08:20:24.000Z",
+    "updatedAt": "2026-08-15T08:20:24.000Z",
     "tags": [
       "database",
       "documentation"
@@ -1745,10 +1745,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_progress",
     "priority": "low",
-    "ownerId": "USR-009",
+    "ownerId": "USR-005",
     "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-07-26T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-15T11:15:21.600Z",
+    "updatedAt": "2026-08-15T11:15:21.600Z",
     "tags": [
       "devops",
       "accessibility"
@@ -1760,10 +1760,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-005",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-07-25T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-15T14:10:19.200Z",
+    "updatedAt": "2026-08-15T14:10:19.200Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -1775,10 +1775,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-005",
     "dueDate": "2026-09-14T12:00:00.000Z",
-    "createdAt": "2026-07-24T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-15T17:05:16.800Z",
+    "updatedAt": "2026-08-15T17:05:16.800Z",
     "tags": [
       "documentation",
       "backend"
@@ -1790,10 +1790,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-005",
     "dueDate": null,
-    "createdAt": "2026-07-23T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-15T20:00:14.400Z",
+    "updatedAt": "2026-08-15T20:00:14.400Z",
     "tags": [
       "accessibility",
       "bug"
@@ -1805,10 +1805,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": null,
+    "ownerId": "USR-005",
     "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-07-22T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-15T22:55:12.000Z",
+    "updatedAt": "2026-08-15T22:55:12.000Z",
     "tags": [
       "frontend",
       "feature"
@@ -1820,10 +1820,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-005",
     "dueDate": "2026-10-21T12:00:00.000Z",
-    "createdAt": "2026-07-21T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-16T01:50:09.600Z",
+    "updatedAt": "2026-08-16T01:50:09.600Z",
     "tags": [
       "backend",
       "design"
@@ -1835,10 +1835,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-005",
     "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-07-20T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-16T04:45:07.200Z",
+    "updatedAt": "2026-08-16T04:45:07.200Z",
     "tags": [
       "bug",
       "performance"
@@ -1850,10 +1850,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-005",
     "dueDate": "2026-10-23T12:00:00.000Z",
-    "createdAt": "2026-07-19T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-16T07:40:04.800Z",
+    "updatedAt": "2026-08-16T07:40:04.800Z",
     "tags": [
       "feature",
       "security"
@@ -1867,8 +1867,8 @@
     "priority": "low",
     "ownerId": "USR-005",
     "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-07-18T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-16T10:35:02.400Z",
+    "updatedAt": "2026-08-16T10:35:02.400Z",
     "tags": [
       "design",
       "database"
@@ -1880,10 +1880,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-005",
     "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-07-17T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-16T13:30:00.000Z",
+    "updatedAt": "2026-08-16T13:30:00.000Z",
     "tags": [
       "performance",
       "devops"
@@ -1895,10 +1895,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-005",
     "dueDate": null,
-    "createdAt": "2026-07-16T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-16T16:24:57.600Z",
+    "updatedAt": "2026-08-16T16:24:57.600Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -1910,10 +1910,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-005",
     "dueDate": "2026-10-27T12:00:00.000Z",
-    "createdAt": "2026-07-15T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-16T19:19:55.200Z",
+    "updatedAt": "2026-08-16T19:19:55.200Z",
     "tags": [
       "database",
       "documentation"
@@ -1925,10 +1925,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": "USR-009",
+    "ownerId": "USR-005",
     "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-07-14T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-16T22:14:52.800Z",
+    "updatedAt": "2026-08-16T22:14:52.800Z",
     "tags": [
       "devops",
       "accessibility"
@@ -1940,10 +1940,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-005",
     "dueDate": "2026-10-29T12:00:00.000Z",
-    "createdAt": "2026-07-13T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-17T01:09:50.400Z",
+    "updatedAt": "2026-08-17T01:09:50.400Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -1955,10 +1955,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-005",
     "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-07-12T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-17T04:04:48.000Z",
+    "updatedAt": "2026-08-17T04:04:48.000Z",
     "tags": [
       "documentation",
       "backend"
@@ -1970,10 +1970,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-005",
     "dueDate": "2026-10-31T12:00:00.000Z",
-    "createdAt": "2026-07-11T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-17T06:59:45.600Z",
+    "updatedAt": "2026-08-17T06:59:45.600Z",
     "tags": [
       "accessibility",
       "bug"
@@ -1985,10 +1985,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-005",
     "dueDate": "2026-09-13T12:00:00.000Z",
-    "createdAt": "2026-07-10T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-17T09:54:43.200Z",
+    "updatedAt": "2026-08-17T09:54:43.200Z",
     "tags": [
       "frontend",
       "feature"
@@ -2000,10 +2000,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-009",
     "dueDate": null,
-    "createdAt": "2026-07-09T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-17T12:49:40.800Z",
+    "updatedAt": "2026-08-17T12:49:40.800Z",
     "tags": [
       "backend",
       "design"
@@ -2015,10 +2015,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-009",
     "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-07-08T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-17T15:44:38.400Z",
+    "updatedAt": "2026-08-17T15:44:38.400Z",
     "tags": [
       "bug",
       "performance"
@@ -2030,10 +2030,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "high",
-    "ownerId": "USR-004",
-    "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-21T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "ownerId": "USR-009",
+    "dueDate": "2026-10-08T12:00:00.000Z",
+    "createdAt": "2026-08-17T18:39:36.000Z",
+    "updatedAt": "2026-08-17T18:39:36.000Z",
     "tags": [
       "feature",
       "security"
@@ -2045,10 +2045,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": "USR-005",
-    "dueDate": "2026-09-02T12:00:00.000Z",
-    "createdAt": "2026-08-20T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "ownerId": "USR-009",
+    "dueDate": "2026-09-15T12:00:00.000Z",
+    "createdAt": "2026-08-17T21:34:33.600Z",
+    "updatedAt": "2026-08-17T21:34:33.600Z",
     "tags": [
       "design",
       "database"
@@ -2060,10 +2060,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-009",
     "dueDate": "2026-11-06T12:00:00.000Z",
-    "createdAt": "2026-08-19T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-18T00:29:31.200Z",
+    "updatedAt": "2026-08-18T00:29:31.200Z",
     "tags": [
       "performance",
       "devops"
@@ -2075,10 +2075,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-009",
     "dueDate": "2026-09-04T12:00:00.000Z",
-    "createdAt": "2026-08-18T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-18T03:24:28.800Z",
+    "updatedAt": "2026-08-18T03:24:28.800Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -2090,10 +2090,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-009",
     "dueDate": "2026-11-08T12:00:00.000Z",
-    "createdAt": "2026-08-17T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-18T06:19:26.400Z",
+    "updatedAt": "2026-08-18T06:19:26.400Z",
     "tags": [
       "database",
       "documentation"
@@ -2107,8 +2107,8 @@
     "priority": "low",
     "ownerId": "USR-009",
     "dueDate": null,
-    "createdAt": "2026-08-16T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-18T09:14:24.000Z",
+    "updatedAt": "2026-08-18T09:14:24.000Z",
     "tags": [
       "devops",
       "accessibility"
@@ -2120,10 +2120,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-009",
     "dueDate": "2026-11-10T12:00:00.000Z",
-    "createdAt": "2026-08-15T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-18T12:09:21.600Z",
+    "updatedAt": "2026-08-18T12:09:21.600Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -2135,10 +2135,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-009",
     "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-08-14T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-18T15:04:19.200Z",
+    "updatedAt": "2026-08-18T15:04:19.200Z",
     "tags": [
       "documentation",
       "backend"
@@ -2150,10 +2150,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-009",
     "dueDate": "2026-11-12T12:00:00.000Z",
-    "createdAt": "2026-08-13T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-18T17:59:16.800Z",
+    "updatedAt": "2026-08-18T17:59:16.800Z",
     "tags": [
       "accessibility",
       "bug"
@@ -2165,10 +2165,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": null,
+    "ownerId": "USR-009",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-12T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-18T20:54:14.400Z",
+    "updatedAt": "2026-08-18T20:54:14.400Z",
     "tags": [
       "frontend",
       "feature"
@@ -2180,10 +2180,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-009",
     "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-11T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-18T23:49:12.000Z",
+    "updatedAt": "2026-08-18T23:49:12.000Z",
     "tags": [
       "backend",
       "design"
@@ -2195,10 +2195,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-009",
     "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-08-10T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-19T02:44:09.600Z",
+    "updatedAt": "2026-08-19T02:44:09.600Z",
     "tags": [
       "bug",
       "performance"
@@ -2210,10 +2210,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-009",
     "dueDate": null,
-    "createdAt": "2026-08-09T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-19T05:39:07.200Z",
+    "updatedAt": "2026-08-19T05:39:07.200Z",
     "tags": [
       "feature",
       "security"
@@ -2225,10 +2225,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "low",
-    "ownerId": "USR-005",
+    "ownerId": "USR-009",
     "dueDate": "2026-09-14T12:00:00.000Z",
-    "createdAt": "2026-08-08T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-19T08:34:04.800Z",
+    "updatedAt": "2026-08-19T08:34:04.800Z",
     "tags": [
       "design",
       "database"
@@ -2240,10 +2240,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-009",
     "dueDate": "2026-11-18T12:00:00.000Z",
-    "createdAt": "2026-08-07T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-19T11:29:02.400Z",
+    "updatedAt": "2026-08-19T11:29:02.400Z",
     "tags": [
       "performance",
       "devops"
@@ -2255,10 +2255,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-009",
     "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-06T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-19T14:24:00.000Z",
+    "updatedAt": "2026-08-19T14:24:00.000Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -2270,10 +2270,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-006",
     "dueDate": "2026-11-20T12:00:00.000Z",
-    "createdAt": "2026-08-05T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-19T17:18:57.600Z",
+    "updatedAt": "2026-08-19T17:18:57.600Z",
     "tags": [
       "database",
       "documentation"
@@ -2285,10 +2285,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": "USR-009",
+    "ownerId": "USR-006",
     "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-04T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-19T20:13:55.200Z",
+    "updatedAt": "2026-08-19T20:13:55.200Z",
     "tags": [
       "devops",
       "accessibility"
@@ -2300,10 +2300,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_progress",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-006",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-03T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-19T23:08:52.800Z",
+    "updatedAt": "2026-08-19T23:08:52.800Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -2315,10 +2315,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "in_progress",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-006",
     "dueDate": null,
-    "createdAt": "2026-08-02T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-20T02:03:50.400Z",
+    "updatedAt": "2026-08-20T02:03:50.400Z",
     "tags": [
       "documentation",
       "backend"
@@ -2330,10 +2330,10 @@
     "description": null,
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-006",
     "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-01T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-20T04:58:48.000Z",
+    "updatedAt": "2026-08-20T04:58:48.000Z",
     "tags": [
       "accessibility",
       "bug"
@@ -2345,10 +2345,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_review",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-006",
     "dueDate": "2026-09-07T12:00:00.000Z",
-    "createdAt": "2026-07-31T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-20T07:53:45.600Z",
+    "updatedAt": "2026-08-20T07:53:45.600Z",
     "tags": [
       "frontend",
       "feature"
@@ -2360,10 +2360,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-006",
     "dueDate": "2026-11-26T12:00:00.000Z",
-    "createdAt": "2026-07-30T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-20T10:48:43.200Z",
+    "updatedAt": "2026-08-20T10:48:43.200Z",
     "tags": [
       "backend",
       "design"
@@ -2375,10 +2375,10 @@
     "description": null,
     "status": "in_progress",
     "priority": "urgent",
-    "ownerId": "USR-003",
+    "ownerId": "USR-006",
     "dueDate": "2026-08-26T12:00:00.000Z",
-    "createdAt": "2026-07-29T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-20T13:43:40.800Z",
+    "updatedAt": "2026-08-20T13:43:40.800Z",
     "tags": [
       "bug",
       "performance"
@@ -2390,10 +2390,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_review",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-006",
     "dueDate": "2026-11-28T12:00:00.000Z",
-    "createdAt": "2026-07-28T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-20T16:38:38.400Z",
+    "updatedAt": "2026-08-20T16:38:38.400Z",
     "tags": [
       "feature",
       "security"
@@ -2405,10 +2405,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "in_review",
     "priority": "urgent",
-    "ownerId": "USR-005",
+    "ownerId": "USR-006",
     "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-07-27T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-20T19:33:36.000Z",
+    "updatedAt": "2026-08-20T19:33:36.000Z",
     "tags": [
       "design",
       "database"
@@ -2422,8 +2422,8 @@
     "priority": "medium",
     "ownerId": "USR-006",
     "dueDate": null,
-    "createdAt": "2026-07-26T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-20T22:28:33.600Z",
+    "updatedAt": "2026-08-20T22:28:33.600Z",
     "tags": [
       "performance",
       "devops"
@@ -2435,10 +2435,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_review",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-006",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-07-25T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-21T01:23:31.200Z",
+    "updatedAt": "2026-08-21T01:23:31.200Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -2450,10 +2450,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-006",
     "dueDate": "2026-12-02T12:00:00.000Z",
-    "createdAt": "2026-07-24T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-21T04:18:28.800Z",
+    "updatedAt": "2026-08-21T04:18:28.800Z",
     "tags": [
       "database",
       "documentation"
@@ -2465,10 +2465,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "in_review",
     "priority": "low",
-    "ownerId": "USR-009",
+    "ownerId": "USR-006",
     "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-07-23T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-21T07:13:26.400Z",
+    "updatedAt": "2026-08-21T07:13:26.400Z",
     "tags": [
       "devops",
       "accessibility"
@@ -2480,10 +2480,10 @@
     "description": null,
     "status": "in_review",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-006",
     "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-07-22T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-21T10:08:24.000Z",
+    "updatedAt": "2026-08-21T10:08:24.000Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -2495,10 +2495,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-008",
     "dueDate": "2026-09-02T12:00:00.000Z",
-    "createdAt": "2026-07-21T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-21T13:03:21.600Z",
+    "updatedAt": "2026-08-21T13:03:21.600Z",
     "tags": [
       "documentation",
       "backend"
@@ -2510,10 +2510,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-008",
     "dueDate": "2026-12-06T12:00:00.000Z",
-    "createdAt": "2026-07-20T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-21T15:58:19.200Z",
+    "updatedAt": "2026-08-21T15:58:19.200Z",
     "tags": [
       "accessibility",
       "bug"
@@ -2525,10 +2525,10 @@
     "description": null,
     "status": "in_review",
     "priority": "urgent",
-    "ownerId": null,
+    "ownerId": "USR-008",
     "dueDate": null,
-    "createdAt": "2026-07-19T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-21T18:53:16.800Z",
+    "updatedAt": "2026-08-21T18:53:16.800Z",
     "tags": [
       "frontend",
       "feature"
@@ -2540,10 +2540,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-008",
     "dueDate": "2026-12-08T12:00:00.000Z",
-    "createdAt": "2026-07-18T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-21T21:48:14.400Z",
+    "updatedAt": "2026-08-21T21:48:14.400Z",
     "tags": [
       "backend",
       "design"
@@ -2555,10 +2555,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-008",
     "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-07-17T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-22T00:43:12.000Z",
+    "updatedAt": "2026-08-22T00:43:12.000Z",
     "tags": [
       "bug",
       "performance"
@@ -2570,10 +2570,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "in_review",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-008",
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-07-16T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-22T03:38:09.600Z",
+    "updatedAt": "2026-08-22T03:38:09.600Z",
     "tags": [
       "feature",
       "security"
@@ -2585,10 +2585,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_review",
     "priority": "low",
-    "ownerId": "USR-005",
+    "ownerId": "USR-008",
     "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-07-15T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-22T06:33:07.200Z",
+    "updatedAt": "2026-08-22T06:33:07.200Z",
     "tags": [
       "design",
       "database"
@@ -2600,10 +2600,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-008",
     "dueDate": "2026-12-12T12:00:00.000Z",
-    "createdAt": "2026-07-14T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-22T09:28:04.800Z",
+    "updatedAt": "2026-08-22T09:28:04.800Z",
     "tags": [
       "performance",
       "devops"
@@ -2615,10 +2615,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "in_review",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-008",
     "dueDate": "2026-09-10T12:00:00.000Z",
-    "createdAt": "2026-07-13T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-22T12:23:02.400Z",
+    "updatedAt": "2026-08-22T12:23:02.400Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -2632,8 +2632,8 @@
     "priority": "medium",
     "ownerId": "USR-008",
     "dueDate": null,
-    "createdAt": "2026-07-12T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-22T15:18:00.000Z",
+    "updatedAt": "2026-08-22T15:18:00.000Z",
     "tags": [
       "database",
       "documentation"
@@ -2645,10 +2645,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_review",
     "priority": "urgent",
-    "ownerId": "USR-009",
+    "ownerId": "USR-008",
     "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-07-11T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-22T18:12:57.600Z",
+    "updatedAt": "2026-08-22T18:12:57.600Z",
     "tags": [
       "devops",
       "accessibility"
@@ -2660,10 +2660,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_review",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-008",
     "dueDate": "2026-12-16T12:00:00.000Z",
-    "createdAt": "2026-07-10T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-22T21:07:55.200Z",
+    "updatedAt": "2026-08-22T21:07:55.200Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -2675,10 +2675,10 @@
     "description": null,
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-010",
     "dueDate": "2026-09-14T12:00:00.000Z",
-    "createdAt": "2026-07-09T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-23T00:02:52.800Z",
+    "updatedAt": "2026-08-23T00:02:52.800Z",
     "tags": [
       "documentation",
       "backend"
@@ -2690,10 +2690,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-010",
     "dueDate": "2026-12-18T12:00:00.000Z",
-    "createdAt": "2026-07-08T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-23T02:57:50.400Z",
+    "updatedAt": "2026-08-23T02:57:50.400Z",
     "tags": [
       "accessibility",
       "bug"
@@ -2705,10 +2705,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "in_review",
     "priority": "high",
-    "ownerId": null,
-    "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-21T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "ownerId": "USR-010",
+    "dueDate": "2026-10-02T12:00:00.000Z",
+    "createdAt": "2026-08-23T05:52:48.000Z",
+    "updatedAt": "2026-08-23T05:52:48.000Z",
     "tags": [
       "frontend",
       "feature"
@@ -2720,10 +2720,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-010",
     "dueDate": "2026-09-21T12:00:00.000Z",
-    "createdAt": "2026-08-20T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-23T08:47:45.600Z",
+    "updatedAt": "2026-08-23T08:47:45.600Z",
     "tags": [
       "backend",
       "design"
@@ -2735,10 +2735,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-010",
     "dueDate": null,
-    "createdAt": "2026-08-19T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-23T11:42:43.200Z",
+    "updatedAt": "2026-08-23T11:42:43.200Z",
     "tags": [
       "bug",
       "performance"
@@ -2750,10 +2750,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "in_review",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-010",
     "dueDate": "2026-09-23T12:00:00.000Z",
-    "createdAt": "2026-08-18T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-23T14:37:40.800Z",
+    "updatedAt": "2026-08-23T14:37:40.800Z",
     "tags": [
       "feature",
       "security"
@@ -2765,10 +2765,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "in_review",
     "priority": "urgent",
-    "ownerId": "USR-005",
+    "ownerId": "USR-010",
     "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-17T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-23T17:32:38.400Z",
+    "updatedAt": "2026-08-23T17:32:38.400Z",
     "tags": [
       "design",
       "database"
@@ -2780,10 +2780,10 @@
     "description": null,
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": "USR-010",
     "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-16T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-23T20:27:36.000Z",
+    "updatedAt": "2026-08-23T20:27:36.000Z",
     "tags": [
       "performance",
       "devops"
@@ -2795,10 +2795,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "in_review",
     "priority": "high",
-    "ownerId": null,
+    "ownerId": "USR-010",
     "dueDate": "2026-09-07T12:00:00.000Z",
-    "createdAt": "2026-08-15T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-23T23:22:33.600Z",
+    "updatedAt": "2026-08-23T23:22:33.600Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -2810,10 +2810,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "in_review",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": "USR-004",
     "dueDate": "2026-09-27T12:00:00.000Z",
-    "createdAt": "2026-08-14T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-24T02:17:31.200Z",
+    "updatedAt": "2026-08-24T02:17:31.200Z",
     "tags": [
       "database",
       "documentation"
@@ -2825,10 +2825,10 @@
     "description": null,
     "status": "in_review",
     "priority": "low",
-    "ownerId": "USR-009",
+    "ownerId": "USR-004",
     "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-08-13T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-24T05:12:28.800Z",
+    "updatedAt": "2026-08-24T05:12:28.800Z",
     "tags": [
       "devops",
       "accessibility"
@@ -2840,10 +2840,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "in_review",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": "USR-004",
     "dueDate": null,
-    "createdAt": "2026-08-12T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-24T08:07:26.400Z",
+    "updatedAt": "2026-08-24T08:07:26.400Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -2855,10 +2855,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": "USR-004",
     "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-11T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-24T11:02:24.000Z",
+    "updatedAt": "2026-08-24T11:02:24.000Z",
     "tags": [
       "documentation",
       "backend"
@@ -2870,10 +2870,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": "USR-004",
     "dueDate": "2026-10-01T12:00:00.000Z",
-    "createdAt": "2026-08-10T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-24T13:57:21.600Z",
+    "updatedAt": "2026-08-24T13:57:21.600Z",
     "tags": [
       "accessibility",
       "bug"
@@ -2885,10 +2885,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "done",
     "priority": "urgent",
-    "ownerId": null,
+    "ownerId": "USR-004",
     "dueDate": "2026-09-13T12:00:00.000Z",
-    "createdAt": "2026-08-09T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-24T16:52:19.200Z",
+    "updatedAt": "2026-08-24T16:52:19.200Z",
     "tags": [
       "frontend",
       "feature"
@@ -2900,10 +2900,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": "USR-007",
     "dueDate": "2026-10-03T12:00:00.000Z",
-    "createdAt": "2026-08-08T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-24T19:47:16.800Z",
+    "updatedAt": "2026-08-24T19:47:16.800Z",
     "tags": [
       "backend",
       "design"
@@ -2915,10 +2915,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": "USR-007",
     "dueDate": "2026-09-15T12:00:00.000Z",
-    "createdAt": "2026-08-07T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-24T22:42:14.400Z",
+    "updatedAt": "2026-08-24T22:42:14.400Z",
     "tags": [
       "bug",
       "performance"
@@ -2930,10 +2930,10 @@
     "description": null,
     "status": "done",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": "USR-007",
     "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-06T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-25T01:37:12.000Z",
+    "updatedAt": "2026-08-25T01:37:12.000Z",
     "tags": [
       "feature",
       "security"
@@ -2945,10 +2945,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "done",
     "priority": "low",
-    "ownerId": "USR-005",
+    "ownerId": null,
     "dueDate": null,
-    "createdAt": "2026-08-05T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-25T04:32:09.600Z",
+    "updatedAt": "2026-08-25T04:32:09.600Z",
     "tags": [
       "design",
       "database"
@@ -2960,10 +2960,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": null,
     "dueDate": "2026-10-07T12:00:00.000Z",
-    "createdAt": "2026-08-04T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-25T07:27:07.200Z",
+    "updatedAt": "2026-08-25T07:27:07.200Z",
     "tags": [
       "performance",
       "devops"
@@ -2977,8 +2977,8 @@
     "priority": "high",
     "ownerId": null,
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-03T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-25T10:22:04.800Z",
+    "updatedAt": "2026-08-25T10:22:04.800Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -2990,10 +2990,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": null,
     "dueDate": "2026-10-09T12:00:00.000Z",
-    "createdAt": "2026-08-02T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-25T13:17:02.400Z",
+    "updatedAt": "2026-08-25T13:17:02.400Z",
     "tags": [
       "database",
       "documentation"
@@ -3005,10 +3005,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "done",
     "priority": "urgent",
-    "ownerId": "USR-009",
+    "ownerId": null,
     "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-01T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-25T16:12:00.000Z",
+    "updatedAt": "2026-08-25T16:12:00.000Z",
     "tags": [
       "devops",
       "accessibility"
@@ -3020,10 +3020,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "done",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": null,
     "dueDate": "2026-10-11T12:00:00.000Z",
-    "createdAt": "2026-07-31T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-25T19:06:57.600Z",
+    "updatedAt": "2026-08-25T19:06:57.600Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -3035,10 +3035,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": null,
     "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-07-30T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-25T22:01:55.200Z",
+    "updatedAt": "2026-08-25T22:01:55.200Z",
     "tags": [
       "documentation",
       "backend"
@@ -3050,10 +3050,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": null,
     "dueDate": null,
-    "createdAt": "2026-07-29T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-26T00:56:52.800Z",
+    "updatedAt": "2026-08-26T00:56:52.800Z",
     "tags": [
       "accessibility",
       "bug"
@@ -3067,8 +3067,8 @@
     "priority": "high",
     "ownerId": null,
     "dueDate": "2026-09-10T12:00:00.000Z",
-    "createdAt": "2026-07-28T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-26T03:51:50.400Z",
+    "updatedAt": "2026-08-26T03:51:50.400Z",
     "tags": [
       "frontend",
       "feature"
@@ -3080,10 +3080,10 @@
     "description": null,
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": null,
     "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-07-27T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-26T06:46:48.000Z",
+    "updatedAt": "2026-08-26T06:46:48.000Z",
     "tags": [
       "backend",
       "design"
@@ -3095,10 +3095,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": null,
     "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-07-26T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-26T09:41:45.600Z",
+    "updatedAt": "2026-08-26T09:41:45.600Z",
     "tags": [
       "bug",
       "performance"
@@ -3110,10 +3110,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "done",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": null,
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-07-25T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-26T12:36:43.200Z",
+    "updatedAt": "2026-08-26T12:36:43.200Z",
     "tags": [
       "feature",
       "security"
@@ -3125,10 +3125,10 @@
     "description": null,
     "status": "done",
     "priority": "urgent",
-    "ownerId": "USR-005",
+    "ownerId": null,
     "dueDate": "2026-09-14T12:00:00.000Z",
-    "createdAt": "2026-07-24T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-26T15:31:40.800Z",
+    "updatedAt": "2026-08-26T15:31:40.800Z",
     "tags": [
       "design",
       "database"
@@ -3140,10 +3140,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": null,
     "dueDate": "2026-10-19T12:00:00.000Z",
-    "createdAt": "2026-07-23T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-26T18:26:38.400Z",
+    "updatedAt": "2026-08-26T18:26:38.400Z",
     "tags": [
       "performance",
       "devops"
@@ -3157,8 +3157,8 @@
     "priority": "high",
     "ownerId": null,
     "dueDate": null,
-    "createdAt": "2026-07-22T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-26T21:21:36.000Z",
+    "updatedAt": "2026-08-26T21:21:36.000Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -3170,10 +3170,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": null,
     "dueDate": "2026-10-21T12:00:00.000Z",
-    "createdAt": "2026-07-21T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-27T00:16:33.600Z",
+    "updatedAt": "2026-08-27T00:16:33.600Z",
     "tags": [
       "database",
       "documentation"
@@ -3185,10 +3185,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "done",
     "priority": "low",
-    "ownerId": "USR-009",
+    "ownerId": null,
     "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-07-20T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-27T03:11:31.200Z",
+    "updatedAt": "2026-08-27T03:11:31.200Z",
     "tags": [
       "devops",
       "accessibility"
@@ -3200,10 +3200,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "done",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": null,
     "dueDate": "2026-10-23T12:00:00.000Z",
-    "createdAt": "2026-07-19T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-27T06:06:28.800Z",
+    "updatedAt": "2026-08-27T06:06:28.800Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -3215,10 +3215,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": null,
     "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-07-18T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-27T09:01:26.400Z",
+    "updatedAt": "2026-08-27T09:01:26.400Z",
     "tags": [
       "documentation",
       "backend"
@@ -3230,10 +3230,10 @@
     "description": null,
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": null,
     "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-07-17T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-27T11:56:24.000Z",
+    "updatedAt": "2026-08-27T11:56:24.000Z",
     "tags": [
       "accessibility",
       "bug"
@@ -3247,8 +3247,8 @@
     "priority": "urgent",
     "ownerId": null,
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-07-16T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-27T14:51:21.600Z",
+    "updatedAt": "2026-08-27T14:51:21.600Z",
     "tags": [
       "frontend",
       "feature"
@@ -3260,10 +3260,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": null,
     "dueDate": null,
-    "createdAt": "2026-07-15T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-27T17:46:19.200Z",
+    "updatedAt": "2026-08-27T17:46:19.200Z",
     "tags": [
       "backend",
       "design"
@@ -3275,10 +3275,10 @@
     "description": null,
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": null,
     "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-07-14T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-27T20:41:16.800Z",
+    "updatedAt": "2026-08-27T20:41:16.800Z",
     "tags": [
       "bug",
       "performance"
@@ -3290,10 +3290,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "done",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": null,
     "dueDate": "2026-10-29T12:00:00.000Z",
-    "createdAt": "2026-07-13T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-27T23:36:14.400Z",
+    "updatedAt": "2026-08-27T23:36:14.400Z",
     "tags": [
       "feature",
       "security"
@@ -3305,10 +3305,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "done",
     "priority": "low",
-    "ownerId": "USR-005",
+    "ownerId": null,
     "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-07-12T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-28T02:31:12.000Z",
+    "updatedAt": "2026-08-28T02:31:12.000Z",
     "tags": [
       "design",
       "database"
@@ -3320,10 +3320,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": null,
     "dueDate": "2026-10-31T12:00:00.000Z",
-    "createdAt": "2026-07-11T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-28T05:26:09.600Z",
+    "updatedAt": "2026-08-28T05:26:09.600Z",
     "tags": [
       "performance",
       "devops"
@@ -3337,8 +3337,8 @@
     "priority": "high",
     "ownerId": null,
     "dueDate": "2026-09-13T12:00:00.000Z",
-    "createdAt": "2026-07-10T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-28T08:21:07.200Z",
+    "updatedAt": "2026-08-28T08:21:07.200Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -3350,10 +3350,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": null,
     "dueDate": "2026-11-02T12:00:00.000Z",
-    "createdAt": "2026-07-09T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-28T11:16:04.800Z",
+    "updatedAt": "2026-08-28T11:16:04.800Z",
     "tags": [
       "database",
       "documentation"
@@ -3365,10 +3365,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "done",
     "priority": "urgent",
-    "ownerId": "USR-009",
+    "ownerId": null,
     "dueDate": null,
-    "createdAt": "2026-07-08T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-28T14:11:02.400Z",
+    "updatedAt": "2026-08-28T14:11:02.400Z",
     "tags": [
       "devops",
       "accessibility"
@@ -3380,10 +3380,10 @@
     "description": null,
     "status": "done",
     "priority": "high",
-    "ownerId": "USR-010",
-    "dueDate": "2026-08-25T12:00:00.000Z",
-    "createdAt": "2026-08-21T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "ownerId": null,
+    "dueDate": "2026-09-28T12:00:00.000Z",
+    "createdAt": "2026-08-28T17:06:00.000Z",
+    "updatedAt": "2026-08-28T17:06:00.000Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -3395,10 +3395,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": null,
     "dueDate": "2026-09-02T12:00:00.000Z",
-    "createdAt": "2026-08-20T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-28T20:00:57.600Z",
+    "updatedAt": "2026-08-28T20:00:57.600Z",
     "tags": [
       "documentation",
       "backend"
@@ -3410,10 +3410,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": null,
     "dueDate": "2026-11-06T12:00:00.000Z",
-    "createdAt": "2026-08-19T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-28T22:55:55.200Z",
+    "updatedAt": "2026-08-28T22:55:55.200Z",
     "tags": [
       "accessibility",
       "bug"
@@ -3427,8 +3427,8 @@
     "priority": "high",
     "ownerId": null,
     "dueDate": "2026-09-04T12:00:00.000Z",
-    "createdAt": "2026-08-18T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-29T01:50:52.800Z",
+    "updatedAt": "2026-08-29T01:50:52.800Z",
     "tags": [
       "frontend",
       "feature"
@@ -3440,10 +3440,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-002",
+    "ownerId": null,
     "dueDate": "2026-11-08T12:00:00.000Z",
-    "createdAt": "2026-08-17T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-29T04:45:50.400Z",
+    "updatedAt": "2026-08-29T04:45:50.400Z",
     "tags": [
       "backend",
       "design"
@@ -3455,10 +3455,10 @@
     "description": "Users on mobile networks are experiencing silent authentication failures when refreshing JWT tokens concurrently. We need to implement a queue mechanism to prevent multiple refresh calls.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-003",
+    "ownerId": null,
     "dueDate": "2026-08-20T12:00:00.000Z",
-    "createdAt": "2026-08-16T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-29T07:40:48.000Z",
+    "updatedAt": "2026-08-29T07:40:48.000Z",
     "tags": [
       "bug",
       "performance"
@@ -3470,10 +3470,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "done",
     "priority": "high",
-    "ownerId": "USR-004",
+    "ownerId": null,
     "dueDate": null,
-    "createdAt": "2026-08-15T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-29T10:35:45.600Z",
+    "updatedAt": "2026-08-29T10:35:45.600Z",
     "tags": [
       "feature",
       "security"
@@ -3485,10 +3485,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "done",
     "priority": "urgent",
-    "ownerId": "USR-005",
+    "ownerId": null,
     "dueDate": "2026-09-08T12:00:00.000Z",
-    "createdAt": "2026-08-14T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-29T13:30:43.200Z",
+    "updatedAt": "2026-08-29T13:30:43.200Z",
     "tags": [
       "design",
       "database"
@@ -3500,10 +3500,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-006",
+    "ownerId": null,
     "dueDate": "2026-11-12T12:00:00.000Z",
-    "createdAt": "2026-08-13T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-29T16:25:40.800Z",
+    "updatedAt": "2026-08-29T16:25:40.800Z",
     "tags": [
       "performance",
       "devops"
@@ -3517,8 +3517,8 @@
     "priority": "high",
     "ownerId": null,
     "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-12T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-29T19:20:38.400Z",
+    "updatedAt": "2026-08-29T19:20:38.400Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -3530,10 +3530,10 @@
     "description": null,
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-008",
+    "ownerId": null,
     "dueDate": "2026-08-15T12:00:00.000Z",
-    "createdAt": "2026-08-11T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "createdAt": "2026-08-29T22:15:36.000Z",
+    "updatedAt": "2026-08-29T22:15:36.000Z",
     "tags": [
       "database",
       "documentation"
@@ -3545,10 +3545,10 @@
     "description": "Database logs indicate full table scans during owner search queries. Add composite index on (owner_id, status, due_date).",
     "status": "done",
     "priority": "low",
-    "ownerId": "USR-009",
+    "ownerId": null,
     "dueDate": "2026-09-12T12:00:00.000Z",
-    "createdAt": "2026-08-10T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "createdAt": "2026-08-30T01:10:33.600Z",
+    "updatedAt": "2026-08-30T01:10:33.600Z",
     "tags": [
       "devops",
       "accessibility"
@@ -3560,10 +3560,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "done",
     "priority": "high",
-    "ownerId": "USR-010",
+    "ownerId": null,
     "dueDate": "2026-11-16T12:00:00.000Z",
-    "createdAt": "2026-08-09T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "createdAt": "2026-08-30T04:05:31.200Z",
+    "updatedAt": "2026-08-30T04:05:31.200Z",
     "tags": [
       "mobile-fix",
       "frontend"
@@ -3575,10 +3575,10 @@
     "description": null,
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-011",
+    "ownerId": null,
     "dueDate": null,
-    "createdAt": "2026-08-08T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "createdAt": "2026-08-30T07:00:28.800Z",
+    "updatedAt": "2026-08-30T07:00:28.800Z",
     "tags": [
       "documentation",
       "backend"
@@ -3590,10 +3590,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-012",
+    "ownerId": null,
     "dueDate": "2026-11-18T12:00:00.000Z",
-    "createdAt": "2026-08-07T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "createdAt": "2026-08-30T09:55:26.400Z",
+    "updatedAt": "2026-08-30T09:55:26.400Z",
     "tags": [
       "accessibility",
       "bug"
@@ -3606,9 +3606,9 @@
     "status": "done",
     "priority": "urgent",
     "ownerId": null,
-    "dueDate": "2026-08-30T12:00:00.000Z",
-    "createdAt": "2026-08-06T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "dueDate": "2026-09-18T12:00:00.000Z",
+    "createdAt": "2026-08-30T12:50:24.000Z",
+    "updatedAt": "2026-08-30T12:50:24.000Z",
     "tags": [
       "frontend",
       "feature"
@@ -3620,10 +3620,10 @@
     "description": "Current rendering drops below 30fps when loading more than 200 items in the DOM. Replace standard mapping with TanStack Virtual or custom windowing.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-002",
-    "dueDate": "2026-11-20T12:00:00.000Z",
-    "createdAt": "2026-08-05T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "ownerId": null,
+    "dueDate": "2026-09-22T12:00:00.000Z",
+    "createdAt": "2026-08-30T15:45:21.600Z",
+    "updatedAt": "2026-08-30T15:45:21.600Z",
     "tags": [
       "backend",
       "design"
@@ -3635,10 +3635,10 @@
     "description": "Need to comply with updated data retention guidelines by end of Q3.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-003",
-    "dueDate": "2026-09-03T12:00:00.000Z",
-    "createdAt": "2026-08-04T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "ownerId": null,
+    "dueDate": "2026-09-26T12:00:00.000Z",
+    "createdAt": "2026-08-30T18:40:19.200Z",
+    "updatedAt": "2026-08-30T18:40:19.200Z",
     "tags": [
       "bug",
       "performance"
@@ -3650,10 +3650,10 @@
     "description": "Heap profile shows accumulating unclosed event listeners in task subscription hook.",
     "status": "done",
     "priority": "high",
-    "ownerId": "USR-004",
-    "dueDate": "2026-08-31T12:00:00.000Z",
-    "createdAt": "2026-08-03T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "ownerId": null,
+    "dueDate": "2026-09-30T12:00:00.000Z",
+    "createdAt": "2026-08-30T21:35:16.800Z",
+    "updatedAt": "2026-08-30T21:35:16.800Z",
     "tags": [
       "feature",
       "security"
@@ -3665,10 +3665,10 @@
     "description": "The current row of dropdown filters overflows horizontally on iPhone SE (375px). Replace with a full-height bottom sheet filter drawer.",
     "status": "done",
     "priority": "low",
-    "ownerId": "USR-005",
-    "dueDate": "2026-09-05T12:00:00.000Z",
-    "createdAt": "2026-08-02T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "ownerId": null,
+    "dueDate": "2026-10-05T12:00:00.000Z",
+    "createdAt": "2026-08-31T00:30:14.400Z",
+    "updatedAt": "2026-08-31T00:30:14.400Z",
     "tags": [
       "design",
       "database"
@@ -3680,10 +3680,10 @@
     "description": null,
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-006",
-    "dueDate": null,
-    "createdAt": "2026-08-01T12:00:00.000Z",
-    "updatedAt": "2026-08-31T12:00:00.000Z",
+    "ownerId": null,
+    "dueDate": "2026-10-10T12:00:00.000Z",
+    "createdAt": "2026-08-31T03:25:12.000Z",
+    "updatedAt": "2026-08-31T03:25:12.000Z",
     "tags": [
       "performance",
       "devops"
@@ -3696,9 +3696,9 @@
     "status": "done",
     "priority": "high",
     "ownerId": null,
-    "dueDate": "2026-09-07T12:00:00.000Z",
-    "createdAt": "2026-07-31T12:00:00.000Z",
-    "updatedAt": "2026-08-30T12:00:00.000Z",
+    "dueDate": "2026-10-15T12:00:00.000Z",
+    "createdAt": "2026-08-31T06:20:09.600Z",
+    "updatedAt": "2026-08-31T06:20:09.600Z",
     "tags": [
       "security",
       "mobile-fix"
@@ -3710,10 +3710,10 @@
     "description": "Clean up legacy CSS variables and align design system tokens.",
     "status": "done",
     "priority": "medium",
-    "ownerId": "USR-008",
-    "dueDate": "2026-11-26T12:00:00.000Z",
-    "createdAt": "2026-07-30T12:00:00.000Z",
-    "updatedAt": "2026-08-29T12:00:00.000Z",
+    "ownerId": null,
+    "dueDate": "2026-10-18T12:00:00.000Z",
+    "createdAt": "2026-08-31T09:15:07.200Z",
+    "updatedAt": "2026-08-31T09:15:07.200Z",
     "tags": [
       "database",
       "documentation"
@@ -3725,10 +3725,10 @@
     "description": null,
     "status": "done",
     "priority": "urgent",
-    "ownerId": "USR-009",
-    "dueDate": "2026-09-09T12:00:00.000Z",
-    "createdAt": "2026-07-29T12:00:00.000Z",
-    "updatedAt": "2026-08-28T12:00:00.000Z",
+    "ownerId": null,
+    "dueDate": "2026-10-22T12:00:00.000Z",
+    "createdAt": "2026-08-31T12:10:04.800Z",
+    "updatedAt": "2026-08-31T12:10:04.800Z",
     "tags": [
       "devops",
       "accessibility"
@@ -3740,10 +3740,10 @@
     "description": "Ensure keyboard navigation works seamlessly using Tab, Arrow keys, and Escape.",
     "status": "done",
     "priority": "high",
-    "ownerId": "USR-010",
-    "dueDate": "2026-11-28T12:00:00.000Z",
-    "createdAt": "2026-07-28T12:00:00.000Z",
-    "updatedAt": "2026-08-27T12:00:00.000Z",
+    "ownerId": null,
+    "dueDate": "2026-10-26T12:00:00.000Z",
+    "createdAt": "2026-08-31T15:05:02.400Z",
+    "updatedAt": "2026-08-31T15:05:02.400Z",
     "tags": [
       "mobile-fix",
       "frontend"

@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { TaskHeader } from '@/features/tasks/TaskHeader';
 import { Avatar } from '@/components/common/Avatar';
+import { TeamGridSkeleton } from '@/components/skeleton';
 import { TaskOwner } from '@/types/task';
 import { useTaskStorage } from '@/hooks/useTaskStorage';
 import { Mail, ShieldCheck } from 'lucide-react';
@@ -65,10 +66,7 @@ export default function TeamPage() {
         />
 
         {isLoading ? (
-          <div className="p-8 text-center bg-white rounded-2xl border border-slate-200 shadow-2xs">
-            <div className="inline-block w-8 h-8 border-4 border-[#FE9F43] border-t-transparent rounded-full animate-spin mb-2" />
-            <p className="text-xs text-slate-500 font-bold">Loading team workload data...</p>
-          </div>
+          <TeamGridSkeleton count={6} />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {owners.map((member) => {
