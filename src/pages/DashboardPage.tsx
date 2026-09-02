@@ -145,16 +145,16 @@ export default function DashboardPage() {
               {/* Left: Recent Tasks & Activities Widget */}
               <div className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-3 flex flex-col justify-between">
                 {/* Header with Title and View All CTA */}
-                <div className="flex items-center justify-between gap-3 border-b border-slate-100 pb-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 rounded-xl bg-amber-50 text-[#FE9F43] flex items-center justify-center font-bold shrink-0">
-                      <ListTodo className="w-5 h-5" />
+                <div className="flex items-start sm:items-center justify-between gap-2 sm:gap-3 border-b border-slate-100 pb-2.5 sm:pb-3">
+                  <div className="flex items-start sm:items-center gap-2 sm:gap-2.5 min-w-0 flex-1">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-amber-50 text-[#FE9F43] flex items-center justify-center font-bold shrink-0 mt-0.5 sm:mt-0">
+                      <ListTodo className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <div>
-                      <h2 className="text-base font-bold text-slate-900 leading-tight">
+                    <div className="min-w-0 flex-1">
+                      <h2 className="text-sm sm:text-base font-bold text-slate-900 leading-snug sm:leading-tight">
                         Recent Activity & Tasks
                       </h2>
-                      <p className="text-xs text-slate-500 font-normal mt-0.5">
+                      <p className="text-[11px] sm:text-xs text-slate-500 font-normal mt-0.5">
                         Latest 5 newly created tasks across workflows
                       </p>
                     </div>
@@ -162,15 +162,15 @@ export default function DashboardPage() {
 
                   <Link
                     to="/tasks"
-                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#FE9F43] hover:text-[#FF6E22] bg-amber-50 hover:bg-amber-100/80 rounded-xl transition-colors shrink-0"
+                    className="flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-[#FE9F43] hover:text-[#FF6E22] bg-amber-50 hover:bg-amber-100/80 rounded-xl transition-colors shrink-0 self-start sm:self-auto mt-0.5 sm:mt-0"
                   >
                     <span>View All</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   </Link>
                 </div>
 
                 {/* Tasks List */}
-                <div className="space-y-1.5 flex-1">
+                <div className="space-y-2.5 flex-1">
                   {recentCreatedTasks.length === 0 ? (
                     <div className="p-8 text-center text-xs text-slate-500 font-medium bg-slate-50 rounded-xl">
                       No tasks available in this view.
@@ -180,7 +180,7 @@ export default function DashboardPage() {
                       <div
                         key={task.id}
                         onClick={() => setSelectedTask(task)}
-                        className="group p-2.5 rounded-xl border border-slate-100 hover:border-amber-200/90 bg-slate-50/30 hover:bg-amber-50/20 transition-all duration-200 flex items-center justify-between gap-2.5 cursor-pointer shadow-2xs hover:shadow-xs"
+                        className="group p-3 rounded-xl border border-slate-100 hover:border-amber-200/90 bg-slate-50/30 hover:bg-amber-50/20 transition-all duration-200 flex items-center justify-between gap-2.5 cursor-pointer shadow-2xs hover:shadow-xs"
                       >
                         {/* Left: Task ID & Title */}
                         <div className="flex items-center gap-2.5 min-w-0 flex-1 overflow-hidden">

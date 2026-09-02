@@ -1,18 +1,7 @@
 import React, { useMemo } from 'react';
-import {
-  Chart as ChartJS,
-  ArcElement,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Doughnut, Bar } from 'react-chartjs-2';
 import { Task } from '@/types/task';
-import { PieChart, BarChart2 } from 'lucide-react';
-
-ChartJS.register(ArcElement, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+import WorkflowStatusChart from '@/components/chart/WorkflowStatusChart';
+import PriorityBreakdownChart from '@/components/chart/PriorityBreakdownChart';
 
 interface AnalyticsPanelProps {
   tasks: Task[];
@@ -55,89 +44,6 @@ export const AnalyticsPanel: React.FC<AnalyticsPanelProps> = ({ tasks }) => {
     return counts;
   }, [tasks]);
 
-  // Thicker, chunkier Doughnut Chart with rounded corners and spacing gap
-  const doughnutData = {
-    labels: ['Backlog', 'To Do', 'In Progress', 'In Review', 'Done'],
-    datasets: [
-      {
-        data: [
-          statusCounts.backlog,
-          statusCounts.todo,
-          statusCounts.in_progress,
-          statusCounts.in_review,
-          statusCounts.done,
-        ],
-        backgroundColor: [
-          '#092C4C', // Deep Navy
-          '#00B4D8', // Bright Cyan Blue
-          '#10B981', // Vivid Emerald Green
-          '#FE9F43', // Brand Orange/Amber
-          '#8B5CF6', // Purple
-        ],
-        borderWidth: 3,
-        borderColor: '#FFFFFF',
-        borderRadius: 10,
-        spacing: 5,
-        hoverOffset: 8,
-      },
-    ],
-  };
-
-  const doughnutOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    cutout: '48%', // Thicker ring width (52% thickness)
-    plugins: {
-      legend: {
-        position: 'bottom' as const,
-        labels: {
-          font: { family: 'sans-serif', size: 11, weight: 700 },
-          color: '#334155',
-          usePointStyle: true,
-          pointStyle: 'circle',
-          padding: 16,
-        },
-      },
-    },
-  };
-
-  // Priority Bar Chart Configuration
-  const barData = {
-    labels: ['Urgent', 'High', 'Medium', 'Low'],
-    datasets: [
-      {
-        label: 'Task Count',
-        data: [
-          priorityCounts.urgent,
-          priorityCounts.high,
-          priorityCounts.medium,
-          priorityCounts.low,
-        ],
-        backgroundColor: [
-          '#092C4C', // Urgent - Deep Navy
-          '#FE9F43', // High - Brand Amber
-          '#8B5CF6', // Medium - Purple
-          '#0F9384', // Low - Teal
-        ],
-        borderRadius: 8,
-      },
-    ],
-  };
-
-  const barOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        position: 'bottom' as const,
-        labels: {
-          font: { family: 'sans-serif', size: 11, weight: 700 },
-          color: '#334155',
-        },
-      },
-    },
-  };
-
   return (
     <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-2xs space-y-4 animate-fade-in">
       {/* Header */}
@@ -159,27 +65,11 @@ export const AnalyticsPanel: React.FC<AnalyticsPanelProps> = ({ tasks }) => {
 
       {/* Visual Charts Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1">
-        {/* Doughnut Chart Card */}
-        <div className="bg-slate-50/70 p-4 rounded-xl border border-slate-200/80 space-y-3">
-          <div className="flex items-center gap-2 text-xs font-extrabold text-slate-800">
-            <PieChart className="w-4 h-4 text-[#FE9F43]" />
-            <span>Workflow Status Proportions</span>
-          </div>
-          <div className="h-64 relative flex items-center justify-center">
-            <Doughnut data={doughnutData} options={doughnutOptions} />
-          </div>
-        </div>
+        {/* Workflow Status Doughnut Chart Component */}
+        <WorkflowStatusChart statusCounts={statusCounts} />
 
-        {/* Bar Chart Card */}
-        <div className="bg-[#FAFBFD] p-4 rounded-xl border border-slate-200/80 space-y-3">
-          <div className="flex items-center gap-2 text-xs font-extrabold text-slate-800">
-            <BarChart2 className="w-4 h-4 text-[#155EEF]" />
-            <span>Priority Level Breakdown</span>
-          </div>
-          <div className="h-64 relative flex items-center justify-center">
-            <Bar data={barData} options={barOptions} />
-          </div>
-        </div>
+        {/* Priority Breakdown Bar Chart Component */}
+        <PriorityBreakdownChart priorityCounts={priorityCounts} />
       </div>
     </div>
   );

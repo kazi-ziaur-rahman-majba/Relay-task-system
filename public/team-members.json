@@ -70,5 +70,23 @@
     "name": "Sophia Martinez",
     "email": "sophia.m@webns.io",
     "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sophia"
+  },
+  {
+    "id": "USR-013",
+    "name": "Tariq Hassan",
+    "email": "tariq.h@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Tariq"
+  },
+  {
+    "id": "USR-014",
+    "name": "Chloe Tanaka",
+    "email": "chloe.t@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Chloe"
+  },
+  {
+    "id": "USR-015",
+    "name": "Benjamin Foster",
+    "email": "benjamin.f@webns.io",
+    "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=Benjamin"
   }
 ]

@@ -3,17 +3,23 @@
 A high-performance, responsive, state-driven **Team Workload Task Management Dashboard** built for **WEBNS Technology Ltd.**
 
 > [!NOTE]
-> **Strict Non-Negotiables Compliance**: Built exclusively with **React 18 & TypeScript** (strict mode, zero `any` types) using custom **Tailwind CSS v4** layout architecture. No pre-built component UI kits (MUI, Ant Design, Chakra) were used.
+> **Strict Non-Negotiables Compliance**: Built exclusively with **React 19 & TypeScript** (strict mode, zero `any` types) using custom **Tailwind CSS v4** layout architecture. No pre-built component UI kits (MUI, Ant Design, Chakra) were used.
 
 ---
 
 ## 📸 1. Screenshots & Responsive Viewports
 
-### Desktop View (1280px Viewport) — High-Density Workload Table
-![Desktop View 1280px](./public/screenshots/desktop-1280.jpg)
+### 💻 Desktop View (1280px Viewport) — Executive Dashboard & Workload Analytics
+![Desktop Dashboard View](./public/screenshots/Desktop-Dashboard.png)
 
-### Mobile View (375px Viewport) — Touch-Friendly Task Cards & Mobile Filter Drawer
-![Mobile View 375px](./public/screenshots/mobile-375.jpg)
+### 📋 Desktop View (1280px Viewport) — High-Density Workload Table List
+![Desktop High-Density Table View](./public/screenshots/Desktop-Table-List.png)
+
+### 📊 Tablet View (768px Viewport) — Analytical Dashboard
+![Tablet Analytical Dashboard View](./public/screenshots/Tablet-Analytical%20Dashboard.png)
+
+### 📱 Mobile View (375px Viewport) — Touch-Friendly Task Cards & Mobile Filter Drawer
+![Mobile Device Table List View](./public/screenshots/Mobile-Device-Table%20List.png)
 
 ---
 
@@ -27,8 +33,14 @@ Follow these steps to run the application from a clean repository clone:
 
 ### Setup Steps
 ```bash
-# 1. Clone the repository
+# 1. Repository Link
+https://github.com/kazi-ziaur-rahman-majba/Relay-task-system
+
+# Repository Clone HTTPS Through
 git clone https://github.com/kazi-ziaur-rahman-majba/Relay-task-system.git
+
+# Repository Clone SSH Key Through
+git clone git@github.com:kazi-ziaur-rahman-majba/Relay-task-system.git
 
 # 2. Navigate into project root directory
 cd Relay-task-system
@@ -43,11 +55,11 @@ Open **[http://localhost:5173](http://localhost:5173)** in your browser.
 
 ### Verification & Production Build
 ```bash
-# Strict TypeScript compilation check (0 errors)
-npx tsc --noEmit
+# Strict TypeScript compilation & production build
+pnpm build
 
-# Production bundle build
-npx vite build
+# Preview production build locally
+pnpm preview
 ```
 
 ---
@@ -239,33 +251,3 @@ In accordance with the assignment brief, AI assistance (Google Antigravity / Cla
    - **Alternative**: `@tanstack/react-virtual` for virtualized rendering. We chose pagination because URL parameter syncing (`?page=2`) makes deep linking and view-sharing significantly cleaner for team members.
 
 ---
-
-## 🚀 Setup & Local Development Instructions
-
-### Prerequisites
-- Node.js `>= 18.0.0`
-- pnpm `>= 8.0.0` (or npm/yarn)
-
-### Installation
-```bash
-# Repository Link
-https://github.com/kazi-ziaur-rahman-majba/Relay-task-system
-
-# Repository Clone HTTPS Through
-git clone https://github.com/kazi-ziaur-rahman-majba/Relay-task-system.git
-
-# Repository Clone SSH Key Through
-git clone git@github.com:kazi-ziaur-rahman-majba/Relay-task-system.git
-
-# Navigate to project directory
-cd Relay-task-system
-
-# Install dependencies
-pnpm install
-```
-
-### Running Development Server
-```bash
-pnpm dev
-```
-Open [http://localhost:5173](http://localhost:5173) in your browser.

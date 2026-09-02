@@ -88,7 +88,7 @@ const Header = ({ sidebarClick }: { sidebarClick: boolean }) => {
             )}
 
             {/* Desktop Top Navbar (>= 1024px / lg) Clean Header Bar */}
-            <div className="hidden lg:flex justify-end items-center px-6 py-3 bg-white">
+            <div className="hidden lg:flex h-16 justify-end items-center px-6 bg-white">
                 {/* Right Area: User Profile Badge */}
                 <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2.5 p-1 px-3 rounded-xl border border-slate-200/80 shadow-2xs">

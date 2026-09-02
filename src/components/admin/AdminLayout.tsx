@@ -16,7 +16,7 @@ export default function AdminLayout() {
 			<button
 				onClick={handleSidebarClick}
 				aria-label={sidebarClick ? "Expand sidebar" : "Collapse sidebar"}
-				className={`hidden lg:flex fixed top-4 z-[51] bg-[#fe9f43] text-white rounded-full p-1 shadow-md hover:scale-105 focus:outline-none transition-all duration-300 ease-in-out cursor-pointer items-center justify-center ${
+				className={`hidden lg:flex fixed top-[19px] z-[51] bg-[#fe9f43] text-white rounded-full p-1 shadow-md hover:scale-105 focus:outline-none transition-all duration-300 ease-in-out cursor-pointer items-center justify-center ${
 					sidebarClick ? "left-[68px]" : "left-[228px]"
 				}`}
 			>
@@ -37,7 +37,7 @@ export default function AdminLayout() {
 			<div className="flex flex-col flex-1 min-w-0 overflow-hidden">
 				<Header sidebarClick={sidebarClick} />
 
-				<main className="flex-1 overflow-y-auto mt-14 p-2.5 sm:p-5 lg:p-5 bg-[#F7F7F7]">
+				<main className="flex-1 overflow-y-auto mt-16 p-2.5 sm:p-5 lg:p-5 bg-[#F7F7F7]">
 					<Suspense fallback={<TableSkeleton rowsCount={8} />}>
 						<Outlet />
 					</Suspense>

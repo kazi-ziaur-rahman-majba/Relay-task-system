@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Task, CreateTaskInput, UpdateTaskInput } from '@/types/task';
 
-const STORAGE_KEY = 'relay_tasks_data_v4';
+const STORAGE_KEY = 'relay_tasks_data_v6';
 
 /**
  * Custom hook to manage Task state with LocalStorage persistence.
