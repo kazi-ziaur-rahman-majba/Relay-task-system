@@ -18,7 +18,7 @@ export const DateBadge: React.FC<DateBadgeProps> = ({ dueDate, className = '' })
   }
 
   const dateObj = new Date(dueDate);
-  const today = startOfDay(new Date('2026-08-31T12:00:00Z'));
+  const today = startOfDay(new Date('2026-09-02T12:00:00Z'));
   const isOverdue = isBefore(startOfDay(dateObj), today);
   const isDueToday = isToday(dateObj);
 

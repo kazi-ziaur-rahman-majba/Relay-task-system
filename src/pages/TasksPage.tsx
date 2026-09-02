@@ -145,7 +145,7 @@ export default function TasksPage() {
 
   return (
     <div className="min-h-full bg-[#F7F7F7] text-slate-900 font-sans antialiased">
-      <main className="w-full max-w-full px-1 sm:px-6 py-1 sm:py-4 space-y-2.5 sm:space-y-4">
+      <main className="w-full max-w-full px-1 md:px-2 lg:px-6 py-1 md:py-2 lg:py-4 space-y-2.5 sm:space-y-4">
         {/* Header with New Task CTA */}
         <TaskHeader
           title="All Tasks"

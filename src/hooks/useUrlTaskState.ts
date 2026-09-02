@@ -4,7 +4,7 @@ import { useCallback, useMemo } from 'react';
 
 const VALID_STATUSES: TaskStatus[] = ['backlog', 'todo', 'in_progress', 'in_review', 'done'];
 const VALID_PRIORITIES: TaskPriority[] = ['urgent', 'high', 'medium', 'low'];
-const VALID_SORT_FIELDS: TaskSortField[] = ['updatedAt', 'id', 'dueDate', 'priority', 'createdAt', 'title'];
+const VALID_SORT_FIELDS: TaskSortField[] = ['id', 'priority', 'dueDate'];
 
 export function useUrlTaskState() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -38,10 +38,10 @@ export function useUrlTaskState() {
 
     // Sort Field & Order
     const rawSortBy = searchParams.get('sort') as TaskSortField;
-    const sortBy: TaskSortField = VALID_SORT_FIELDS.includes(rawSortBy) ? rawSortBy : 'updatedAt';
+    const sortBy: TaskSortField = VALID_SORT_FIELDS.includes(rawSortBy) ? rawSortBy : 'id';
 
     const rawOrder = searchParams.get('order');
-    const sortOrder: 'asc' | 'desc' = rawOrder === 'asc' ? 'asc' : 'desc';
+    const sortOrder: 'asc' | 'desc' = rawOrder === 'desc' ? 'desc' : 'asc';
 
     // Page
     const rawPage = parseInt(searchParams.get('page') || '1', 10);
@@ -128,7 +128,7 @@ export function useUrlTaskState() {
 
   const setSortBy = useCallback(
     (sortBy: TaskSortField) => {
-      updateUrl({ sort: sortBy === 'updatedAt' ? null : sortBy });
+      updateUrl({ sort: sortBy === 'id' ? null : sortBy });
     },
     [updateUrl]
   );

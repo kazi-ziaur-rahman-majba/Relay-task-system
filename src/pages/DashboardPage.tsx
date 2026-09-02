@@ -44,7 +44,7 @@ export default function DashboardPage() {
 
   // Compute stat metrics
   const { urgentCount, overdueCount, unassignedCount } = useMemo(() => {
-    const today = startOfDay(new Date('2026-08-31T12:00:00Z'));
+    const today = startOfDay(new Date('2026-09-02T12:00:00Z'));
     let urgent = 0;
     let overdue = 0;
     let unassigned = 0;

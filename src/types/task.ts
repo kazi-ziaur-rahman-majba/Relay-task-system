@@ -17,12 +17,9 @@ export type TaskPriority =
   | 'low';
 
 export type TaskSortField =
-  | 'updatedAt'
   | 'id'
   | 'dueDate'
-  | 'priority'
-  | 'createdAt'
-  | 'title';
+  | 'priority';
 
 export interface TaskOwner {
   id: string;

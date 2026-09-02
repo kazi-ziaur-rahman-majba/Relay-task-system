@@ -77,6 +77,13 @@ export function sortTasks(
       return isAsc ? cmp : -cmp;
     }
 
+    if (sortBy === 'priority') {
+      const weightA = PRIORITY_WEIGHTS[a.priority] || 0;
+      const weightB = PRIORITY_WEIGHTS[b.priority] || 0;
+
+      return isAsc ? weightA - weightB : weightB - weightA;
+    }
+
     if (sortBy === 'dueDate') {
       // Null due dates sorted last always
       if (!a.dueDate && !b.dueDate) return 0;
@@ -89,32 +96,9 @@ export function sortTasks(
       return isAsc ? timeA - timeB : timeB - timeA;
     }
 
-    if (sortBy === 'priority') {
-      const weightA = PRIORITY_WEIGHTS[a.priority] || 0;
-      const weightB = PRIORITY_WEIGHTS[b.priority] || 0;
-
-      return isAsc ? weightA - weightB : weightB - weightA;
-    }
-
-    if (sortBy === 'title') {
-      const titleA = a.title.toLowerCase();
-      const titleB = b.title.toLowerCase();
-
-      return isAsc ? titleA.localeCompare(titleB) : titleB.localeCompare(titleA);
-    }
-
-    if (sortBy === 'createdAt') {
-      const dateA = new Date(a.createdAt).getTime();
-      const dateB = new Date(b.createdAt).getTime();
-
-      return isAsc ? dateA - dateB : dateB - dateA;
-    }
-
-    // Default: updatedAt (Last Updated)
-    const dateA = new Date(a.updatedAt || a.createdAt).getTime();
-    const dateB = new Date(b.updatedAt || b.createdAt).getTime();
-
-    return isAsc ? dateA - dateB : dateB - dateA;
+    // Default: ID
+    const cmp = a.id.localeCompare(b.id, undefined, { numeric: true, sensitivity: 'base' });
+    return isAsc ? cmp : -cmp;
   });
 }
 

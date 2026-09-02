@@ -35,13 +35,13 @@ export const TaskTableView: React.FC<TaskTableViewProps> = ({
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="bg-slate-50 border-b border-slate-200 text-[11px] font-extrabold uppercase tracking-wider text-[#051A2C] select-none">
-              <th scope="col" className="py-3 px-4 w-20">ID</th>
-              <th scope="col" className="py-3 px-4 w-[320px] max-w-[320px]">Task Title</th>
-              <th scope="col" className="py-3 px-4 w-44">Owner</th>
-              <th scope="col" className="py-3 px-4 w-32">Priority</th>
-              <th scope="col" className="py-3 px-4 w-36">Due Date</th>
-              <th scope="col" className="py-3 px-4 w-36">Status</th>
-              <th scope="col" className="py-3 px-4 w-24 text-right">Actions</th>
+              <th scope="col" className="py-3 px-2 lg:px-4 w-16 lg:w-20">ID</th>
+              <th scope="col" className="py-3 px-2 lg:px-4 w-[280px] lg:w-[320px] max-w-[320px]">Task Title</th>
+              <th scope="col" className="py-3 px-2 lg:px-4 md:w-32 lg:w-44">Owner</th>
+              <th scope="col" className="hidden lg:table-cell py-3 px-4 w-32">Priority</th>
+              <th scope="col" className="py-3 px-2 lg:px-4 md:w-36 lg:w-36">Due Date</th>
+              <th scope="col" className="py-3 px-2 lg:px-2 xl:px-4 w-32 lg:w-28 xl:w-36">Status</th>
+              <th scope="col" className="py-3 px-2 lg:px-2 xl:px-4 w-24 text-right">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 text-sm">
@@ -53,14 +53,14 @@ export const TaskTableView: React.FC<TaskTableViewProps> = ({
                 className="group hover:bg-[#FFF5EC]/80 focus:bg-[#FFF5EC] focus:outline-none transition-colors cursor-pointer"
               >
                 {/* ID */}
-                <td className="py-3.5 px-4 font-mono text-xs font-bold text-[#051A2C] group-hover:text-[#FE9F43]">
+                <td className="py-3.5 px-2 lg:px-4 font-mono text-xs font-bold text-[#051A2C] group-hover:text-[#FE9F43]">
                   {task.id}
                 </td>
 
                 {/* Title */}
-                <td className="py-3.5 px-4 w-[320px] max-w-[320px]">
+                <td className="py-3.5 px-2 lg:px-4 w-[280px] lg:w-[320px] max-w-[320px]">
                   <div 
-                    className="max-h-14 overflow-y-hidden hover:overflow-y-auto whitespace-normal break-words text-xs sm:text-sm font-medium text-slate-900 group-hover:text-[#FE9F43] transition-colors pr-1 scrollbar-thin scrollbar-thumb-slate-300"
+                    className="max-h-14 overflow-y-hidden hover:overflow-y-auto whitespace-normal break-words text-xs sm:text-sm font-normal text-slate-900 group-hover:text-[#FE9F43] transition-colors pr-1 scrollbar-thin scrollbar-thumb-slate-300"
                     title={task.title}
                   >
                     {task.title}
@@ -68,22 +68,22 @@ export const TaskTableView: React.FC<TaskTableViewProps> = ({
                 </td>
 
                 {/* Owner */}
-                <td className="py-3.5 px-4">
+                <td className="py-3.5 px-2 lg:px-4">
                   <Avatar owner={task.owner} size="sm" showName />
                 </td>
 
-                {/* Priority */}
-                <td className="py-3.5 px-4">
+                {/* Priority (Hidden on Tablet, visible on Desktop >= lg) */}
+                <td className="hidden lg:table-cell py-3.5 px-4">
                   <PriorityBadge priority={task.priority} />
                 </td>
 
                 {/* Due Date */}
-                <td className="py-3.5 px-4">
+                <td className="py-3.5 px-2 lg:px-4">
                   <DateBadge dueDate={task.dueDate} />
                 </td>
 
                 {/* Status Picker (Inline Quick Update) */}
-                <td className="py-3.5 px-4" onClick={(e) => e.stopPropagation()}>
+                <td className="py-3.5 px-2 lg:px-2 xl:px-4" onClick={(e) => e.stopPropagation()}>
                   <div className="relative inline-block group/select">
                     <StatusBadge status={task.status} />
                     <select
@@ -102,7 +102,7 @@ export const TaskTableView: React.FC<TaskTableViewProps> = ({
                 </td>
 
                 {/* Row Actions */}
-                <td className="py-3.5 px-4 text-right" onClick={(e) => e.stopPropagation()}>
+                <td className="py-3.5 px-2 lg:px-2 xl:px-4 text-right" onClick={(e) => e.stopPropagation()}>
                   <div className="flex items-center justify-end gap-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
                     <button
                       onClick={() => onTaskClick?.(task)}

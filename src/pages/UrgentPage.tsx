@@ -7,6 +7,7 @@ import { EditTaskModal } from '@/features/tasks/modals/EditTaskModal';
 import { DeleteConfirmModal } from '@/features/tasks/modals/DeleteConfirmModal';
 import { TaskDetailDrawer } from '@/features/tasks/modals/TaskDetailDrawer';
 import { TableSkeleton } from '@/components/skeleton';
+import { Pagination } from '@/components/common/Pagination';
 import { TaskOwner, PopulatedTask, TaskStatus, UpdateTaskInput } from '@/types/task';
 import { useTaskStorage } from '@/hooks/useTaskStorage';
 import { isBefore, isToday, startOfDay } from 'date-fns';
@@ -25,6 +26,8 @@ export default function UrgentPage() {
   const [editingTask, setEditingTask] = useState<PopulatedTask | null>(null);
   const [deletingTask, setDeletingTask] = useState<PopulatedTask | null>(null);
   const [selectedTask, setSelectedTask] = useState<PopulatedTask | null>(null);
+  const [page, setPage] = useState<number>(1);
+  const pageSize = 10;
 
   // Load team members
   useEffect(() => {
@@ -52,7 +55,7 @@ export default function UrgentPage() {
 
   // Filter urgent & overdue tasks
   const { urgentTasks, urgentCount, overdueCount } = useMemo(() => {
-    const today = startOfDay(new Date('2026-08-31T12:00:00Z'));
+    const today = startOfDay(new Date('2026-09-02T12:00:00Z'));
     let urgent = 0;
     let overdue = 0;
 
@@ -85,6 +88,19 @@ export default function UrgentPage() {
     };
   }, [rawTasks, usersMap]);
 
+  // Pagination math for Urgent Tasks (10 items per page)
+  const totalUrgentItems = urgentTasks.length;
+  const totalUrgentPages = Math.max(1, Math.ceil(totalUrgentItems / pageSize));
+  const validPage = page > totalUrgentPages ? 1 : page;
+
+  const startIndex = totalUrgentItems === 0 ? 0 : (validPage - 1) * pageSize + 1;
+  const endIndex = Math.min(validPage * pageSize, totalUrgentItems);
+
+  const paginatedUrgentTasks = useMemo(() => {
+    const start = (validPage - 1) * pageSize;
+    return urgentTasks.slice(start, start + pageSize);
+  }, [urgentTasks, validPage]);
+
   const handleInlineStatusChange = (taskId: string, newStatus: TaskStatus) => {
     updateTask(taskId, { status: newStatus });
     toast.success(`Task ${taskId} status updated to ${newStatus.replace('_', ' ')}.`);
@@ -106,7 +122,7 @@ export default function UrgentPage() {
 
   return (
     <div className="min-h-full bg-[#F7F7F7] text-slate-900 font-sans antialiased">
-      <main className="w-full max-w-full px-1 sm:px-6 py-1 sm:py-4 space-y-2.5 sm:space-y-5">
+      <main className="w-full max-w-full px-1 md:px-2 lg:px-6 py-1 md:py-2 lg:py-4 space-y-2.5 sm:space-y-5">
         {/* Header */}
         <TaskHeader
           title="Urgent & Overdue Focus"
@@ -152,7 +168,7 @@ export default function UrgentPage() {
           <>
             <div className="hidden md:block">
               <TaskTableView
-                tasks={urgentTasks}
+                tasks={paginatedUrgentTasks}
                 onStatusChange={handleInlineStatusChange}
                 onTaskClick={(task) => setSelectedTask(task)}
                 onEditTask={(task) => setEditingTask(task)}
@@ -162,13 +178,23 @@ export default function UrgentPage() {
 
             <div className="md:hidden">
               <TaskCardView
-                tasks={urgentTasks}
+                tasks={paginatedUrgentTasks}
                 onStatusChange={handleInlineStatusChange}
                 onTaskClick={(task) => setSelectedTask(task)}
                 onEditTask={(task) => setEditingTask(task)}
                 onDeleteTask={(task) => setDeletingTask(task)}
               />
             </div>
+
+            {/* Reusable Pagination */}
+            <Pagination
+              currentPage={validPage}
+              totalPages={totalUrgentPages}
+              totalItems={totalUrgentItems}
+              startIndex={startIndex}
+              endIndex={endIndex}
+              onPageChange={setPage}
+            />
           </>
         )}
       </main>
