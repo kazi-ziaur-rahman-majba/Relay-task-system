@@ -1,54 +1,13 @@
-import { useState, useEffect, useRef } from "react";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { menu } from "@/navigation/sidebar";
 import { Link, useLocation } from "react-router-dom";
 import { MotionDiv } from "@/utils/framer.motion";
-import { FaCog, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
-
-const MenuItem = ({
-    icon,
-    text,
-    className = "",
-    onClick
-}: {
-    icon: React.ReactNode;
-    text: string;
-    className?: string;
-    onClick?: () => void;
-}) => (
-    <div className={`flex items-center gap-3 p-2 hover:bg-[#FFF5EC] cursor-pointer ${className}`} onClick={onClick}>
-        {icon}
-        <span>{text}</span>
-    </div>
-);
 
 const Header = ({ sidebarClick }: { sidebarClick: boolean }) => {
     const { pathname } = useLocation();
     const [showSidebarMenu, setShowSidebarMenu] = useState(false);
-    const [showUserDropdown, setShowUserDropdown] = useState(false);
-    const [showMenuDropdown, setShowMenuDropdown] = useState(false);
-    const dropdownRef = useRef<HTMLDivElement>(null);
-    const userImageRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (
-                dropdownRef.current &&
-                !dropdownRef.current.contains(event.target as Node) &&
-                userImageRef.current &&
-                !userImageRef.current.contains(event.target as Node)
-            ) {
-                setShowUserDropdown(false);
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
 
     const closeSidebarWithTransition = () => {
         setTimeout(() => {
@@ -94,52 +53,7 @@ const Header = ({ sidebarClick }: { sidebarClick: boolean }) => {
                     </div>
                 </div>
 
-                <div className="relative inline-block">
-                    <BsThreeDotsVertical
-                        size={20}
-                        className="text-[#fe9f43] cursor-pointer"
-                        onClick={() => setShowMenuDropdown(!showMenuDropdown)}
-                    />
 
-                    {showMenuDropdown && (
-                        <MotionDiv>
-                            <div className="absolute top-8 right-0 w-48 bg-white shadow-xl rounded-xl border border-slate-200 z-50 p-2">
-                                <div className="flex items-center gap-2 bg-[#FFF5EC] p-2 rounded-lg mb-2">
-                                    <div className="w-9 h-9 rounded-full bg-[#fe9f43] text-white flex items-center justify-center font-bold text-xs">
-                                        KZ
-                                    </div>
-                                    <div>
-                                        <p className="text-xs font-bold text-[#051A2C]">
-                                            Kazi Ziaur Rahman
-                                        </p>
-                                        <p className="text-[10px] text-slate-500">
-                                            Front-End Developer
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="border-b border-slate-200 pb-1 mb-1">
-                                    <MenuItem
-                                        icon={<FaUserCircle size={14} className="text-[#fe9f43]" />}
-                                        text="My Profile"
-                                        className="text-xs text-slate-700 font-medium rounded-md hover:text-[#fe9f43]"
-                                    />
-                                    <MenuItem
-                                        icon={<FaCog size={14} className="text-[#fe9f43]" />}
-                                        text="Settings"
-                                        className="text-xs text-slate-700 font-medium rounded-md hover:text-[#fe9f43]"
-                                    />
-                                </div>
-
-                                <MenuItem
-                                    icon={<FaSignOutAlt size={14} />}
-                                    text="Logout"
-                                    className="text-rose-600 text-xs font-medium rounded-md hover:bg-rose-50"
-                                    onClick={handleLogout}
-                                />
-                            </div>
-                        </MotionDiv>
-                    )}
-                </div>
             </div>
 
             {/* Mobile Slide-over Sidebar Menu */}
@@ -176,14 +90,9 @@ const Header = ({ sidebarClick }: { sidebarClick: boolean }) => {
 
             {/* Desktop Top Navbar (>= 1024px / lg) Clean Header Bar */}
             <div className="hidden lg:flex justify-end items-center px-6 py-3 bg-white">
-                {/* Right Area: User Profile Dropdown (Notification Icon Removed) */}
+                {/* Right Area: User Profile Badge */}
                 <div className="flex items-center gap-4">
-                    {/* User Profile Dropdown */}
-                    <div
-                        ref={userImageRef}
-                        className="flex items-center gap-2.5 cursor-pointer hover:bg-slate-50 p-1 px-3 rounded-xl transition-colors relative border border-slate-200/80 shadow-2xs"
-                        onClick={() => setShowUserDropdown(!showUserDropdown)}
-                    >
+                    <div className="flex items-center gap-2.5 p-1 px-3 rounded-xl border border-slate-200/80 shadow-2xs">
                         <div className="w-8 h-8 rounded-full bg-[#fe9f43] text-white flex items-center justify-center font-bold text-xs">
                             KZ
                         </div>
@@ -191,44 +100,6 @@ const Header = ({ sidebarClick }: { sidebarClick: boolean }) => {
                             <p className="text-xs font-black text-black">Kazi Ziaur Rahman</p>
                             <p className="text-[10px] text-slate-500 font-medium">Front-End Developer</p>
                         </div>
-                    </div>
-
-                    {/* User Dropdown Menu */}
-                    <div
-                        ref={dropdownRef}
-                        className={`absolute top-14 right-6 bg-white shadow-xl rounded-xl border border-slate-200 p-2 w-52 origin-top-right transition-all duration-200 z-50 ${
-                            showUserDropdown ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-                        }`}
-                    >
-                        <div className="flex items-center gap-2.5 bg-[#FFF5EC] p-2.5 rounded-lg mb-2 border border-[#fe9f43]/20">
-                            <div className="w-9 h-9 rounded-full bg-[#fe9f43] text-white flex items-center justify-center font-bold text-xs">
-                                KZ
-                            </div>
-                            <div>
-                                <p className="text-xs font-bold text-[#051A2C]">Kazi Ziaur Rahman</p>
-                                <p className="text-[10px] text-[#FF6E22] font-semibold">WEBNS Ltd. Candidate</p>
-                            </div>
-                        </div>
-
-                        <div className="border-b border-slate-100 pb-1 mb-1">
-                            <MenuItem
-                                icon={<FaUserCircle size={14} className="text-[#fe9f43]" />}
-                                text="My Profile"
-                                className="text-xs text-slate-700 font-medium rounded-md hover:text-[#fe9f43]"
-                            />
-                            <MenuItem
-                                icon={<FaCog size={14} className="text-[#fe9f43]" />}
-                                text="Settings"
-                                className="text-xs text-slate-700 font-medium rounded-md hover:text-[#fe9f43]"
-                            />
-                        </div>
-
-                        <MenuItem
-                            icon={<FaSignOutAlt size={14} />}
-                            text="Logout"
-                            className="text-rose-600 text-xs font-medium rounded-md hover:bg-rose-50"
-                            onClick={handleLogout}
-                        />
                     </div>
                 </div>
             </div>

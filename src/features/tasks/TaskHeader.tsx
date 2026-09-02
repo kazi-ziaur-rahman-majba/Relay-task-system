@@ -27,9 +27,9 @@ export const TaskHeader: React.FC<TaskHeaderProps> = ({
           <button
             type="button"
             onClick={onNewTaskClick}
-            className="flex items-center justify-center px-4 py-2 text-xs font-black rounded-xl bg-[#FE9F43] hover:bg-[#FF6E22] text-white transition-all shadow-2xs cursor-pointer min-h-[40px]"
+            className="flex items-center justify-center px-2.5 py-1.5 sm:px-4 sm:py-2 text-xs font-bold rounded-lg sm:rounded-xl bg-[#FE9F43] hover:bg-[#FF6E22] text-white transition-all shadow-2xs cursor-pointer shrink-0"
           >
-            <Plus className="w-4 h-4 mr-1.5 stroke-[3]" />
+            <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 stroke-[2.5]" />
             New Task
           </button>
         )}

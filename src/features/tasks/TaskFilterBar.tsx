@@ -99,64 +99,64 @@ export const TaskFilterBar: React.FC<TaskFilterBarProps> = ({
   const activePriority = filters.priority.length > 0 ? filters.priority[0] : 'all';
 
   return (
-    <div className="space-y-2 sm:space-y-3 bg-white p-2.5 sm:p-4 rounded-2xl border border-slate-200 shadow-2xs">
-      {/* Combined Status Tabs & Search Box Row (Flex justify-between) */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 sm:gap-3 border-b border-slate-100 pb-2 sm:pb-3">
-        {/* Navigation Status Tabs */}
-        <nav className="flex items-center gap-1 overflow-x-auto no-scrollbar shrink-0" aria-label="Status Tabs">
-          {statusTabs.map((tab) => {
-            const isActive = activeStatus === tab.id;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => onStatusChange(tab.id)}
-                className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
-                  isActive
-                    ? 'bg-[#FE9F43] text-white shadow-2xs'
-                    : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
-                }`}
-              >
-                {tab.label}
-              </button>
-            );
-          })}
-        </nav>
-
-        {/* Search Input & Mobile Filter Button */}
-        <div className="flex items-center gap-2 w-full sm:w-80 shrink-0">
-          <div className="relative flex-1">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input
-              ref={searchInputRef}
-              type="text"
-              value={localSearchInput}
-              onChange={(e) => setLocalSearchInput(e.target.value)}
-              placeholder="Search tasks... (Press '/' to focus)"
-              className="w-full pl-9 pr-8 py-1.5 text-xs bg-white border border-[#FE9F43] rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none transition-all min-h-[36px]"
-            />
-            {localSearchInput && (
-              <button
-                type="button"
-                onClick={handleClearSearch}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 p-1 rounded-full cursor-pointer transition-colors"
-                aria-label="Clear search"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
-            )}
-          </div>
+    <div className="space-y-2.5 sm:space-y-3 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200 shadow-2xs">
+      {/* Combined Status Tabs & Search Box Row (Responsive Mobile Stack, Desktop Flex Between) */}
+      <div className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-2.5 sm:gap-3">
+        {/* Navigation Status Tabs & Mobile Filters Button */}
+        <div className="flex items-center justify-between gap-2 min-w-0">
+          <nav className="flex items-center gap-1.5 overflow-x-auto no-scrollbar shrink min-w-0 py-0.5" aria-label="Status Tabs">
+            {statusTabs.map((tab) => {
+              const isActive = activeStatus === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => onStatusChange(tab.id)}
+                  className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap ${
+                    isActive
+                      ? 'bg-[#FE9F43] text-white shadow-2xs'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </nav>
 
           {/* Mobile Filter Button (< 768px / md) */}
           <button
             onClick={onOpenMobileFilter}
-            className="md:hidden flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-[#FE9F43] text-white rounded-xl transition-colors shrink-0 min-h-[36px] cursor-pointer"
+            className="md:hidden flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-[#FE9F43] text-white rounded-xl transition-colors shrink-0 min-h-[34px] cursor-pointer shadow-2xs"
           >
-            <Filter className="w-4 h-4" />
+            <Filter className="w-3.5 h-3.5" />
             <span>Filters</span>
             {hasActiveFilters && (
               <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             )}
           </button>
+        </div>
+
+        {/* Search Input Box (Full width on mobile, w-80 on desktop) */}
+        <div className="relative w-full md:w-80 shrink-0">
+          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+          <input
+            ref={searchInputRef}
+            type="text"
+            value={localSearchInput}
+            onChange={(e) => setLocalSearchInput(e.target.value)}
+            placeholder="Search tasks... (Press '/' to focus)"
+            className="w-full pl-9 pr-8 py-1.5 text-xs bg-white border border-[#FE9F43] rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none transition-all min-h-[36px]"
+          />
+          {localSearchInput && (
+            <button
+              type="button"
+              onClick={handleClearSearch}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 p-1 rounded-full cursor-pointer transition-colors"
+              aria-label="Clear search"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
       </div>
 

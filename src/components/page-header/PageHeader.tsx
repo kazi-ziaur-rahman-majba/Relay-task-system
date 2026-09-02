@@ -14,11 +14,17 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   className = '',
 }) => {
   return (
-    <div className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 sm:gap-3 ${className}`}>
-      <div className="flex flex-col">
-        <h1 className="text-lg sm:text-xl lg:text-2xl font-black text-[#051A2C]">
-          {headerTitle}
-        </h1>
+    <div className={`flex flex-col space-y-1 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between ${className}`}>
+      <div className="flex flex-col min-w-0">
+        <div className="flex items-center justify-between gap-2">
+          <h1 className="text-lg sm:text-xl lg:text-2xl font-black text-[#051A2C] truncate">
+            {headerTitle}
+          </h1>
+
+          {/* Mobile Side-by-side CTA Button */}
+          {children && <div className="flex sm:hidden items-center shrink-0">{children}</div>}
+        </div>
+
         {headerDescription && (
           <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">
             {headerDescription}
@@ -26,7 +32,8 @@ const PageHeader: React.FC<PageHeaderProps> = ({
         )}
       </div>
 
-      {children && <div className="flex items-center gap-2.5">{children}</div>}
+      {/* Desktop CTA Button */}
+      {children && <div className="hidden sm:flex items-center gap-2.5 shrink-0">{children}</div>}
     </div>
   );
 };

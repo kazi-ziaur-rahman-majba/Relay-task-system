@@ -49,7 +49,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, className = ''
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold rounded-full border shadow-2xs transition-colors ${config.bg} ${config.text} ${config.border} ${className}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold rounded-lg border shadow-2xs transition-colors ${config.bg} ${config.text} ${config.border} ${className}`}
     >
       <span className={`w-1.5 h-1.5 rounded-full ${config.dot}`} aria-hidden="true" />
       {config.label}
